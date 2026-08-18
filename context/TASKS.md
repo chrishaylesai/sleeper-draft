@@ -26,10 +26,12 @@ a shippable feature on its own.
   excluded players, excluded teams, refresh interval, and file paths
   (`players.json`, `rankings.csv`, `wishlist.csv`). Ship a documented sample
   `config.json`. Delivers the "configurable" requirement.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Validate required fields; fail clearly if neither `draft_id` nor
-  `username`+`season` is provided.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented initial Go CLI, JSON config loading, validation,
+  `-config` path override, sample `config.json`, and focused config tests.
+  Verified with `go test ./...`, `go build ./...`, and
+  `go run ./... -config config.json`.
 
 ### T2. Player database sync
 

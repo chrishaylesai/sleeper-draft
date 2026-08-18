@@ -1,0 +1,24 @@
+{
+  "draft_id": "your_draft_id_from_sleeper_url",
+  "username": "",
+  "season": "2026",
+  "sport": "nfl",
+  "position_targets": {
+    "QB": 2,
+    "RB": 5,
+    "WR": 5,
+    "TE": 2,
+    "K": 1,
+    "DEF": 1
+  },
+  "excluded_players": [
+    "example_player_id"
+  ],
+  "excluded_teams": [
+    "FA"
+  ],
+  "refresh_interval_seconds": 5,
+  "players_path": "players.json",
+  "rankings_path": "rankings.csv",
+  "wishlist_path": "wishlist.csv"
+}
