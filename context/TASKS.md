@@ -1,0 +1,105 @@
+# Tasks
+
+This is the backlog for **sleeper-draft**. See [`../AGENTS.md`](../AGENTS.md) for
+the project overview.
+
+## How to use this file
+
+- Work is broken down by **feature** (a user-facing capability), **not** by
+  application layer.
+- Every task has four fields: **Description**, **Status**, **Assigned to**,
+  **Notes**.
+- **Status** is exactly one of: `TODO`, `IN PROGRESS`, `DONE`.
+- **Before starting** a task: set **Status** → `IN PROGRESS` and fill in
+  **Assigned to**.
+- **On completion**: set **Status** → `DONE` and record the outcome in **Notes**.
+
+Tasks are ordered so earlier ones unblock later ones, but each is intended to be
+a shippable feature on its own.
+
+---
+
+### T1. Configuration & startup
+
+- **Description:** Load a JSON `config.json` and start the app from it. Config
+  covers: `draft_id`, `username`, `season`, `sport`, per-position draft targets,
+  excluded players, excluded teams, refresh interval, and file paths
+  (`players.json`, `rankings.csv`, `wishlist.csv`). Ship a documented sample
+  `config.json`. Delivers the "configurable" requirement.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Validate required fields; fail clearly if neither `draft_id` nor
+  `username`+`season` is provided.
+
+### T2. Player database sync
+
+- **Description:** Fetch Sleeper `GET /players/nfl` and cache it to
+  `players.json` (`player_id, name, team, position`, plus `search_rank`). Refresh
+  only when the cache is stale (at most once per day) and stay within rate
+  limits. Build a name(+position/team) lookup index used for CSV matching.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Response is ~5MB — do not fetch on every run. `search_rank` is
+  retained here to serve as the rankings fallback in T6.
+
+### T3. Draft resolution & live pick polling
+
+- **Description:** Resolve the target draft either from an explicit `draft_id` or
+  by looking it up from `username` + `season` (`/user/<username>` →
+  `/user/<user_id>/drafts/nfl/<season>`). Read draft settings and `/picks`, and
+  poll on the configured refresh interval. Derive current round/pick and total
+  picks made (using `slot_to_roster_id` / `draft_order` where needed).
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Keep polling under the rate limit; handle transient API errors.
+
+### T4. Rankings & wishlist import
+
+- **Description:** Parse the two CSVs — `rankings.csv` and `wishlist.csv` — each
+  with header `player_name, player_position, player_team` (team optional).
+  Validate every row against `players.json`; report any unmatched row as an
+  error. Resolve each row to a `player_id` and preserve file order as rank.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Team column disambiguates duplicate names. Import must fail loudly
+  on unmatched entries rather than silently dropping them.
+
+### T5. Position summary
+
+- **Description:** For each position, compute how many have been drafted so far
+  (from the picks in T3) and how many remain relative to the per-position targets
+  from config (T1). Present drafted vs. remaining per position.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Depends on T1 (targets) and T3 (picks).
+
+### T6. Best available per position
+
+- **Description:** For each position, determine the highest-rated available
+  player. Order primarily by `rankings.csv` (T4); for players not in the rankings,
+  fall back to Sleeper `search_rank`. Exclude already-drafted players and any
+  players/teams excluded in config.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Depends on T2 (search_rank), T3 (drafted), T4 (rankings), T1
+  (exclusions).
+
+### T7. Wishlist tracking
+
+- **Description:** For the `wishlist.csv` list, show each target's availability
+  (available, or taken and by whom) and surface the top available wishlist
+  player(s), overall and/or per position.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Reuses the drafted/exclusion logic from T3/T6; ordered by wishlist
+  rank from T4.
+
+### T8. Live TUI dashboard
+
+- **Description:** A Bubble Tea full-screen dashboard that lays out the current
+  round/pick, position summary (T5), best-available per position (T6), and
+  wishlist tracking (T7), refreshing on the configured interval. Handle API
+  errors gracefully and exit cleanly on Ctrl-C.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** This assembles the outputs of T3–T7 into the live view.
