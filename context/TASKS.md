@@ -106,10 +106,12 @@ a shippable feature on its own.
 - **Description:** For the `wishlist.csv` list, show each target's availability
   (available, or taken and by whom) and surface the top available wishlist
   player(s), overall and/or per position.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Reuses the drafted/exclusion logic from T3/T6; ordered by wishlist
-  rank from T4.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented wishlist availability reporting in wishlist rank order,
+  taken-by/pick annotations, exclusion handling, top available overall, and top
+  available by position. Verified with `go test ./...`, `go build ./...`, and a
+  live startup smoke test against the configured mock draft.
 
 ### T8. Live TUI dashboard
 

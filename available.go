@@ -33,10 +33,7 @@ func BestAvailableByPosition(cfg Config, players PlayerDatabase, rankings Player
 		if drafted[normalizeLookupText(player.ID)] {
 			continue
 		}
-		if excludedPlayers[normalizeLookupText(player.ID)] || excludedPlayers[normalizeLookupText(player.Name)] {
-			continue
-		}
-		if excludedTeams[normalizeLookupText(player.Team)] {
+		if playerIsExcluded(player, excludedPlayers, excludedTeams) {
 			continue
 		}
 
