@@ -33,6 +33,10 @@ type PlayerDatabase struct {
 	Source  string
 }
 
+func (db PlayerDatabase) LookupByID(id string) (Player, bool) {
+	return db.Index.LookupByID(id)
+}
+
 type PlayerIndex struct {
 	byNamePosition map[string][]Player
 	byID           map[string]Player

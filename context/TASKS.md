@@ -93,10 +93,13 @@ a shippable feature on its own.
   player. Order primarily by `rankings.csv` (T4); for players not in the rankings,
   fall back to Sleeper `search_rank`. Exclude already-drafted players and any
   players/teams excluded in config.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Depends on T2 (search_rank), T3 (drafted), T4 (rankings), T1
-  (exclusions).
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented best-available selection per configured target
+  position, custom rankings precedence, Sleeper `search_rank` fallback,
+  drafted-player filtering, and config player/team exclusions. Verified with
+  `go test ./...`, `go build ./...`, and a live startup smoke test against the
+  configured mock draft.
 
 ### T7. Wishlist tracking
 

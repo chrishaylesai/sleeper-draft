@@ -56,6 +56,7 @@ func main() {
 			}
 			fmt.Println(snapshot.Summary())
 			fmt.Println(FormatPositionSummaries(BuildPositionSummaries(cfg.PositionTargets, snapshot.Picks, players)))
+			fmt.Println(FormatBestAvailable(BestAvailableByPosition(cfg, players, rankings, snapshot.Picks)))
 		})
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error: %v\n", err)
@@ -72,4 +73,5 @@ func main() {
 
 	fmt.Println(snapshot.Summary())
 	fmt.Println(FormatPositionSummaries(BuildPositionSummaries(cfg.PositionTargets, snapshot.Picks, players)))
+	fmt.Println(FormatBestAvailable(BestAvailableByPosition(cfg, players, rankings, snapshot.Picks)))
 }
