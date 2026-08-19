@@ -39,10 +39,13 @@ a shippable feature on its own.
   `players.json` (`player_id, name, team, position`, plus `search_rank`). Refresh
   only when the cache is stale (at most once per day) and stay within rate
   limits. Build a name(+position/team) lookup index used for CSV matching.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Response is ~5MB — do not fetch on every run. `search_rank` is
-  retained here to serve as the rankings fallback in T6.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented Sleeper `/players/<sport>` sync, compact
+  `players.json` cache with `search_rank`, 24-hour freshness checks, and a
+  name+position(+team) lookup index for CSV matching. Verified with
+  `go test ./...`, `go build ./...`, and a cached `go run ./... -config ...`
+  smoke test.
 
 ### T3. Draft resolution & live pick polling
 
