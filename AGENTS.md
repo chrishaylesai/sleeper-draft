@@ -79,6 +79,7 @@ Each task has four fields:
    **Assigned to**.
 2. **On completion:** set its **Status** to `DONE` and update **Notes** with the
    outcome.
+3. **On completion** Update README.md 
 
 Do not begin implementation work on a task whose status is still `TODO` without
 first updating it.
