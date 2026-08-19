@@ -6,12 +6,14 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
 
 const defaultConfigPath = "config.json"
 
 func main() {
 	configPath := flag.String("config", defaultConfigPath, "path to config JSON file")
+	poll := flag.Bool("poll", false, "poll the draft continuously using refresh_interval_seconds")
 	flag.Parse()
 
 	cfg, err := LoadConfig(*configPath)
@@ -29,4 +31,35 @@ func main() {
 	}
 
 	fmt.Printf("Players loaded: %d source=%s\n", len(players.Players), players.Source)
+
+	drafts := NewDraftService(http.DefaultClient)
+	draft, err := drafts.Resolve(context.Background(), cfg)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		os.Exit(1)
+	}
+
+	if *poll {
+		interval := time.Duration(cfg.RefreshIntervalSeconds) * time.Second
+		err := drafts.Poll(context.Background(), draft.ID, interval, func(snapshot DraftSnapshot, err error) {
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "poll error: %v\n", err)
+				return
+			}
+			fmt.Println(snapshot.Summary())
+		})
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error: %v\n", err)
+			os.Exit(1)
+		}
+		return
+	}
+
+	snapshot, err := drafts.Snapshot(context.Background(), draft.ID)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(snapshot.Summary())
 }

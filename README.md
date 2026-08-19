@@ -80,15 +80,23 @@ go run ./... -config path/to/config.json
 ```
 
 On startup, the app prints a config summary and loads players from either the
-fresh local cache or the Sleeper API:
+fresh local cache or the Sleeper API. It then resolves the configured draft and
+prints the current draft snapshot:
 
 ```text
 Config loaded: target=... sport=nfl refresh=5s positions=...
 Players loaded: 12345 source=cache
+Draft loaded: draft_id=... status=active round=1 pick=4 next_pick=4 total_picks=3
 ```
 
 If `players.json` is missing or stale, the first run will fetch
 `/players/nfl` from Sleeper and write a compact local cache.
+
+To keep polling the draft on `refresh_interval_seconds`, pass `-poll`:
+
+```sh
+go run ./... -poll
+```
 
 ## Test
 

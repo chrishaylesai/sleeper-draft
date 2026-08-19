@@ -54,9 +54,12 @@ a shippable feature on its own.
   `/user/<user_id>/drafts/nfl/<season>`). Read draft settings and `/picks`, and
   poll on the configured refresh interval. Derive current round/pick and total
   picks made (using `slot_to_roster_id` / `draft_order` where needed).
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Keep polling under the rate limit; handle transient API errors.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented draft resolution from explicit `draft_id` or
+  username+season, draft settings and picks reads, current round/pick snapshot
+  derivation, and `-poll` refresh-loop support that reports transient API
+  errors and continues. Verified with `go test ./...` and `go build ./...`.
 
 ### T4. Rankings & wishlist import
 
