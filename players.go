@@ -35,6 +35,7 @@ type PlayerDatabase struct {
 
 type PlayerIndex struct {
 	byNamePosition map[string][]Player
+	byID           map[string]Player
 }
 
 type PlayerService struct {
@@ -272,8 +273,14 @@ func writePlayerCache(path string, cache playerCacheFile) error {
 }
 
 func NewPlayerIndex(players []Player) PlayerIndex {
-	index := PlayerIndex{byNamePosition: make(map[string][]Player)}
+	index := PlayerIndex{
+		byNamePosition: make(map[string][]Player),
+		byID:           make(map[string]Player),
+	}
 	for _, player := range players {
+		if strings.TrimSpace(player.ID) != "" {
+			index.byID[player.ID] = player
+		}
 		if strings.TrimSpace(player.Name) == "" || strings.TrimSpace(player.Position) == "" {
 			continue
 		}
@@ -281,6 +288,11 @@ func NewPlayerIndex(players []Player) PlayerIndex {
 		index.byNamePosition[key] = append(index.byNamePosition[key], player)
 	}
 	return index
+}
+
+func (idx PlayerIndex) LookupByID(id string) (Player, bool) {
+	player, ok := idx.byID[strings.TrimSpace(id)]
+	return player, ok
 }
 
 func (idx PlayerIndex) Lookup(name, position, team string) (Player, error) {

@@ -32,6 +32,14 @@ func main() {
 
 	fmt.Printf("Players loaded: %d source=%s\n", len(players.Players), players.Source)
 
+	rankings, wishlist, err := LoadPlayerLists(cfg, players)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Printf("Player lists loaded: rankings=%d wishlist=%d\n", len(rankings.Entries), len(wishlist.Entries))
+
 	drafts := NewDraftService(http.DefaultClient)
 	draft, err := drafts.Resolve(context.Background(), cfg)
 	if err != nil {
@@ -47,6 +55,7 @@ func main() {
 				return
 			}
 			fmt.Println(snapshot.Summary())
+			fmt.Println(FormatPositionSummaries(BuildPositionSummaries(cfg.PositionTargets, snapshot.Picks, players)))
 		})
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "error: %v\n", err)
@@ -62,4 +71,5 @@ func main() {
 	}
 
 	fmt.Println(snapshot.Summary())
+	fmt.Println(FormatPositionSummaries(BuildPositionSummaries(cfg.PositionTargets, snapshot.Picks, players)))
 }

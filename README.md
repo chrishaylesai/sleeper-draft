@@ -51,7 +51,19 @@ paths:
 
 `players_path` is used for the Sleeper player cache. The app refreshes it at
 most once per 24 hours. `rankings_path` and `wishlist_path` are configured now
-for later import tasks.
+for custom player lists.
+
+## Rankings and Wishlist
+
+`rankings.csv` and `wishlist.csv` use the same header:
+
+```csv
+player_name,player_position,player_team
+```
+
+`player_team` can be empty unless it is needed to disambiguate duplicate player
+names. Every non-header row is validated against `players.json`; startup fails
+clearly if any row cannot be matched.
 
 ## Build
 
@@ -86,7 +98,9 @@ prints the current draft snapshot:
 ```text
 Config loaded: target=... sport=nfl refresh=5s positions=...
 Players loaded: 12345 source=cache
+Player lists loaded: rankings=0 wishlist=0
 Draft loaded: draft_id=... status=active round=1 pick=4 next_pick=4 total_picks=3
+Position summary: QB drafted=0 remaining=2 target=2; RB drafted=1 remaining=4 target=5
 ```
 
 If `players.json` is missing or stale, the first run will fetch

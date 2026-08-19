@@ -67,19 +67,25 @@ a shippable feature on its own.
   with header `player_name, player_position, player_team` (team optional).
   Validate every row against `players.json`; report any unmatched row as an
   error. Resolve each row to a `player_id` and preserve file order as rank.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Team column disambiguates duplicate names. Import must fail loudly
-  on unmatched entries rather than silently dropping them.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented shared CSV import for `rankings.csv` and
+  `wishlist.csv`, exact header validation, player resolution through
+  `players.json`, row-order ranks, aggregated unmatched-row errors, and
+  header-only starter files. Verified with `go test ./...`, `go build ./...`,
+  and a live startup smoke test against the configured mock draft.
 
 ### T5. Position summary
 
 - **Description:** For each position, compute how many have been drafted so far
   (from the picks in T3) and how many remain relative to the per-position targets
   from config (T1). Present drafted vs. remaining per position.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Depends on T1 (targets) and T3 (picks).
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented per-position drafted counts from current picks,
+  remaining counts against configured targets, deterministic summary formatting,
+  and startup/polling output. Verified with `go test ./...`, `go build ./...`,
+  and a live startup smoke test against the configured mock draft.
 
 ### T6. Best available per position
 
