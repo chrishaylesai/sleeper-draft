@@ -119,6 +119,11 @@ a shippable feature on its own.
   round/pick, position summary (T5), best-available per position (T6), and
   wishlist tracking (T7), refreshing on the configured interval. Handle API
   errors gracefully and exit cleanly on Ctrl-C.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** This assembles the outputs of T3–T7 into the live view.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Implemented the default Bubble Tea/Lip Gloss full-screen dashboard
+  with current pick, position summary, best available, wishlist tracking,
+  refresh ticks, transient error display, and `q`/Ctrl-C exit. Kept
+  non-interactive output behind `-once`. Verified with `go test ./...`,
+  `go build ./...`, and a live `go run ./... -config config.json -once` smoke
+  test against the configured mock draft.

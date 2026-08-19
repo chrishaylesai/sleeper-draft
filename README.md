@@ -1,11 +1,11 @@
 # sleeper-draft
 
-`sleeper-draft` is a Go command-line application for live fantasy football draft
+`sleeper-draft` is a Go terminal dashboard for live fantasy football draft
 support using Sleeper's read-only API.
 
-The current implementation loads configuration, validates startup settings, and
-syncs Sleeper's NFL player database into a local `players.json` cache. Later
-tasks will add draft polling, rankings import, and the live TUI dashboard.
+It loads your draft configuration, syncs Sleeper's NFL player database into a
+local `players.json` cache, imports custom rankings and wishlist CSVs, and
+refreshes a full-screen Bubble Tea dashboard during the draft.
 
 ## Requirements
 
@@ -91,9 +91,18 @@ Run with an explicit config path:
 go run ./... -config path/to/config.json
 ```
 
-On startup, the app prints a config summary and loads players from either the
-fresh local cache or the Sleeper API. It then resolves the configured draft and
-prints the current draft snapshot:
+The dashboard refreshes on `refresh_interval_seconds` and exits cleanly with
+`q` or `Ctrl-C`.
+
+For a non-interactive smoke test, print one snapshot and exit:
+
+```sh
+go run ./... -once
+```
+
+In `-once` mode, the app prints a config summary, loads players from either the
+fresh local cache or the Sleeper API, resolves the configured draft, and prints
+the current draft snapshot:
 
 ```text
 Config loaded: target=... sport=nfl refresh=5s positions=...
@@ -107,12 +116,6 @@ Wishlist: none
 
 If `players.json` is missing or stale, the first run will fetch
 `/players/nfl` from Sleeper and write a compact local cache.
-
-To keep polling the draft on `refresh_interval_seconds`, pass `-poll`:
-
-```sh
-go run ./... -poll
-```
 
 ## Test
 
