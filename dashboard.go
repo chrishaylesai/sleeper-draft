@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"strconv"
 	"strings"
 	"time"
 
@@ -25,6 +26,20 @@ type snapshotMsg struct {
 }
 
 type refreshTickMsg time.Time
+
+var (
+	titleStyle       = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("39"))
+	metaStyle        = lipgloss.NewStyle().Foreground(lipgloss.Color("245"))
+	sectionTitle     = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("39"))
+	labelStyle       = lipgloss.NewStyle().Foreground(lipgloss.Color("245"))
+	healthyStyle     = lipgloss.NewStyle().Foreground(lipgloss.Color("42"))
+	warningStyle     = lipgloss.NewStyle().Foreground(lipgloss.Color("214"))
+	dangerStyle      = lipgloss.NewStyle().Foreground(lipgloss.Color("196"))
+	customRankStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("42"))
+	sleeperRankStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("45"))
+	unrankedStyle    = lipgloss.NewStyle().Foreground(lipgloss.Color("245"))
+	footerStyle      = lipgloss.NewStyle().Foreground(lipgloss.Color("244"))
+)
 
 func NewDashboardModel(state AppState) dashboardModel {
 	return dashboardModel{state: state}
@@ -120,8 +135,8 @@ func dashboardFrame(width int, sections ...string) string {
 }
 
 func renderHeader(m dashboardModel, status string) string {
-	title := lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("39")).Render("Sleeper Draft Dashboard")
-	meta := fmt.Sprintf("draft=%s refresh=%s status=%s", m.state.DraftID, m.state.RefreshInterval(), status)
+	title := titleStyle.Render("Sleeper Draft Dashboard")
+	meta := metaStyle.Render(fmt.Sprintf("draft=%s refresh=%s status=%s", m.state.DraftID, m.state.RefreshInterval(), status))
 	return title + "\n" + meta
 }
 
@@ -129,7 +144,7 @@ func renderError(err error) string {
 	if err == nil {
 		return ""
 	}
-	return lipgloss.NewStyle().Foreground(lipgloss.Color("196")).Render("Last refresh error: " + err.Error())
+	return dangerStyle.Render("Last refresh error: " + err.Error())
 }
 
 func renderDraftSummary(snapshot DraftSnapshot) string {
@@ -138,45 +153,50 @@ func renderDraftSummary(snapshot DraftSnapshot) string {
 		updated = snapshot.UpdatedAt.Format("15:04:05")
 	}
 
-	state := "active"
+	state := healthyStyle.Render("active")
 	if snapshot.Complete {
-		state = "complete"
+		state = warningStyle.Render("complete")
 	}
 
 	return sectionStyle().Render(fmt.Sprintf(
-		"Draft\nRound %d  Pick %d  Next %d  Total picks %d  Status %s  Updated %s",
+		"%s\n%s %d  %s %d  %s %d  %s %d  %s %s  %s %s",
+		sectionTitle.Render("Draft"),
+		labelStyle.Render("Round"),
 		snapshot.CurrentRound,
+		labelStyle.Render("Pick"),
 		snapshot.CurrentPick,
+		labelStyle.Render("Next"),
 		snapshot.NextPickNo,
+		labelStyle.Render("Total picks"),
 		snapshot.TotalPicks,
+		labelStyle.Render("Status"),
 		state,
+		labelStyle.Render("Updated"),
 		updated,
 	))
 }
 
 func renderPositionTable(summaries []PositionSummary) string {
 	if len(summaries) == 0 {
-		return sectionStyle().Render("Positions\nNo position targets configured.")
+		return sectionStyle().Render(sectionTitle.Render("Positions") + "\nNo position targets configured.")
 	}
 
-	rows := []string{"Positions", "POS  DRAFTED  REMAINING  TARGET"}
+	rows := []string{sectionTitle.Render("Positions"), labelStyle.Render("POS  DRAFTED  REMAINING  TARGET")}
 	for _, summary := range summaries {
-		rows = append(rows, fmt.Sprintf("%-4s %-8d %-10d %d", summary.Position, summary.Drafted, summary.Remaining, summary.Target))
+		remaining := styledRemaining(summary)
+		rows = append(rows, fmt.Sprintf("%-4s %-8d %-10s %d", summary.Position, summary.Drafted, remaining, summary.Target))
 	}
 	return sectionStyle().Render(strings.Join(rows, "\n"))
 }
 
 func renderBestAvailable(best []BestAvailable) string {
 	if len(best) == 0 {
-		return sectionStyle().Render("Best Available\nNone")
+		return sectionStyle().Render(sectionTitle.Render("Best Available") + "\nNone")
 	}
 
-	rows := []string{"Best Available"}
+	rows := []string{sectionTitle.Render("Best Available")}
 	for _, item := range best {
-		rank := item.Source
-		if item.Source != "unranked" {
-			rank = fmt.Sprintf("%s rank %d", item.Source, item.Rank)
-		}
+		rank := styledRank(item.Source, item.Rank)
 		rows = append(rows, fmt.Sprintf("%-4s %-28s %-4s %s", item.Position, item.Player.Name, emptyTeamAsFA(item.Player.Team), rank))
 	}
 	return sectionStyle().Render(strings.Join(rows, "\n"))
@@ -184,26 +204,26 @@ func renderBestAvailable(best []BestAvailable) string {
 
 func renderWishlist(report WishlistReport) string {
 	if len(report.Items) == 0 {
-		return sectionStyle().Render("Wishlist\nNo wishlist entries.")
+		return sectionStyle().Render(sectionTitle.Render("Wishlist") + "\nNo wishlist entries.")
 	}
 
-	rows := []string{"Wishlist"}
+	rows := []string{sectionTitle.Render("Wishlist")}
 	if report.TopAvailable != nil {
-		rows = append(rows, "Top: "+wishlistPlayerLabel(*report.TopAvailable))
+		rows = append(rows, labelStyle.Render("Top: ")+healthyStyle.Render(wishlistPlayerLabel(*report.TopAvailable)))
 	} else {
-		rows = append(rows, "Top: none")
+		rows = append(rows, labelStyle.Render("Top: ")+"none")
 	}
 	if len(report.TopAvailableByPosition) > 0 {
-		rows = append(rows, "By position: "+formatTopWishlistByPosition(report.TopAvailableByPosition))
+		rows = append(rows, labelStyle.Render("By position: ")+healthyStyle.Render(formatTopWishlistByPosition(report.TopAvailableByPosition)))
 	}
 	for _, item := range report.Items {
-		rows = append(rows, "  "+formatWishlistItem(item))
+		rows = append(rows, "  "+styledWishlistItem(item))
 	}
 	return sectionStyle().Render(strings.Join(rows, "\n"))
 }
 
 func footerView() string {
-	return lipgloss.NewStyle().Foreground(lipgloss.Color("244")).Render("q / Ctrl-C quit")
+	return footerStyle.Render("q / Ctrl-C quit")
 }
 
 func sectionStyle() lipgloss.Style {
@@ -211,6 +231,42 @@ func sectionStyle() lipgloss.Style {
 		Border(lipgloss.RoundedBorder()).
 		BorderForeground(lipgloss.Color("240")).
 		Padding(0, 1)
+}
+
+func styledRemaining(summary PositionSummary) string {
+	text := strconv.Itoa(summary.Remaining)
+	if summary.Remaining == 0 {
+		return dangerStyle.Render(text)
+	}
+	if summary.Target > 0 && summary.Remaining <= 1 {
+		return warningStyle.Render(text)
+	}
+	return healthyStyle.Render(text)
+}
+
+func styledRank(source string, rank int) string {
+	switch source {
+	case "custom":
+		return customRankStyle.Render(fmt.Sprintf("custom rank %d", rank))
+	case "sleeper":
+		return sleeperRankStyle.Render(fmt.Sprintf("sleeper rank %d", rank))
+	default:
+		return unrankedStyle.Render("unranked")
+	}
+}
+
+func styledWishlistItem(item WishlistItem) string {
+	text := formatWishlistItem(item)
+	switch item.Status {
+	case WishlistAvailable:
+		return healthyStyle.Render(text)
+	case WishlistTaken:
+		return dangerStyle.Render(text)
+	case WishlistExcluded:
+		return warningStyle.Render(text)
+	default:
+		return text
+	}
 }
 
 func emptyTeamAsFA(team string) string {

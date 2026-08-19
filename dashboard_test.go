@@ -7,6 +7,7 @@ import (
 	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
+	"github.com/charmbracelet/lipgloss"
 )
 
 func TestDashboardModelRendersSnapshotSections(t *testing.T) {
@@ -71,5 +72,40 @@ func TestDashboardModelQuitsOnQ(t *testing.T) {
 	_, cmd := model.Update(tea.KeyMsg{Type: tea.KeyRunes, Runes: []rune{'q'}})
 	if cmd == nil {
 		t.Fatal("cmd = nil, want quit command")
+	}
+}
+
+func TestDashboardStylesUseForegroundColors(t *testing.T) {
+	styles := map[string]lipgloss.Style{
+		"title":        titleStyle,
+		"meta":         metaStyle,
+		"sectionTitle": sectionTitle,
+		"label":        labelStyle,
+		"healthy":      healthyStyle,
+		"warning":      warningStyle,
+		"danger":       dangerStyle,
+		"customRank":   customRankStyle,
+		"sleeperRank":  sleeperRankStyle,
+		"unranked":     unrankedStyle,
+		"footer":       footerStyle,
+	}
+
+	for name, style := range styles {
+		if _, ok := style.GetForeground().(lipgloss.NoColor); ok {
+			t.Fatalf("%s style has no foreground color", name)
+		}
+	}
+}
+
+func TestStyledStatusHelpersKeepReadableText(t *testing.T) {
+	if got := styledRemaining(PositionSummary{Target: 1, Remaining: 0}); !strings.Contains(got, "0") {
+		t.Fatalf("styled remaining = %q, want readable number", got)
+	}
+	if got := styledRank("sleeper", 7); !strings.Contains(got, "sleeper rank 7") {
+		t.Fatalf("styled rank = %q, want readable rank", got)
+	}
+	item := WishlistItem{Rank: 1, Position: "RB", Player: Player{Name: "Target", Team: "ATL"}, Status: WishlistAvailable}
+	if got := styledWishlistItem(item); !strings.Contains(got, "available") {
+		t.Fatalf("styled wishlist item = %q, want status text", got)
 	}
 }

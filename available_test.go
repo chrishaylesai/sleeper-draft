@@ -114,6 +114,22 @@ func TestBestAvailableByPositionReturnsTargetPositionsInOrder(t *testing.T) {
 	}
 }
 
+func TestBestAvailableByPositionSkipsZeroTargetPositions(t *testing.T) {
+	rank1 := 1
+	players := PlayerDatabase{
+		Players: []Player{
+			{ID: "def", Name: "Defense", Team: "DAL", Position: "DEF", SearchRank: &rank1},
+			{ID: "qb", Name: "Quarterback", Team: "BUF", Position: "QB", SearchRank: &rank1},
+		},
+	}
+
+	got := BestAvailableByPosition(Config{PositionTargets: map[string]int{"DEF": 0, "QB": 1}}, players, PlayerList{}, nil)
+	want := []string{"QB"}
+	if positions := bestAvailablePositions(got); !reflect.DeepEqual(positions, want) {
+		t.Fatalf("positions = %#v, want %#v", positions, want)
+	}
+}
+
 func TestFormatBestAvailable(t *testing.T) {
 	got := FormatBestAvailable([]BestAvailable{
 		{Position: "QB", Player: Player{Name: "Quarterback", Team: "BUF"}, Source: "custom", Rank: 1},

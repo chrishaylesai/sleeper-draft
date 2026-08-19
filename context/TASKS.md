@@ -127,3 +127,17 @@ a shippable feature on its own.
   non-interactive output behind `-once`. Verified with `go test ./...`,
   `go build ./...`, and a live `go run ./... -config config.json -once` smoke
   test against the configured mock draft.
+
+### T9. Colorized TUI readability
+
+- **Description:** Add purposeful color styling to the Bubble Tea dashboard to
+  make the live draft state easier to scan. Use Lip Gloss styles for section
+  headings, draft status, position remaining counts, best-available ranking
+  sources, wishlist statuses, and refresh errors. Keep colors restrained and
+  readable in typical terminal themes.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Added centralized Lip Gloss color styles for dashboard title,
+  metadata, section headings, status/error text, remaining counts, ranking
+  sources, wishlist statuses, and footer help. Verified with `go test ./...`,
+  `go build ./...`, and `go run ./... -config config.json -once`.

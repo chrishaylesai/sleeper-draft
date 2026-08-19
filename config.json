@@ -5,11 +5,11 @@
   "sport": "nfl",
   "position_targets": {
     "QB": 2,
-    "RB": 5,
+    "RB": 4,
     "WR": 5,
     "TE": 2,
-    "K": 1,
-    "DEF": 1
+    "K": 0,
+    "DEF": 0
   },
   "excluded_players": [
     "example_player_id"

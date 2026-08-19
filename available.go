@@ -149,7 +149,10 @@ func normalizedSet(values []string) map[string]bool {
 
 func targetPositions(targets map[string]int) map[string]struct{} {
 	positions := make(map[string]struct{}, len(targets))
-	for position := range targets {
+	for position, target := range targets {
+		if target <= 0 {
+			continue
+		}
 		if normalized := normalizePosition(position); normalized != "" {
 			positions[normalized] = struct{}{}
 		}
