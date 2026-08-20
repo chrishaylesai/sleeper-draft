@@ -273,10 +273,10 @@ a shippable feature on its own.
   Sleeper player database where possible, and document the source and as-of date
   so ambiguous depth charts, committees, injuries, and later changes can be
   reviewed.
-- **Status:** TODO
-- **Assigned to:** Unassigned
-- **Notes:** Keep this as a separate research/data task. No dashboard integration
-  is required unless added by a later task.
+- **Status:** IN PROGRESS
+- **Assigned to:** Codex
+- **Notes:** Researching current 2026 depth-chart roles for all 32 NFL teams and
+  matching the results to the repository's Sleeper player cache.
 
 ### T19. Create simple team strength-of-schedule ratings
 
