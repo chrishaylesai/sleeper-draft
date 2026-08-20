@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func TestPrunePlayerCacheKeepsRelevantPlayers(t *testing.T) {
+func TestPrunePlayerCacheKeepsRelevantPlayersUnderCutoff(t *testing.T) {
 	players := []Player{
 		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
 		{ID: "2", Name: "Edge Case", Team: "SF", Position: "WR", SearchRank: intPtr(500)},
@@ -19,12 +19,12 @@ func TestPrunePlayerCacheKeepsRelevantPlayers(t *testing.T) {
 		{ID: "5", Name: "No Rank", Team: "DEN", Position: "TE", SearchRank: nil},
 		{ID: "ARI", Name: "Arizona Cardinals", Team: "ARI", Position: "DEF", SearchRank: nil},
 		{ID: "6", Name: "Wishlist Longshot", Team: "CHI", Position: "RB", SearchRank: intPtr(1200)},
-		{ID: "7", Name: "Ranked Longshot", Team: "GB", Position: "QB", SearchRank: nil},
+		{ID: "7", Name: "Rankless Longshot", Team: "GB", Position: "QB", SearchRank: nil},
 	}
-	cfg := prunableConfig(t, 500, players,
-		[]string{"Ranked Longshot,QB,GB"},
-		[]string{"Wishlist Longshot,RB,CHI"},
-	)
+	cfg := prunableConfig(t, 500, players, nil, []string{
+		"Wishlist Longshot,RB,CHI",
+		"Rankless Longshot,QB,GB",
+	})
 
 	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{})
 	if err != nil {
@@ -151,20 +151,91 @@ func TestPrunePlayerCacheRejectsNonPositiveConfiguredCutoff(t *testing.T) {
 
 func TestPruneResultSummary(t *testing.T) {
 	result := PruneResult{
-		Path:         "players.json",
-		Cutoff:       500,
-		Before:       12221,
-		After:        1175,
-		Removed:      11046,
-		KeptRanked:   1128,
-		KeptRankless: 32,
-		KeptListed:   15,
+		Path:          "players.json",
+		Cutoff:        500,
+		CutoffApplied: true,
+		Before:        12221,
+		After:         1175,
+		Removed:       11046,
+		KeptRanked:    1128,
+		KeptRankless:  32,
+		KeptListed:    15,
 	}
 
 	want := "Pruned players.json: cutoff=500 before=12221 after=1175 removed=11046 " +
 		"kept_ranked=1128 kept_rankless=32 kept_listed=15"
 	if got := result.Summary(); got != want {
 		t.Fatalf("Summary() = %q, want %q", got, want)
+	}
+}
+
+func TestPrunePlayerCacheIgnoresCutoffWhenRankingsSupplied(t *testing.T) {
+	players := []Player{
+		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
+		{ID: "2", Name: "Deep Sleeper", Team: "NYJ", Position: "WR", SearchRank: intPtr(1200)},
+		{ID: "3", Name: "Top Pick", Team: "CIN", Position: "WR", SearchRank: intPtr(1)},
+		{ID: "ARI", Name: "Arizona Cardinals", Team: "ARI", Position: "DEF", SearchRank: nil},
+	}
+	cfg := prunableConfig(t, 500, players,
+		[]string{"Deep Sleeper,WR,NYJ"},
+		nil,
+	)
+
+	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{})
+	if err != nil {
+		t.Fatalf("PrunePlayerCache returned error: %v", err)
+	}
+
+	// "Top Pick" and "Bijan Robinson" both beat the cutoff, but the custom
+	// rankings replace it, so only the ranked player and the defense survive.
+	kept := keptPlayerIDs(t, cfg.PlayersPath)
+	want := []string{"2", "ARI"}
+	if strings.Join(kept, ",") != strings.Join(want, ",") {
+		t.Fatalf("kept players = %v, want %v", kept, want)
+	}
+	if result.CutoffApplied {
+		t.Fatal("CutoffApplied = true, want false when rankings are supplied")
+	}
+	if result.KeptRanked != 0 {
+		t.Fatalf("KeptRanked = %d, want 0", result.KeptRanked)
+	}
+	if !strings.Contains(result.Summary(), "cutoff=ignored") {
+		t.Fatalf("Summary() = %q, want cutoff=ignored", result.Summary())
+	}
+}
+
+func TestPrunePlayerCacheIgnoresInvalidCutoffWhenRankingsSupplied(t *testing.T) {
+	players := []Player{
+		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
+		{ID: "2", Name: "Deep Sleeper", Team: "NYJ", Position: "WR", SearchRank: intPtr(1200)},
+	}
+	cfg := prunableConfig(t, 0, players, []string{"Deep Sleeper,WR,NYJ"}, nil)
+
+	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{})
+	if err != nil {
+		t.Fatalf("PrunePlayerCache returned error: %v", err)
+	}
+	if result.After != 1 || result.KeptListed != 1 {
+		t.Fatalf("result = %#v, want after=1 kept_listed=1", result)
+	}
+}
+
+func TestPrunePlayerCacheAppliesCutoffWhenOnlyWishlistSupplied(t *testing.T) {
+	players := []Player{
+		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
+		{ID: "2", Name: "Deep Sleeper", Team: "NYJ", Position: "WR", SearchRank: intPtr(1200)},
+	}
+	cfg := prunableConfig(t, 500, players, nil, []string{"Deep Sleeper,WR,NYJ"})
+
+	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{})
+	if err != nil {
+		t.Fatalf("PrunePlayerCache returned error: %v", err)
+	}
+	if !result.CutoffApplied {
+		t.Fatal("CutoffApplied = false, want true when only a wishlist is supplied")
+	}
+	if kept := keptPlayerIDs(t, cfg.PlayersPath); strings.Join(kept, ",") != "1,2" {
+		t.Fatalf("kept players = %v, want [1 2]", kept)
 	}
 }
 

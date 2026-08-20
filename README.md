@@ -71,12 +71,12 @@ clearly if any row cannot be matched.
 Sleeper's player database is around 12,000 players, but only a small slice is
 fantasy relevant. `-prune` rewrites `players.json` in place, keeping only:
 
+- every player referenced by `rankings.csv` or `wishlist.csv`, whatever their
+  rank,
+- team defenses (`DEF`), which Sleeper leaves without a `search_rank`,
 - players whose Sleeper `search_rank` is at or below `prune_rank_cutoff`
   (`search_rank` is lower-is-better; unranked players carry values like
-  `9999999`),
-- team defenses (`DEF`), which Sleeper leaves without a `search_rank`,
-- every player referenced by `rankings.csv` or `wishlist.csv`, regardless of
-  rank.
+  `9999999`).
 
 The cutoff is the `prune_rank_cutoff` setting in `config.json`. It defaults to
 `500`, which keeps a deep pool; lower it for a tighter one:
@@ -87,6 +87,17 @@ The cutoff is the `prune_rank_cutoff` setting in `config.json`. It defaults to
 }
 ```
 
+**Custom rankings override the cutoff.** `rankings.csv` is the app's primary
+ordering, so when it has any rows, it — not Sleeper's `search_rank` — decides
+who matters, and `prune_rank_cutoff` is ignored entirely. The pruned cache is
+then exactly your rankings, your wishlist, and the team defenses, and the
+summary reports `cutoff=ignored`.
+
+That makes the cache as small as your list. Note that a *partial* rankings list
+prunes away every player you did not rank, which leaves nothing for the
+`search_rank` fallback that normally fills out best-available. Rank a full pool
+before pruning, or leave `rankings.csv` empty to prune by cutoff instead.
+
 Preview the result without touching the file:
 
 ```sh
@@ -95,6 +106,13 @@ go run ./... -prune -prune-dry-run
 
 ```text
 Prune dry run for players.json: cutoff=500 before=12221 after=1160 removed=11061 kept_ranked=1113 kept_rankless=32 kept_listed=15
+```
+
+With a populated `rankings.csv`, the same cache prunes to just the listed
+players plus defenses:
+
+```text
+Pruned players.json: cutoff=ignored before=12221 after=96 removed=12125 kept_ranked=0 kept_rankless=32 kept_listed=64
 ```
 
 Then prune for real:

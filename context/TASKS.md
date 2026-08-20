@@ -187,16 +187,19 @@ a shippable feature on its own.
 - **Status:** DONE
 - **Assigned to:** Claude
 - **Notes:** Added a `-prune` CLI command (`-prune-dry-run` previews without
-  rewriting) that rewrites `players.json` in place. The cutoff is the
-  `prune_rank_cutoff` config setting, defaulting to `500`. Keeps players
-  ranked at or below the cutoff, rankless-but-draftable positions (`DEF`, which
-  Sleeper leaves without a `search_rank`), and every player referenced by
-  `rankings.csv` or `wishlist.csv` — those lists are resolved against the
-  unpruned database first, so CSV validation keeps working. The pruned file
-  preserves `cached_at`, so the app still treats it as a fresh cache. On the
-  real cache this cuts 12,221 players to 1,160 (1.7 MB to 162 KB). Verified with
-  `go test ./...`, `go build ./...`, and dry-run plus real prune runs against a
-  copy of the live cache.
+  rewriting) that rewrites `players.json` in place. Keeps every player
+  referenced by `rankings.csv` or `wishlist.csv`, rankless-but-draftable
+  positions (`DEF`, which Sleeper leaves without a `search_rank`), and players
+  ranked at or below the `prune_rank_cutoff` config setting (default `500`).
+  Supplying a custom `rankings.csv` ignores the cutoff entirely — rankings are
+  the app's primary ordering, so when present they define the relevant pool and
+  the summary reports `cutoff=ignored`. Both lists are resolved against the
+  unpruned database first, so CSV validation keeps working, and the pruned file
+  preserves `cached_at` so the app still treats it as a fresh cache. On the real
+  cache the cutoff path cuts 12,221 players to 1,160 (1.7 MB to 162 KB); a
+  61-row rankings file cuts it to 96. Verified with `go test ./...`,
+  `go build ./...`, and dry-run plus real prune runs against a copy of the live
+  cache, with and without rankings.
 
 ### T14. Display my overall pick numbers
 
