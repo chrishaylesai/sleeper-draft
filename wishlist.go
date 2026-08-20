@@ -15,12 +15,13 @@ const (
 )
 
 type WishlistItem struct {
-	Rank     int
-	Player   Player
-	Status   WishlistStatus
-	TakenBy  string
-	PickNo   int
-	Position string
+	Rank         int
+	Player       Player
+	Status       WishlistStatus
+	TakenBy      string
+	PickNo       int
+	Position     string
+	SelectedByMe bool
 }
 
 type WishlistReport struct {
@@ -30,6 +31,10 @@ type WishlistReport struct {
 }
 
 func BuildWishlistReport(cfg Config, wishlist PlayerList, picks []Pick) WishlistReport {
+	return BuildWishlistReportForPersonal(cfg, wishlist, picks, PersonalDraft{})
+}
+
+func BuildWishlistReportForPersonal(cfg Config, wishlist PlayerList, picks []Pick, personal PersonalDraft) WishlistReport {
 	picksByPlayerID := picksByPlayerID(picks)
 	excludedPlayers := normalizedSet(cfg.ExcludedPlayers)
 	excludedTeams := normalizedSet(cfg.ExcludedTeams)
@@ -47,6 +52,7 @@ func BuildWishlistReport(cfg Config, wishlist PlayerList, picks []Pick) Wishlist
 			item.Status = WishlistTaken
 			item.TakenBy = pickedByLabel(pick)
 			item.PickNo = pick.PickNo
+			item.SelectedByMe = personal.MatchesPick(pick)
 		} else if playerIsExcluded(entry.Player, excludedPlayers, excludedTeams) {
 			item.Status = WishlistExcluded
 		}

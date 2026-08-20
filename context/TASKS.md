@@ -230,3 +230,17 @@ a shippable feature on its own.
 - **Notes:** Reuse the same personal pick-number calculation from T14. Display
   `on the clock` or `0` when the next pick belongs to the user. Handle completed
   drafts and cases where no future user pick remains.
+
+### T16. Highlight wishlist players drafted by me
+
+- **Description:** In the Bubble Tea Wishlist section, keep available players
+  green and taken players red, except when a taken player was selected by this
+  user. Those personally drafted wishlist players should render yellow/gold.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Use the resolved personal draft identity to distinguish taken by
+  this user from taken by other teams without changing the compact wishlist
+  text labels. Added a `SelectedByMe` flag to wishlist items and render those
+  taken items with the existing gold warning style, while keeping available
+  green and taken-by-others red. Verified with `go test ./...`,
+  `go build ./...`, and a live `-once` smoke run.

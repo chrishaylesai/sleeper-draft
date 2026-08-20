@@ -43,6 +43,30 @@ func TestBuildWishlistReportUsesRosterWhenPickedByMissing(t *testing.T) {
 	}
 }
 
+func TestBuildWishlistReportMarksPersonalTakenPlayer(t *testing.T) {
+	wishlist := PlayerList{Entries: []RankedPlayer{
+		wishlistEntry(1, Player{ID: "mine", Name: "My RB", Team: "ATL", Position: "RB"}),
+		wishlistEntry(2, Player{ID: "theirs", Name: "Their WR", Team: "DET", Position: "WR"}),
+	}}
+
+	report := BuildWishlistReportForPersonal(
+		Config{},
+		wishlist,
+		[]Pick{
+			{PlayerID: "mine", PickedBy: "me", PickNo: 5},
+			{PlayerID: "theirs", PickedBy: "other", PickNo: 6},
+		},
+		PersonalDraft{UserID: "me", Known: true},
+	)
+
+	if !report.Items[0].SelectedByMe {
+		t.Fatalf("SelectedByMe = false for personal pick: %#v", report.Items[0])
+	}
+	if report.Items[1].SelectedByMe {
+		t.Fatalf("SelectedByMe = true for other user's pick: %#v", report.Items[1])
+	}
+}
+
 func TestBuildWishlistReportTopAvailableByPosition(t *testing.T) {
 	wishlist := PlayerList{Entries: []RankedPlayer{
 		wishlistEntry(1, Player{ID: "qb1", Name: "QB One", Team: "BUF", Position: "QB"}),

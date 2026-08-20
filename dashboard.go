@@ -92,7 +92,7 @@ func (m dashboardModel) View() string {
 
 	positionSummaries := BuildRelevantPositionSummaries(m.state.Config, m.snapshot.Picks, m.state.Players, m.state.Rankings, m.state.Wishlist, m.state.Personal)
 	bestAvailable := BestAvailableByPosition(m.state.Config, m.state.Players, m.state.Rankings, m.snapshot.Picks)
-	wishlistReport := BuildWishlistReport(m.state.Config, m.state.Wishlist, m.snapshot.Picks)
+	wishlistReport := BuildWishlistReportForPersonal(m.state.Config, m.state.Wishlist, m.snapshot.Picks, m.state.Personal)
 
 	content := []string{
 		renderHeader(m, "Live"),
@@ -297,6 +297,9 @@ func styledWishlistItem(item WishlistItem) string {
 	case WishlistAvailable:
 		return healthyStyle.Render(text)
 	case WishlistTaken:
+		if item.SelectedByMe {
+			return warningStyle.Render(text)
+		}
 		return dangerStyle.Render(text)
 	case WishlistExcluded:
 		return warningStyle.Render(text)

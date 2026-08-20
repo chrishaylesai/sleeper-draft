@@ -74,7 +74,7 @@ func (s AppState) SnapshotSummary(snapshot DraftSnapshot) string {
 		snapshot.Summary(),
 		FormatPositionSummaries(BuildRelevantPositionSummaries(s.Config, snapshot.Picks, s.Players, s.Rankings, s.Wishlist, s.Personal)),
 		FormatBestAvailable(BestAvailableByPosition(s.Config, s.Players, s.Rankings, snapshot.Picks)),
-		FormatWishlistReport(BuildWishlistReport(s.Config, s.Wishlist, snapshot.Picks)),
+		FormatWishlistReport(BuildWishlistReportForPersonal(s.Config, s.Wishlist, snapshot.Picks, s.Personal)),
 	)
 }
 

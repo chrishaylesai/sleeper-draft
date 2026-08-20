@@ -115,6 +115,14 @@ func TestStyledStatusHelpersKeepReadableText(t *testing.T) {
 	if got := styledWishlistItem(item); !strings.Contains(got, "available") {
 		t.Fatalf("styled wishlist item = %q, want status text", got)
 	}
+	takenByOther := WishlistItem{Rank: 1, Position: "RB", Player: Player{Name: "Taken", Team: "ATL"}, Status: WishlistTaken}
+	if got, want := styledWishlistItem(takenByOther), dangerStyle.Render(formatWishlistItem(takenByOther)); got != want {
+		t.Fatalf("taken by other style = %q, want %q", got, want)
+	}
+	takenByMe := WishlistItem{Rank: 1, Position: "RB", Player: Player{Name: "Mine", Team: "ATL"}, Status: WishlistTaken, SelectedByMe: true}
+	if got, want := styledWishlistItem(takenByMe), warningStyle.Render(formatWishlistItem(takenByMe)); got != want {
+		t.Fatalf("taken by me style = %q, want %q", got, want)
+	}
 }
 
 func TestPositionTableRowPadsColoredRemainingByVisibleWidth(t *testing.T) {
