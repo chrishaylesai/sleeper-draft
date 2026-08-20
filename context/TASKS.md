@@ -178,3 +178,39 @@ a shippable feature on its own.
   columns, include empty columns for positive `position_targets`, omit
   zero-target positions, and preserve rank order plus status styling. Verified
   with `go test ./...`, `go build ./...`, and a `-once` smoke test.
+
+### T13. Prune irrelevant players from players cache
+
+- **Description:** Create a script or CLI command that removes irrelevant players
+  from `players.json` based on Sleeper `search_rank`, producing a smaller local
+  cache for faster startup and easier inspection.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** `search_rank` is lower-is-better; very large values such as
+  `9999999` are effectively unranked. Suggested initial cutoff is `500`, which
+  keeps a deep fantasy-relevant pool while removing most noise. Final cutoff is
+  user-selected. Preserve any player referenced by `rankings.csv` or
+  `wishlist.csv` even if their `search_rank` is above the cutoff or missing. Be
+  careful with `DEF`, since team defenses may not have `search_rank`.
+
+### T14. Display my overall pick numbers
+
+- **Description:** Add a dashboard section that displays this user's overall
+  draft pick numbers. Picks already used should render in red, and upcoming
+  picks should render in green.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Derive the user's draft slot/roster from the existing personal
+  draft resolution logic. Use draft settings and total teams/rounds to calculate
+  all overall pick numbers for that slot, including snake-draft order if
+  applicable from Sleeper draft metadata/settings.
+
+### T15. Show picks until my next pick
+
+- **Description:** Add to the existing Draft section the number of picks until
+  this user's next pick.
+- **Status:** TODO
+- **Assigned to:** _unassigned_
+- **Notes:** Reuse the same personal pick-number calculation from T14. Display
+  `on the clock` or `0` when the next pick belongs to the user. Handle completed
+  drafts and cases where no future user pick remains.
