@@ -264,3 +264,40 @@ a shippable feature on its own.
   flight. This keeps polling aligned to `refresh_interval_seconds` whenever API
   calls complete within the interval, without overlapping requests. Verified
   with `go test ./...`, `go build ./...`, and a live `-once` smoke run.
+
+### T18. Record each team's starting RB and WR roles
+
+- **Description:** Create a maintained player list covering every NFL team and
+  identifying its current WR1, WR2, RB1, and RB2. Store the data in a simple,
+  machine-readable format suitable for use by the app, match each entry to the
+  Sleeper player database where possible, and document the source and as-of date
+  so ambiguous depth charts, committees, injuries, and later changes can be
+  reviewed.
+- **Status:** TODO
+- **Assigned to:** Unassigned
+- **Notes:** Keep this as a separate research/data task. No dashboard integration
+  is required unless added by a later task.
+
+### T19. Create simple team strength-of-schedule ratings
+
+- **Description:** Produce a simple strength-of-schedule rating for every NFL
+  team using a transparent, documented method and consistent source data. Store
+  both the underlying score and an easiest-to-hardest or hardest-to-easiest rank
+  in a machine-readable file, with the season and as-of date recorded.
+- **Status:** TODO
+- **Assigned to:** Unassigned
+- **Notes:** Keep the first version deliberately simple and reproducible. More
+  advanced position-specific schedule analysis can be added separately later.
+
+### T20. Research team defenses against the run and pass
+
+- **Description:** Research and rate every NFL team defense in two independent
+  categories: run defense and pass defense. Use documented, objective source
+  statistics; produce separate scores, rankings, or tiers for the two
+  categories; and store the results in a machine-readable file with the season,
+  methodology, sources, and as-of date recorded.
+- **Status:** TODO
+- **Assigned to:** Unassigned
+- **Notes:** Do not collapse run and pass defense into a single grade. Flag small
+  samples or conflicting indicators rather than implying false precision.
+
