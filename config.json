@@ -17,7 +17,7 @@
   "excluded_teams": [
     "FA"
   ],
-  "refresh_interval_seconds": 5,
+  "refresh_interval_seconds": 1,
   "prune_rank_cutoff": 300,
   "players_path": "players.json",
   "rankings_path": "rankings.csv",

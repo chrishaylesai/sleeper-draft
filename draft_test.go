@@ -238,3 +238,34 @@ func TestResolvePersonalDraftRejectsUserOutsideDraft(t *testing.T) {
 		t.Fatalf("error = %q, want draft_order message", err.Error())
 	}
 }
+
+func TestPersonalPickNumbersSnakeDraft(t *testing.T) {
+	got := PersonalPickNumbers(
+		Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	)
+	want := []int{4, 21, 28}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("picks = %#v, want %#v", got, want)
+	}
+}
+
+func TestPersonalPickNumbersLinearDraft(t *testing.T) {
+	got := PersonalPickNumbers(
+		Draft{Type: "linear", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	)
+	want := []int{4, 16, 28}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("picks = %#v, want %#v", got, want)
+	}
+}
+
+func TestPersonalPickNumbersUnavailableWithoutPersonalOrSettings(t *testing.T) {
+	if got := PersonalPickNumbers(Draft{Settings: DraftSettings{Teams: 12, Rounds: 3}}, PersonalDraft{}); got != nil {
+		t.Fatalf("picks = %#v, want nil without known personal draft", got)
+	}
+	if got := PersonalPickNumbers(Draft{Settings: DraftSettings{Teams: 0, Rounds: 0}}, PersonalDraft{DraftSlot: 4, Known: true}); got != nil {
+		t.Fatalf("picks = %#v, want nil without teams and rounds", got)
+	}
+}

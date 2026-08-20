@@ -31,7 +31,7 @@ func TestDashboardModelRendersSnapshotSections(t *testing.T) {
 	model.width = 100
 	model.loaded = true
 	model.snapshot = DraftSnapshot{
-		Draft:        Draft{ID: "draft123", Status: "drafting", Settings: DraftSettings{Teams: 2, Rounds: 1}},
+		Draft:        Draft{ID: "draft123", Status: "drafting", Type: "snake", Settings: DraftSettings{Teams: 2, Rounds: 1}},
 		Picks:        nil,
 		TotalPicks:   0,
 		NextPickNo:   1,
@@ -41,7 +41,7 @@ func TestDashboardModelRendersSnapshotSections(t *testing.T) {
 	}
 
 	view := model.View()
-	for _, want := range []string{"Sleeper Draft Dashboard", "Round 1", "Positions", "Best Available", "Wishlist", "Quarterback"} {
+	for _, want := range []string{"Sleeper Draft Dashboard", "Round 1", "My Picks", "Positions", "Best Available", "Wishlist", "Quarterback"} {
 		if !strings.Contains(view, want) {
 			t.Fatalf("view missing %q:\n%s", want, view)
 		}
@@ -102,6 +102,12 @@ func TestStyledStatusHelpersKeepReadableText(t *testing.T) {
 	if got := styledPersonalRemaining(PositionSummary{Target: 1, PersonalRemaining: 0}); !strings.Contains(got, "0") {
 		t.Fatalf("styled remaining = %q, want readable number", got)
 	}
+	if got, want := styledPersonalPickNumber(4, 4), dangerStyle.Render("4"); got != want {
+		t.Fatalf("used pick style = %q, want %q", got, want)
+	}
+	if got, want := styledPersonalPickNumber(5, 4), healthyStyle.Render("5"); got != want {
+		t.Fatalf("upcoming pick style = %q, want %q", got, want)
+	}
 	if got := styledRank("sleeper", 7); !strings.Contains(got, "sleeper rank 7") {
 		t.Fatalf("styled rank = %q, want readable rank", got)
 	}
@@ -123,6 +129,32 @@ func TestPositionTableRowPadsColoredRemainingByVisibleWidth(t *testing.T) {
 	}
 	if got := lipgloss.Width(plainRow[:targetValueIndex+8]); got != targetColumn {
 		t.Fatalf("target starts at visible column %d, want %d", got, targetColumn)
+	}
+}
+
+func TestRenderMyPicksShowsCompactUsedAndUpcomingPicks(t *testing.T) {
+	view := renderMyPicks(
+		DraftSnapshot{
+			Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 4, Rounds: 3}},
+			TotalPicks: 5,
+		},
+		PersonalDraft{DraftSlot: 2, Known: true},
+	)
+
+	plain := stripANSI(view)
+	if !strings.Contains(plain, "My Picks") {
+		t.Fatalf("view missing section title:\n%s", view)
+	}
+	if !strings.Contains(plain, "2 7 10") {
+		t.Fatalf("view missing compact pick row:\n%s", view)
+	}
+}
+
+func TestRenderMyPicksShowsUnavailableWithoutPersonalDraft(t *testing.T) {
+	view := stripANSI(renderMyPicks(DraftSnapshot{Draft: Draft{Settings: DraftSettings{Teams: 4, Rounds: 3}}}, PersonalDraft{}))
+
+	if !strings.Contains(view, "Unavailable") {
+		t.Fatalf("view = %q, want unavailable message", view)
 	}
 }
 

@@ -98,6 +98,7 @@ func (m dashboardModel) View() string {
 		renderHeader(m, "Live"),
 		renderError(m.lastErr),
 		renderDraftSummary(m.snapshot),
+		renderMyPicks(m.snapshot, m.state.Personal),
 		renderPositionTable(positionSummaries),
 		renderBestAvailable(bestAvailable),
 		renderWishlist(wishlistReport, m.state.Config.PositionTargets),
@@ -177,6 +178,22 @@ func renderDraftSummary(snapshot DraftSnapshot) string {
 	))
 }
 
+func renderMyPicks(snapshot DraftSnapshot, personal PersonalDraft) string {
+	rows := []string{sectionTitle.Render("My Picks")}
+	picks := PersonalPickNumbers(snapshot.Draft, personal)
+	if len(picks) == 0 {
+		rows = append(rows, unrankedStyle.Render("Unavailable"))
+		return sectionStyle().Render(strings.Join(rows, "\n"))
+	}
+
+	values := make([]string, 0, len(picks))
+	for _, pickNo := range picks {
+		values = append(values, styledPersonalPickNumber(pickNo, snapshot.TotalPicks))
+	}
+	rows = append(rows, strings.Join(values, " "))
+	return sectionStyle().Render(strings.Join(rows, "\n"))
+}
+
 func renderPositionTable(summaries []PositionSummary) string {
 	if len(summaries) == 0 {
 		return sectionStyle().Render(sectionTitle.Render("Positions") + "\nNo position targets configured.")
@@ -251,6 +268,14 @@ func styledPersonalRemaining(summary PositionSummary) string {
 	}
 	if summary.Target > 0 && summary.PersonalRemaining <= 1 {
 		return warningStyle.Render(text)
+	}
+	return healthyStyle.Render(text)
+}
+
+func styledPersonalPickNumber(pickNo, totalPicks int) string {
+	text := strconv.Itoa(pickNo)
+	if pickNo <= totalPicks {
+		return dangerStyle.Render(text)
 	}
 	return healthyStyle.Render(text)
 }

@@ -210,12 +210,16 @@ a shippable feature on its own.
 - **Description:** Add a dashboard section that displays this user's overall
   draft pick numbers. Picks already used should render in red, and upcoming
   picks should render in green.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
+- **Status:** DONE
+- **Assigned to:** Codex
 - **Notes:** Derive the user's draft slot/roster from the existing personal
   draft resolution logic. Use draft settings and total teams/rounds to calculate
   all overall pick numbers for that slot, including snake-draft order if
-  applicable from Sleeper draft metadata/settings.
+  applicable from Sleeper draft metadata/settings. Implemented a compact `My
+  Picks` dashboard section that renders used overall picks in red and upcoming
+  picks in green. Added reusable personal pick-number calculation for snake and
+  linear drafts. Verified with `go test ./...`, `go build ./...`, and a live
+  `-once` smoke run.
 
 ### T15. Show picks until my next pick
 

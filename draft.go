@@ -26,6 +26,7 @@ type SleeperUser struct {
 type Draft struct {
 	ID             string         `json:"draft_id"`
 	Status         string         `json:"status"`
+	Type           string         `json:"type"`
 	DraftOrder     map[string]int `json:"draft_order"`
 	SlotToRosterID map[string]int `json:"slot_to_roster_id"`
 	Settings       DraftSettings  `json:"settings"`
@@ -316,6 +317,31 @@ func (p PersonalDraft) MatchesPick(pick Pick) bool {
 		return true
 	}
 	return p.RosterID > 0 && pick.RosterID == p.RosterID
+}
+
+func PersonalPickNumbers(draft Draft, personal PersonalDraft) []int {
+	if !personal.Known || personal.DraftSlot <= 0 {
+		return nil
+	}
+
+	teams := draft.Settings.Teams
+	if teams <= 0 {
+		teams = inferTeamCount(draft, nil)
+	}
+	rounds := draft.Settings.Rounds
+	if teams <= 0 || rounds <= 0 || personal.DraftSlot > teams {
+		return nil
+	}
+
+	picks := make([]int, 0, rounds)
+	for round := 1; round <= rounds; round++ {
+		slot := personal.DraftSlot
+		if strings.EqualFold(draft.Type, "snake") && round%2 == 0 {
+			slot = teams - personal.DraftSlot + 1
+		}
+		picks = append(picks, ((round-1)*teams)+slot)
+	}
+	return picks
 }
 
 func inferTeamCount(draft Draft, picks []Pick) int {
