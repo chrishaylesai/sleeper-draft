@@ -13,12 +13,13 @@ import (
 )
 
 type dashboardModel struct {
-	state    AppState
-	loaded   bool
-	snapshot DraftSnapshot
-	lastErr  error
-	width    int
-	height   int
+	state      AppState
+	loaded     bool
+	refreshing bool
+	snapshot   DraftSnapshot
+	lastErr    error
+	width      int
+	height     int
 }
 
 type snapshotMsg struct {
@@ -43,11 +44,11 @@ var (
 )
 
 func NewDashboardModel(state AppState) dashboardModel {
-	return dashboardModel{state: state}
+	return dashboardModel{state: state, refreshing: true}
 }
 
 func (m dashboardModel) Init() tea.Cmd {
-	return m.fetchSnapshot()
+	return tea.Batch(m.fetchSnapshot(), m.scheduleRefresh())
 }
 
 func (m dashboardModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -61,6 +62,7 @@ func (m dashboardModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.width = msg.Width
 		m.height = msg.Height
 	case snapshotMsg:
+		m.refreshing = false
 		if msg.err != nil {
 			m.lastErr = msg.err
 		} else {
@@ -68,9 +70,14 @@ func (m dashboardModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			m.snapshot = msg.snapshot
 			m.lastErr = nil
 		}
-		return m, m.scheduleRefresh()
+		return m, nil
 	case refreshTickMsg:
-		return m, m.fetchSnapshot()
+		cmds := []tea.Cmd{m.scheduleRefresh()}
+		if !m.refreshing {
+			m.refreshing = true
+			cmds = append(cmds, m.fetchSnapshot())
+		}
+		return m, tea.Batch(cmds...)
 	}
 
 	return m, nil
@@ -97,7 +104,7 @@ func (m dashboardModel) View() string {
 	content := []string{
 		renderHeader(m, "Live"),
 		renderError(m.lastErr),
-		renderDraftSummary(m.snapshot),
+		renderDraftSummary(m.snapshot, m.state.Personal),
 		renderMyPicks(m.snapshot, m.state.Personal),
 		renderPositionTable(positionSummaries),
 		renderBestAvailable(bestAvailable),
@@ -149,7 +156,7 @@ func renderError(err error) string {
 	return dangerStyle.Render("Last refresh error: " + err.Error())
 }
 
-func renderDraftSummary(snapshot DraftSnapshot) string {
+func renderDraftSummary(snapshot DraftSnapshot, personal PersonalDraft) string {
 	updated := "unknown"
 	if !snapshot.UpdatedAt.IsZero() {
 		updated = snapshot.UpdatedAt.Format("15:04:05")
@@ -160,8 +167,10 @@ func renderDraftSummary(snapshot DraftSnapshot) string {
 		state = warningStyle.Render("complete")
 	}
 
+	untilYours := styledPicksUntilNext(snapshot, personal)
+
 	return sectionStyle().Render(fmt.Sprintf(
-		"%s\n%s %d  %s %d  %s %d  %s %d  %s %s  %s %s",
+		"%s\n%s %d  %s %d  %s %d  %s %d  %s %s  %s %s  %s %s",
 		sectionTitle.Render("Draft"),
 		labelStyle.Render("Round"),
 		snapshot.CurrentRound,
@@ -175,6 +184,8 @@ func renderDraftSummary(snapshot DraftSnapshot) string {
 		state,
 		labelStyle.Render("Updated"),
 		updated,
+		labelStyle.Render("Until yours"),
+		untilYours,
 	))
 }
 
@@ -278,6 +289,17 @@ func styledPersonalPickNumber(pickNo, totalPicks int) string {
 		return dangerStyle.Render(text)
 	}
 	return healthyStyle.Render(text)
+}
+
+func styledPicksUntilNext(snapshot DraftSnapshot, personal PersonalDraft) string {
+	picksUntil, ok := PicksUntilNextPersonalPick(snapshot, personal)
+	if !ok {
+		return unrankedStyle.Render("none")
+	}
+	if picksUntil == 0 {
+		return warningStyle.Render("on the clock")
+	}
+	return healthyStyle.Render(strconv.Itoa(picksUntil))
 }
 
 func styledRank(source string, rank int) string {

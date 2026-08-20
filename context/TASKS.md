@@ -225,11 +225,16 @@ a shippable feature on its own.
 
 - **Description:** Add to the existing Draft section the number of picks until
   this user's next pick.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
+- **Status:** DONE
+- **Assigned to:** Codex
 - **Notes:** Reuse the same personal pick-number calculation from T14. Display
   `on the clock` or `0` when the next pick belongs to the user. Handle completed
-  drafts and cases where no future user pick remains.
+  drafts and cases where no future user pick remains. Implemented an `Until
+  yours` field in the TUI Draft section using the T14 personal pick-number
+  calculation. It renders `on the clock` when the next pick is the user's, a
+  green numeric countdown for later picks, and `none` when no future personal
+  pick is available. Verified with `go test ./...`, `go build ./...`, and a
+  live `-once` smoke run.
 
 ### T16. Highlight wishlist players drafted by me
 
@@ -244,3 +249,18 @@ a shippable feature on its own.
   taken items with the existing gold warning style, while keeping available
   green and taken-by-others red. Verified with `go test ./...`,
   `go build ./...`, and a live `-once` smoke run.
+
+### T17. Keep dashboard refresh cadence on configured interval
+
+- **Description:** Fix the Bubble Tea dashboard refresh loop so live draft
+  data, including the picks-until-next-pick countdown, refreshes on the
+  configured interval instead of waiting an extra interval after each API
+  request finishes.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Preserve the configured refresh interval while avoiding overlapping
+  Sleeper API requests. Updated the Bubble Tea model to schedule refresh ticks
+  independently from snapshot completion and track when a fetch is already in
+  flight. This keeps polling aligned to `refresh_interval_seconds` whenever API
+  calls complete within the interval, without overlapping requests. Verified
+  with `go test ./...`, `go build ./...`, and a live `-once` smoke run.

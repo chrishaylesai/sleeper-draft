@@ -269,3 +269,64 @@ func TestPersonalPickNumbersUnavailableWithoutPersonalOrSettings(t *testing.T) {
 		t.Fatalf("picks = %#v, want nil without teams and rounds", got)
 	}
 }
+
+func TestPicksUntilNextPersonalPickCountsBeforeNextPick(t *testing.T) {
+	got, ok := PicksUntilNextPersonalPick(
+		DraftSnapshot{
+			Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+			TotalPicks: 12,
+			NextPickNo: 13,
+		},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	)
+
+	if !ok || got != 8 {
+		t.Fatalf("picks until next = %d ok=%v, want 8 true", got, ok)
+	}
+}
+
+func TestPicksUntilNextPersonalPickOnTheClock(t *testing.T) {
+	got, ok := PicksUntilNextPersonalPick(
+		DraftSnapshot{
+			Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+			TotalPicks: 20,
+			NextPickNo: 21,
+		},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	)
+
+	if !ok || got != 0 {
+		t.Fatalf("picks until next = %d ok=%v, want 0 true", got, ok)
+	}
+}
+
+func TestPicksUntilNextPersonalPickUnavailableAfterLastPick(t *testing.T) {
+	got, ok := PicksUntilNextPersonalPick(
+		DraftSnapshot{
+			Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 1}},
+			TotalPicks: 4,
+			NextPickNo: 5,
+		},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	)
+
+	if ok || got != 0 {
+		t.Fatalf("picks until next = %d ok=%v, want 0 false", got, ok)
+	}
+}
+
+func TestPicksUntilNextPersonalPickUnavailableWhenDraftComplete(t *testing.T) {
+	got, ok := PicksUntilNextPersonalPick(
+		DraftSnapshot{
+			Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+			TotalPicks: 20,
+			NextPickNo: 21,
+			Complete:   true,
+		},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	)
+
+	if ok || got != 0 {
+		t.Fatalf("picks until next = %d ok=%v, want 0 false", got, ok)
+	}
+}

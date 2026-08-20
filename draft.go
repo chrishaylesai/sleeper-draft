@@ -344,6 +344,29 @@ func PersonalPickNumbers(draft Draft, personal PersonalDraft) []int {
 	return picks
 }
 
+func PicksUntilNextPersonalPick(snapshot DraftSnapshot, personal PersonalDraft) (int, bool) {
+	if snapshot.Complete {
+		return 0, false
+	}
+
+	nextPickNo := snapshot.NextPickNo
+	if nextPickNo <= 0 {
+		nextPickNo = snapshot.TotalPicks + 1
+	}
+
+	for _, pickNo := range PersonalPickNumbers(snapshot.Draft, personal) {
+		if pickNo <= snapshot.TotalPicks {
+			continue
+		}
+		picksUntil := pickNo - nextPickNo
+		if picksUntil < 0 {
+			picksUntil = 0
+		}
+		return picksUntil, true
+	}
+	return 0, false
+}
+
 func inferTeamCount(draft Draft, picks []Pick) int {
 	count := len(draft.SlotToRosterID)
 	if len(draft.DraftOrder) > count {

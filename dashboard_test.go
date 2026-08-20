@@ -52,10 +52,14 @@ func TestDashboardModelKeepsSnapshotOnRefreshError(t *testing.T) {
 	model := NewDashboardModel(AppState{Config: Config{RefreshIntervalSeconds: 5}})
 	model.loaded = true
 	model.snapshot = DraftSnapshot{TotalPicks: 3}
+	model.refreshing = true
 
 	updated, _ := model.Update(snapshotMsg{err: errors.New("api unavailable")})
 	got := updated.(dashboardModel)
 
+	if got.refreshing {
+		t.Fatal("refreshing = true, want cleared after snapshot response")
+	}
 	if !got.loaded {
 		t.Fatal("loaded = false, want existing snapshot retained")
 	}
@@ -64,6 +68,36 @@ func TestDashboardModelKeepsSnapshotOnRefreshError(t *testing.T) {
 	}
 	if got.lastErr == nil || !strings.Contains(got.lastErr.Error(), "api unavailable") {
 		t.Fatalf("lastErr = %v, want refresh error", got.lastErr)
+	}
+}
+
+func TestDashboardRefreshTickKeepsCadenceAndStartsFetchWhenIdle(t *testing.T) {
+	model := NewDashboardModel(AppState{Config: Config{RefreshIntervalSeconds: 5}})
+	model.refreshing = false
+
+	updated, cmd := model.Update(refreshTickMsg(time.Now()))
+	got := updated.(dashboardModel)
+
+	if !got.refreshing {
+		t.Fatal("refreshing = false, want tick to start snapshot fetch")
+	}
+	if cmd == nil {
+		t.Fatal("cmd = nil, want next tick and fetch commands")
+	}
+}
+
+func TestDashboardRefreshTickSkipsOverlappingFetch(t *testing.T) {
+	model := NewDashboardModel(AppState{Config: Config{RefreshIntervalSeconds: 5}})
+	model.refreshing = true
+
+	updated, cmd := model.Update(refreshTickMsg(time.Now()))
+	got := updated.(dashboardModel)
+
+	if !got.refreshing {
+		t.Fatal("refreshing = false, want in-flight fetch retained")
+	}
+	if cmd == nil {
+		t.Fatal("cmd = nil, want next tick command")
 	}
 }
 
@@ -108,6 +142,25 @@ func TestStyledStatusHelpersKeepReadableText(t *testing.T) {
 	if got, want := styledPersonalPickNumber(5, 4), healthyStyle.Render("5"); got != want {
 		t.Fatalf("upcoming pick style = %q, want %q", got, want)
 	}
+	countdownSnapshot := DraftSnapshot{
+		Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+		TotalPicks: 12,
+		NextPickNo: 13,
+	}
+	if got, want := styledPicksUntilNext(countdownSnapshot, PersonalDraft{DraftSlot: 4, Known: true}), healthyStyle.Render("8"); got != want {
+		t.Fatalf("countdown style = %q, want %q", got, want)
+	}
+	onClockSnapshot := DraftSnapshot{
+		Draft:      Draft{Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+		TotalPicks: 20,
+		NextPickNo: 21,
+	}
+	if got, want := styledPicksUntilNext(onClockSnapshot, PersonalDraft{DraftSlot: 4, Known: true}), warningStyle.Render("on the clock"); got != want {
+		t.Fatalf("on-clock style = %q, want %q", got, want)
+	}
+	if got, want := styledPicksUntilNext(DraftSnapshot{Complete: true}, PersonalDraft{DraftSlot: 4, Known: true}), unrankedStyle.Render("none"); got != want {
+		t.Fatalf("none style = %q, want %q", got, want)
+	}
 	if got := styledRank("sleeper", 7); !strings.Contains(got, "sleeper rank 7") {
 		t.Fatalf("styled rank = %q, want readable rank", got)
 	}
@@ -137,6 +190,23 @@ func TestPositionTableRowPadsColoredRemainingByVisibleWidth(t *testing.T) {
 	}
 	if got := lipgloss.Width(plainRow[:targetValueIndex+8]); got != targetColumn {
 		t.Fatalf("target starts at visible column %d, want %d", got, targetColumn)
+	}
+}
+
+func TestRenderDraftSummaryShowsPicksUntilNextPersonalPick(t *testing.T) {
+	view := stripANSI(renderDraftSummary(
+		DraftSnapshot{
+			Draft:        Draft{ID: "draft123", Status: "drafting", Type: "snake", Settings: DraftSettings{Teams: 12, Rounds: 3}},
+			TotalPicks:   12,
+			NextPickNo:   13,
+			CurrentRound: 2,
+			CurrentPick:  1,
+		},
+		PersonalDraft{DraftSlot: 4, Known: true},
+	))
+
+	if !strings.Contains(view, "Until yours 8") {
+		t.Fatalf("view missing picks-until field:\n%s", view)
 	}
 }
 
