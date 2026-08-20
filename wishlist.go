@@ -88,7 +88,7 @@ func formatWishlistItem(item WishlistItem) string {
 	label := wishlistPlayerLabel(item)
 	switch item.Status {
 	case WishlistTaken:
-		return fmt.Sprintf("#%d %s taken_by=%s pick=%d", item.Rank, label, item.TakenBy, item.PickNo)
+		return fmt.Sprintf("#%d %s taken", item.Rank, label)
 	case WishlistExcluded:
 		return fmt.Sprintf("#%d %s excluded", item.Rank, label)
 	default:

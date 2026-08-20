@@ -126,6 +126,61 @@ func TestPositionTableRowPadsColoredRemainingByVisibleWidth(t *testing.T) {
 	}
 }
 
+func TestRenderWishlistSplitsItemsIntoPositionColumns(t *testing.T) {
+	report := WishlistReport{Items: []WishlistItem{
+		{Rank: 2, Position: "WR", Player: Player{Name: "WR Two", Team: "DET"}, Status: WishlistAvailable},
+		{Rank: 1, Position: "RB", Player: Player{Name: "RB One", Team: "ATL"}, Status: WishlistTaken, TakenBy: "user1", PickNo: 5},
+		{Rank: 1, Position: "WR", Player: Player{Name: "WR One", Team: "LAR"}, Status: WishlistAvailable},
+	}}
+	report.TopAvailable = &report.Items[2]
+	report.TopAvailableByPosition = []WishlistItem{report.Items[0], report.Items[2]}
+
+	view := stripANSI(renderWishlist(report, map[string]int{"RB": 1, "WR": 1}))
+
+	if !strings.Contains(view, "RB") || !strings.Contains(view, "WR") {
+		t.Fatalf("view missing position column headers:\n%s", view)
+	}
+	if !strings.Contains(view, "#1 RB RB One (ATL) taken") {
+		t.Fatalf("view missing RB wishlist item:\n%s", view)
+	}
+	if strings.Contains(view, "taken_by=") || strings.Contains(view, "pick=5") {
+		t.Fatalf("view includes verbose taken details:\n%s", view)
+	}
+	if strings.Index(view, "WR One") > strings.Index(view, "WR Two") {
+		t.Fatalf("WR items not in rank order:\n%s", view)
+	}
+}
+
+func TestRenderWishlistShowsEmptyPositiveTargetColumns(t *testing.T) {
+	view := stripANSI(renderWishlist(WishlistReport{}, map[string]int{"QB": 2, "RB": 0, "TE": 1}))
+
+	if !strings.Contains(view, "QB") || !strings.Contains(view, "TE") {
+		t.Fatalf("view missing empty positive-target columns:\n%s", view)
+	}
+	if strings.Contains(view, "RB") {
+		t.Fatalf("view includes zero-target RB column:\n%s", view)
+	}
+	if count := strings.Count(view, "empty"); count != 2 {
+		t.Fatalf("empty column count = %d, want 2:\n%s", count, view)
+	}
+}
+
+func TestRenderWishlistOmitsZeroTargetPositionsWithItems(t *testing.T) {
+	report := WishlistReport{Items: []WishlistItem{
+		{Rank: 1, Position: "K", Player: Player{Name: "Kicker", Team: "DAL"}, Status: WishlistAvailable},
+		{Rank: 2, Position: "QB", Player: Player{Name: "Quarterback", Team: "BUF"}, Status: WishlistAvailable},
+	}}
+
+	view := stripANSI(renderWishlist(report, map[string]int{"K": 0, "QB": 1}))
+
+	if strings.Contains(view, "Kicker") || strings.Contains(view, "\nK") {
+		t.Fatalf("view includes zero-target K column or item:\n%s", view)
+	}
+	if !strings.Contains(view, "Quarterback") {
+		t.Fatalf("view missing positive-target QB item:\n%s", view)
+	}
+}
+
 func stripANSI(value string) string {
 	return regexp.MustCompile(`\x1b\[[0-9;]*m`).ReplaceAllString(value, "")
 }

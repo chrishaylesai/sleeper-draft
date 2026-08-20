@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
@@ -99,7 +100,7 @@ func (m dashboardModel) View() string {
 		renderDraftSummary(m.snapshot),
 		renderPositionTable(positionSummaries),
 		renderBestAvailable(bestAvailable),
-		renderWishlist(wishlistReport),
+		renderWishlist(wishlistReport, m.state.Config.PositionTargets),
 		footerView(),
 	}
 
@@ -212,11 +213,7 @@ func renderBestAvailable(best []BestAvailable) string {
 	return sectionStyle().Render(strings.Join(rows, "\n"))
 }
 
-func renderWishlist(report WishlistReport) string {
-	if len(report.Items) == 0 {
-		return sectionStyle().Render(sectionTitle.Render("Wishlist") + "\nNo wishlist entries.")
-	}
-
+func renderWishlist(report WishlistReport, targets map[string]int) string {
 	rows := []string{sectionTitle.Render("Wishlist")}
 	if report.TopAvailable != nil {
 		rows = append(rows, labelStyle.Render("Top: ")+healthyStyle.Render(wishlistPlayerLabel(*report.TopAvailable)))
@@ -226,8 +223,12 @@ func renderWishlist(report WishlistReport) string {
 	if len(report.TopAvailableByPosition) > 0 {
 		rows = append(rows, labelStyle.Render("By position: ")+healthyStyle.Render(formatTopWishlistByPosition(report.TopAvailableByPosition)))
 	}
-	for _, item := range report.Items {
-		rows = append(rows, "  "+styledWishlistItem(item))
+
+	columns := renderWishlistColumns(report.Items, targets)
+	if strings.TrimSpace(columns) == "" {
+		rows = append(rows, "No positive position targets configured.")
+	} else {
+		rows = append(rows, columns)
 	}
 	return sectionStyle().Render(strings.Join(rows, "\n"))
 }
@@ -277,6 +278,59 @@ func styledWishlistItem(item WishlistItem) string {
 	default:
 		return text
 	}
+}
+
+func renderWishlistColumns(items []WishlistItem, targets map[string]int) string {
+	positions := positiveTargetPositions(targets)
+	if len(positions) == 0 {
+		return ""
+	}
+
+	itemsByPosition := wishlistItemsByPosition(items)
+	columns := make([]string, 0, len(positions))
+	for _, position := range positions {
+		rows := []string{sectionTitle.Render(position)}
+		positionItems := itemsByPosition[position]
+		if len(positionItems) == 0 {
+			rows = append(rows, unrankedStyle.Render("empty"))
+		} else {
+			for _, item := range positionItems {
+				rows = append(rows, styledWishlistItem(item))
+			}
+		}
+		columns = append(columns, lipgloss.NewStyle().Width(44).Render(strings.Join(rows, "\n")))
+	}
+
+	return lipgloss.JoinHorizontal(lipgloss.Top, columns...)
+}
+
+func positiveTargetPositions(targets map[string]int) []string {
+	normalized := normalizePositionTargets(targets)
+	positions := make([]string, 0, len(normalized))
+	for position, target := range normalized {
+		if target > 0 {
+			positions = append(positions, position)
+		}
+	}
+	sort.Strings(positions)
+	return positions
+}
+
+func wishlistItemsByPosition(items []WishlistItem) map[string][]WishlistItem {
+	itemsByPosition := make(map[string][]WishlistItem)
+	for _, item := range items {
+		position := normalizePosition(item.Position)
+		if position == "" {
+			continue
+		}
+		itemsByPosition[position] = append(itemsByPosition[position], item)
+	}
+	for position := range itemsByPosition {
+		sort.SliceStable(itemsByPosition[position], func(i, j int) bool {
+			return itemsByPosition[position][i].Rank < itemsByPosition[position][j].Rank
+		})
+	}
+	return itemsByPosition
 }
 
 func positionTableRow(position, personalDrafted, personalRemaining, target, totalDrafted, totalRemaining string) string {

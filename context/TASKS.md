@@ -165,3 +165,16 @@ a shippable feature on its own.
   width so ANSI-colored remaining counts do not collapse the `TARGET` column.
   Added rendering coverage for colored remaining values. Verified with
   `go test ./...`, `go build ./...`, and a `-once` smoke test.
+
+### T12. Split wishlist into position columns
+
+- **Description:** Update the Bubble Tea Wishlist section to display wishlist
+  players in separate columns by position instead of one combined list. Include
+  an empty column for every position whose configured `position_targets` value is
+  greater than `0`, even if there are no wishlist players for that position.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Updated the TUI wishlist renderer to group items into position
+  columns, include empty columns for positive `position_targets`, omit
+  zero-target positions, and preserve rank order plus status styling. Verified
+  with `go test ./...`, `go build ./...`, and a `-once` smoke test.

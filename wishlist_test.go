@@ -86,7 +86,23 @@ func TestFormatWishlistReport(t *testing.T) {
 	report.TopAvailableByPosition = []WishlistItem{report.Items[1]}
 
 	got := FormatWishlistReport(report)
-	want := "Wishlist: #1 RB Taken RB (ATL) taken_by=user1 pick=3; #2 WR Available WR (DET) available; top=WR Available WR (DET); top_by_position=WR Available WR (DET)"
+	want := "Wishlist: #1 RB Taken RB (ATL) taken; #2 WR Available WR (DET) available; top=WR Available WR (DET); top_by_position=WR Available WR (DET)"
+	if got != want {
+		t.Fatalf("formatted = %q, want %q", got, want)
+	}
+}
+
+func TestFormatWishlistItemTakenOmitsPickDetails(t *testing.T) {
+	got := formatWishlistItem(WishlistItem{
+		Rank:     1,
+		Player:   Player{Name: "Taken RB", Team: "ATL"},
+		Position: "RB",
+		Status:   WishlistTaken,
+		TakenBy:  "user1",
+		PickNo:   3,
+	})
+
+	want := "#1 RB Taken RB (ATL) taken"
 	if got != want {
 		t.Fatalf("formatted = %q, want %q", got, want)
 	}
