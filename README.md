@@ -66,6 +66,25 @@ player_name,player_position,player_team
 names. Every non-header row is validated against `players.json`; startup fails
 clearly if any row cannot be matched.
 
+## 2026 team skill-position roles
+
+`2026_team_skill_position_roles.csv` records the projected WR1, WR2, RB1, and
+RB2 for every NFL team as of August 20, 2026. It contains one row per team-role
+combination (128 data rows) with:
+
+- the team name and Sleeper abbreviation,
+- the projected role and player,
+- the matching Sleeper player ID,
+- the source's player name, URL, and update date,
+- the research date and any name-matching notes.
+
+The role assignments come from the Draft Punk 2026 depth charts updated August
+19, 2026. `player_name` and `sleeper_player_id` use the repository's Sleeper
+player cache; `source_player_name` preserves the source spelling. Every row is
+marked `projected` because preseason depth order can change and RB1/RB2 does
+not necessarily predict workload in a committee. The app does not consume this
+file yet.
+
 ## Prune the player cache
 
 Sleeper's player database is around 12,000 players, but only a small slice is

@@ -273,10 +273,15 @@ a shippable feature on its own.
   Sleeper player database where possible, and document the source and as-of date
   so ambiguous depth charts, committees, injuries, and later changes can be
   reviewed.
-- **Status:** TODO
-- **Assigned to:** Unassigned
-- **Notes:** Keep this as a separate research/data task. No dashboard integration
-  is required unless added by a later task.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Added `2026_team_skill_position_roles.csv` at the repository root
+  with 128 rows covering WR1, WR2, RB1, and RB2 for all 32 teams. Used the Draft
+  Punk 2026 depth charts updated 2026-08-19, preserved source names and dates,
+  marked every role as projected, and matched all 128 entries to the 2026-08-20
+  Sleeper cache. Documented the schema and preseason limitations in README.md.
+  Validated exact team/role coverage, non-empty Sleeper IDs, CSV row count, and
+  a spreadsheet inspection/render pass.
 
 ### T19. Create simple team strength-of-schedule ratings
 
