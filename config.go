@@ -9,7 +9,14 @@ import (
 	"strings"
 )
 
-const defaultSport = "nfl"
+const (
+	defaultSport = "nfl"
+
+	// defaultPruneRankCutoff is the Sleeper `search_rank` cutoff used by -prune
+	// when config.json omits `prune_rank_cutoff`. It keeps a deep
+	// fantasy-relevant pool while dropping most of the player database.
+	defaultPruneRankCutoff = 500
+)
 
 type Config struct {
 	DraftID                string         `json:"draft_id"`
@@ -20,6 +27,7 @@ type Config struct {
 	ExcludedPlayers        []string       `json:"excluded_players"`
 	ExcludedTeams          []string       `json:"excluded_teams"`
 	RefreshIntervalSeconds int            `json:"refresh_interval_seconds"`
+	PruneRankCutoff        int            `json:"prune_rank_cutoff"`
 	PlayersPath            string         `json:"players_path"`
 	RankingsPath           string         `json:"rankings_path"`
 	WishlistPath           string         `json:"wishlist_path"`
@@ -56,6 +64,9 @@ func (c *Config) ApplyDefaults() {
 	if c.Sport == "" {
 		c.Sport = defaultSport
 	}
+	if c.PruneRankCutoff == 0 {
+		c.PruneRankCutoff = defaultPruneRankCutoff
+	}
 }
 
 func (c Config) Validate() error {
@@ -69,6 +80,9 @@ func (c Config) Validate() error {
 	}
 	if c.RefreshIntervalSeconds <= 0 {
 		problems = append(problems, "refresh_interval_seconds must be greater than 0")
+	}
+	if c.PruneRankCutoff <= 0 {
+		problems = append(problems, "prune_rank_cutoff must be greater than 0")
 	}
 	if c.PlayersPath == "" {
 		problems = append(problems, "players_path is required")

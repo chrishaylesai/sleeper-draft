@@ -21,12 +21,12 @@ func TestPrunePlayerCacheKeepsRelevantPlayers(t *testing.T) {
 		{ID: "6", Name: "Wishlist Longshot", Team: "CHI", Position: "RB", SearchRank: intPtr(1200)},
 		{ID: "7", Name: "Ranked Longshot", Team: "GB", Position: "QB", SearchRank: nil},
 	}
-	cfg := prunableConfig(t, players,
+	cfg := prunableConfig(t, 500, players,
 		[]string{"Ranked Longshot,QB,GB"},
 		[]string{"Wishlist Longshot,RB,CHI"},
 	)
 
-	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{Cutoff: 500})
+	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{})
 	if err != nil {
 		t.Fatalf("PrunePlayerCache returned error: %v", err)
 	}
@@ -57,13 +57,33 @@ func TestPrunePlayerCacheKeepsRelevantPlayers(t *testing.T) {
 	}
 }
 
+func TestPrunePlayerCacheHonoursConfiguredCutoff(t *testing.T) {
+	players := []Player{
+		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
+		{ID: "2", Name: "Mid Round", Team: "SF", Position: "WR", SearchRank: intPtr(400)},
+	}
+	cfg := prunableConfig(t, 300, players, nil, nil)
+
+	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{})
+	if err != nil {
+		t.Fatalf("PrunePlayerCache returned error: %v", err)
+	}
+
+	if result.Cutoff != 300 {
+		t.Fatalf("Cutoff = %d, want 300", result.Cutoff)
+	}
+	if kept := keptPlayerIDs(t, cfg.PlayersPath); strings.Join(kept, ",") != "1" {
+		t.Fatalf("kept players = %v, want [1]", kept)
+	}
+}
+
 func TestPrunePlayerCachePreservesCachedAt(t *testing.T) {
 	cachedAt := time.Date(2026, 8, 1, 12, 0, 0, 0, time.UTC)
 	players := []Player{
 		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
 		{ID: "2", Name: "Retired Guy", Team: "", Position: "LB", SearchRank: intPtr(9999999)},
 	}
-	cfg := prunableConfig(t, players, nil, nil)
+	cfg := prunableConfig(t, 500, players, nil, nil)
 	if err := writePlayerCache(cfg.PlayersPath, playerCacheFile{CachedAt: cachedAt, Players: players}); err != nil {
 		t.Fatalf("write players cache: %v", err)
 	}
@@ -74,7 +94,7 @@ func TestPrunePlayerCachePreservesCachedAt(t *testing.T) {
 	service := prunePlayerService(t)
 	service.Now = func() time.Time { return cachedAt.Add(time.Hour) }
 
-	if _, err := PrunePlayerCache(context.Background(), cfg, service, PruneOptions{Cutoff: 500}); err != nil {
+	if _, err := PrunePlayerCache(context.Background(), cfg, service, PruneOptions{}); err != nil {
 		t.Fatalf("PrunePlayerCache returned error: %v", err)
 	}
 
@@ -92,14 +112,14 @@ func TestPrunePlayerCacheDryRunLeavesCacheUnchanged(t *testing.T) {
 		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
 		{ID: "2", Name: "Retired Guy", Team: "", Position: "LB", SearchRank: intPtr(9999999)},
 	}
-	cfg := prunableConfig(t, players, nil, nil)
+	cfg := prunableConfig(t, 500, players, nil, nil)
 
 	before, err := os.ReadFile(cfg.PlayersPath)
 	if err != nil {
 		t.Fatalf("read cache: %v", err)
 	}
 
-	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{Cutoff: 500, DryRun: true})
+	result, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{DryRun: true})
 	if err != nil {
 		t.Fatalf("PrunePlayerCache returned error: %v", err)
 	}
@@ -119,13 +139,13 @@ func TestPrunePlayerCacheDryRunLeavesCacheUnchanged(t *testing.T) {
 	}
 }
 
-func TestPrunePlayerCacheRejectsNonPositiveCutoff(t *testing.T) {
-	cfg := prunableConfig(t, []Player{
+func TestPrunePlayerCacheRejectsNonPositiveConfiguredCutoff(t *testing.T) {
+	cfg := prunableConfig(t, 0, []Player{
 		{ID: "1", Name: "Bijan Robinson", Team: "ATL", Position: "RB", SearchRank: intPtr(3)},
 	}, nil, nil)
 
-	if _, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{Cutoff: 0}); err == nil {
-		t.Fatal("PrunePlayerCache returned nil error for cutoff 0")
+	if _, err := PrunePlayerCache(context.Background(), cfg, prunePlayerService(t), PruneOptions{}); err == nil {
+		t.Fatal("PrunePlayerCache returned nil error for prune_rank_cutoff 0")
 	}
 }
 
@@ -148,7 +168,7 @@ func TestPruneResultSummary(t *testing.T) {
 	}
 }
 
-func prunableConfig(t *testing.T, players []Player, rankings, wishlist []string) Config {
+func prunableConfig(t *testing.T, cutoff int, players []Player, rankings, wishlist []string) Config {
 	t.Helper()
 
 	dir := t.TempDir()
@@ -161,10 +181,11 @@ func prunableConfig(t *testing.T, players []Player, rankings, wishlist []string)
 	}
 
 	return Config{
-		Sport:        "nfl",
-		PlayersPath:  cachePath,
-		RankingsPath: writePlayerListFixture(t, filepath.Join(dir, "rankings.csv"), rankings),
-		WishlistPath: writePlayerListFixture(t, filepath.Join(dir, "wishlist.csv"), wishlist),
+		Sport:           "nfl",
+		PruneRankCutoff: cutoff,
+		PlayersPath:     cachePath,
+		RankingsPath:    writePlayerListFixture(t, filepath.Join(dir, "rankings.csv"), rankings),
+		WishlistPath:    writePlayerListFixture(t, filepath.Join(dir, "wishlist.csv"), wishlist),
 	}
 }
 

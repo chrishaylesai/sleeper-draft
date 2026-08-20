@@ -43,6 +43,7 @@ paths:
   "excluded_players": ["example_player_id"],
   "excluded_teams": ["FA"],
   "refresh_interval_seconds": 5,
+  "prune_rank_cutoff": 500,
   "players_path": "players.json",
   "rankings_path": "rankings.csv",
   "wishlist_path": "wishlist.csv"
@@ -70,12 +71,21 @@ clearly if any row cannot be matched.
 Sleeper's player database is around 12,000 players, but only a small slice is
 fantasy relevant. `-prune` rewrites `players.json` in place, keeping only:
 
-- players whose Sleeper `search_rank` is at or below the cutoff
+- players whose Sleeper `search_rank` is at or below `prune_rank_cutoff`
   (`search_rank` is lower-is-better; unranked players carry values like
   `9999999`),
 - team defenses (`DEF`), which Sleeper leaves without a `search_rank`,
 - every player referenced by `rankings.csv` or `wishlist.csv`, regardless of
   rank.
+
+The cutoff is the `prune_rank_cutoff` setting in `config.json`. It defaults to
+`500`, which keeps a deep pool; lower it for a tighter one:
+
+```json
+{
+  "prune_rank_cutoff": 300
+}
+```
 
 Preview the result without touching the file:
 
@@ -87,11 +97,10 @@ go run ./... -prune -prune-dry-run
 Prune dry run for players.json: cutoff=500 before=12221 after=1160 removed=11061 kept_ranked=1113 kept_rankless=32 kept_listed=15
 ```
 
-Then prune for real, optionally choosing your own cutoff:
+Then prune for real:
 
 ```sh
-go run ./... -prune                 # default cutoff 500
-go run ./... -prune -prune-rank 300 # tighter pool
+go run ./... -prune
 ```
 
 Pruning preserves the cache's `cached_at` value and refreshes its modification

@@ -15,8 +15,7 @@ const defaultConfigPath = "config.json"
 func main() {
 	configPath := flag.String("config", defaultConfigPath, "path to config JSON file")
 	once := flag.Bool("once", false, "print one snapshot and exit instead of launching the TUI")
-	prune := flag.Bool("prune", false, "prune irrelevant players from the players cache and exit")
-	pruneRank := flag.Int("prune-rank", defaultPruneSearchRank, "highest Sleeper search_rank to keep when pruning")
+	prune := flag.Bool("prune", false, "prune players ranked worse than prune_rank_cutoff from the players cache and exit")
 	pruneDryRun := flag.Bool("prune-dry-run", false, "with -prune, report what would be removed without rewriting the cache")
 	flag.Parse()
 
@@ -28,7 +27,6 @@ func main() {
 
 	if *prune {
 		result, err := PrunePlayerCache(context.Background(), cfg, NewPlayerService(http.DefaultClient), PruneOptions{
-			Cutoff: *pruneRank,
 			DryRun: *pruneDryRun,
 		})
 		if err != nil {

@@ -186,8 +186,9 @@ a shippable feature on its own.
   cache for faster startup and easier inspection.
 - **Status:** DONE
 - **Assigned to:** Claude
-- **Notes:** Added a `-prune` CLI command (`-prune-rank` cutoff, default `500`;
-  `-prune-dry-run` preview) that rewrites `players.json` in place. Keeps players
+- **Notes:** Added a `-prune` CLI command (`-prune-dry-run` previews without
+  rewriting) that rewrites `players.json` in place. The cutoff is the
+  `prune_rank_cutoff` config setting, defaulting to `500`. Keeps players
   ranked at or below the cutoff, rankless-but-draftable positions (`DEF`, which
   Sleeper leaves without a `search_rank`), and every player referenced by
   `rankings.csv` or `wishlist.csv` — those lists are resolved against the
