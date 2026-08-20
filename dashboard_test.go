@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"regexp"
 	"strings"
 	"testing"
 	"time"
@@ -98,7 +99,7 @@ func TestDashboardStylesUseForegroundColors(t *testing.T) {
 }
 
 func TestStyledStatusHelpersKeepReadableText(t *testing.T) {
-	if got := styledRemaining(PositionSummary{Target: 1, Remaining: 0}); !strings.Contains(got, "0") {
+	if got := styledPersonalRemaining(PositionSummary{Target: 1, PersonalRemaining: 0}); !strings.Contains(got, "0") {
 		t.Fatalf("styled remaining = %q, want readable number", got)
 	}
 	if got := styledRank("sleeper", 7); !strings.Contains(got, "sleeper rank 7") {
@@ -108,4 +109,23 @@ func TestStyledStatusHelpersKeepReadableText(t *testing.T) {
 	if got := styledWishlistItem(item); !strings.Contains(got, "available") {
 		t.Fatalf("styled wishlist item = %q, want status text", got)
 	}
+}
+
+func TestPositionTableRowPadsColoredRemainingByVisibleWidth(t *testing.T) {
+	header := positionTableRow("POS", "MY_DRAFTED", "MY_LEFT", "TARGET", "TOTAL_DRAFTED", "TOTAL_LEFT")
+	row := positionTableRow("QB", "0", styledPersonalRemaining(PositionSummary{Target: 2, PersonalRemaining: 2}), "2", "4", "12")
+	targetColumn := strings.Index(header, "TARGET")
+	plainRow := stripANSI(row)
+	targetValueIndex := strings.Index(plainRow, "2       2")
+
+	if !strings.Contains(plainRow, "2       2") {
+		t.Fatalf("row = %q, want target separated from colored remaining value", row)
+	}
+	if got := lipgloss.Width(plainRow[:targetValueIndex+8]); got != targetColumn {
+		t.Fatalf("target starts at visible column %d, want %d", got, targetColumn)
+	}
+}
+
+func stripANSI(value string) string {
+	return regexp.MustCompile(`\x1b\[[0-9;]*m`).ReplaceAllString(value, "")
 }

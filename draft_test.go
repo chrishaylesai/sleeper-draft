@@ -205,3 +205,36 @@ func TestDraftPickMetadataDecodesStringValues(t *testing.T) {
 		t.Fatalf("metadata = %#v, want first_name", pick.Metadata)
 	}
 }
+
+func TestResolvePersonalDraftUsesDraftOrderAndRosterMap(t *testing.T) {
+	personal, err := ResolvePersonalDraft(
+		Draft{
+			ID:             "draft123",
+			DraftOrder:     map[string]int{"user1": 3},
+			SlotToRosterID: map[string]int{"3": 30},
+		},
+		SleeperUser{UserID: "user1"},
+	)
+	if err != nil {
+		t.Fatalf("ResolvePersonalDraft returned error: %v", err)
+	}
+	if personal.UserID != "user1" || personal.DraftSlot != 3 || personal.RosterID != 30 || !personal.Known {
+		t.Fatalf("personal = %#v, want user1 slot 3 roster 30", personal)
+	}
+	if !personal.MatchesPick(Pick{PickedBy: "user1"}) {
+		t.Fatal("MatchesPick returned false for picked_by user")
+	}
+	if !personal.MatchesPick(Pick{RosterID: 30}) {
+		t.Fatal("MatchesPick returned false for roster_id")
+	}
+}
+
+func TestResolvePersonalDraftRejectsUserOutsideDraft(t *testing.T) {
+	_, err := ResolvePersonalDraft(Draft{ID: "draft123", DraftOrder: map[string]int{"other": 1}}, SleeperUser{UserID: "user1"})
+	if err == nil {
+		t.Fatal("ResolvePersonalDraft returned nil error")
+	}
+	if !strings.Contains(err.Error(), "not in draft_order") {
+		t.Fatalf("error = %q, want draft_order message", err.Error())
+	}
+}

@@ -147,12 +147,11 @@ a shippable feature on its own.
 - **Description:** Do not display positions in the Positions tally when their
   configured `position_targets` value is `0`. This should apply to both the TUI
   Positions section and the non-interactive `-once` position summary output.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** Positions with positive targets should still display even when no
-  players have been drafted at that position. Drafted positions with no
-  configured target should continue to display only if the target is omitted
-  rather than set explicitly to `0`.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Updated position summary generation to omit explicitly zero-target
+  positions from both TUI and `-once` output while preserving positive targets
+  and omitted-but-drafted positions. Verified with `go test ./...`.
 
 ### T11. Fix Positions table column alignment
 
@@ -160,9 +159,9 @@ a shippable feature on its own.
   column is visually separated from `REMAINING`. The target value should align
   under the `TARGET` header instead of appearing immediately next to the
   remaining count.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** The issue is in the TUI rendering path for `renderPositionTable`.
-  Account for Lip Gloss ANSI styling when padding colored remaining counts. Add
-  a rendering test that covers colored remaining values and verifies readable
-  column separation.
+- **Status:** DONE
+- **Assigned to:** Codex
+- **Notes:** Updated `renderPositionTable` to pad columns by visible terminal
+  width so ANSI-colored remaining counts do not collapse the `TARGET` column.
+  Added rendering coverage for colored remaining values. Verified with
+  `go test ./...`, `go build ./...`, and a `-once` smoke test.

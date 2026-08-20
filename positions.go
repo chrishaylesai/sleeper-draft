@@ -7,30 +7,41 @@ import (
 )
 
 type PositionSummary struct {
-	Position  string
-	Target    int
-	Drafted   int
-	Remaining int
+	Position          string
+	Target            int
+	PersonalDrafted   int
+	PersonalRemaining int
+	TotalDrafted      int
+	TotalRemaining    int
 }
 
-func BuildPositionSummaries(targets map[string]int, picks []Pick, players PlayerDatabase) []PositionSummary {
-	drafted := make(map[string]int)
+func BuildPositionSummaries(targets map[string]int, picks []Pick, players PlayerDatabase, personal PersonalDraft) []PositionSummary {
+	configuredTargets := normalizePositionTargets(targets)
+	totalDrafted := make(map[string]int)
+	personalDrafted := make(map[string]int)
 	for _, pick := range picks {
 		position := positionForPick(pick, players.Index)
 		if position == "" {
 			continue
 		}
-		drafted[position]++
-	}
-
-	positions := make(map[string]struct{})
-	for position := range targets {
-		normalized := normalizePosition(position)
-		if normalized != "" {
-			positions[normalized] = struct{}{}
+		totalDrafted[position]++
+		if personal.MatchesPick(pick) {
+			personalDrafted[position]++
 		}
 	}
-	for position := range drafted {
+	totalPlayers := totalPlayersByPosition(players.Players)
+
+	positions := make(map[string]struct{})
+	for position, target := range configuredTargets {
+		if target > 0 {
+			positions[position] = struct{}{}
+		}
+	}
+	for position := range totalDrafted {
+		target, configured := configuredTargets[position]
+		if configured && target <= 0 {
+			continue
+		}
 		positions[position] = struct{}{}
 	}
 
@@ -42,17 +53,23 @@ func BuildPositionSummaries(targets map[string]int, picks []Pick, players Player
 
 	summaries := make([]PositionSummary, 0, len(ordered))
 	for _, position := range ordered {
-		target := targetForPosition(targets, position)
-		count := drafted[position]
-		remaining := target - count
-		if remaining < 0 {
-			remaining = 0
+		target := configuredTargets[position]
+		personalCount := personalDrafted[position]
+		personalRemaining := target - personalCount
+		if personalRemaining < 0 {
+			personalRemaining = 0
+		}
+		totalRemaining := totalPlayers[position] - totalDrafted[position]
+		if totalRemaining < 0 {
+			totalRemaining = 0
 		}
 		summaries = append(summaries, PositionSummary{
-			Position:  position,
-			Target:    target,
-			Drafted:   count,
-			Remaining: remaining,
+			Position:          position,
+			Target:            target,
+			PersonalDrafted:   personalCount,
+			PersonalRemaining: personalRemaining,
+			TotalDrafted:      totalDrafted[position],
+			TotalRemaining:    totalRemaining,
 		})
 	}
 	return summaries
@@ -66,11 +83,13 @@ func FormatPositionSummaries(summaries []PositionSummary) string {
 	parts := make([]string, 0, len(summaries))
 	for _, summary := range summaries {
 		parts = append(parts, fmt.Sprintf(
-			"%s drafted=%d remaining=%d target=%d",
+			"%s personal_drafted=%d personal_remaining=%d target=%d total_drafted=%d total_remaining=%d",
 			summary.Position,
-			summary.Drafted,
-			summary.Remaining,
+			summary.PersonalDrafted,
+			summary.PersonalRemaining,
 			summary.Target,
+			summary.TotalDrafted,
+			summary.TotalRemaining,
 		))
 	}
 	return "Position summary: " + strings.Join(parts, "; ")
@@ -85,13 +104,24 @@ func positionForPick(pick Pick, index PlayerIndex) string {
 	return normalizePosition(pick.Metadata["position"])
 }
 
-func targetForPosition(targets map[string]int, position string) int {
-	for rawPosition, target := range targets {
-		if normalizePosition(rawPosition) == position {
-			return target
+func normalizePositionTargets(targets map[string]int) map[string]int {
+	normalized := make(map[string]int, len(targets))
+	for position, target := range targets {
+		if normalizedPosition := normalizePosition(position); normalizedPosition != "" {
+			normalized[normalizedPosition] = target
 		}
 	}
-	return 0
+	return normalized
+}
+
+func totalPlayersByPosition(players []Player) map[string]int {
+	totals := make(map[string]int)
+	for _, player := range players {
+		if position := normalizePosition(player.Position); position != "" {
+			totals[position]++
+		}
+	}
+	return totals
 }
 
 func normalizePosition(position string) string {

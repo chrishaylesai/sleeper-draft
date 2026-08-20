@@ -89,7 +89,7 @@ func (m dashboardModel) View() string {
 		)
 	}
 
-	positionSummaries := BuildPositionSummaries(m.state.Config.PositionTargets, m.snapshot.Picks, m.state.Players)
+	positionSummaries := BuildPositionSummaries(m.state.Config.PositionTargets, m.snapshot.Picks, m.state.Players, m.state.Personal)
 	bestAvailable := BestAvailableByPosition(m.state.Config, m.state.Players, m.state.Rankings, m.snapshot.Picks)
 	wishlistReport := BuildWishlistReport(m.state.Config, m.state.Wishlist, m.snapshot.Picks)
 
@@ -181,10 +181,20 @@ func renderPositionTable(summaries []PositionSummary) string {
 		return sectionStyle().Render(sectionTitle.Render("Positions") + "\nNo position targets configured.")
 	}
 
-	rows := []string{sectionTitle.Render("Positions"), labelStyle.Render("POS  DRAFTED  REMAINING  TARGET")}
+	rows := []string{
+		sectionTitle.Render("Positions"),
+		labelStyle.Render(positionTableRow("POS", "MY_DRAFTED", "MY_LEFT", "TARGET", "TOTAL_DRAFTED", "TOTAL_LEFT")),
+	}
 	for _, summary := range summaries {
-		remaining := styledRemaining(summary)
-		rows = append(rows, fmt.Sprintf("%-4s %-8d %-10s %d", summary.Position, summary.Drafted, remaining, summary.Target))
+		remaining := styledPersonalRemaining(summary)
+		rows = append(rows, positionTableRow(
+			summary.Position,
+			strconv.Itoa(summary.PersonalDrafted),
+			remaining,
+			strconv.Itoa(summary.Target),
+			strconv.Itoa(summary.TotalDrafted),
+			strconv.Itoa(summary.TotalRemaining),
+		))
 	}
 	return sectionStyle().Render(strings.Join(rows, "\n"))
 }
@@ -233,12 +243,12 @@ func sectionStyle() lipgloss.Style {
 		Padding(0, 1)
 }
 
-func styledRemaining(summary PositionSummary) string {
-	text := strconv.Itoa(summary.Remaining)
-	if summary.Remaining == 0 {
+func styledPersonalRemaining(summary PositionSummary) string {
+	text := strconv.Itoa(summary.PersonalRemaining)
+	if summary.PersonalRemaining == 0 {
 		return dangerStyle.Render(text)
 	}
-	if summary.Target > 0 && summary.Remaining <= 1 {
+	if summary.Target > 0 && summary.PersonalRemaining <= 1 {
 		return warningStyle.Render(text)
 	}
 	return healthyStyle.Render(text)
@@ -267,6 +277,25 @@ func styledWishlistItem(item WishlistItem) string {
 	default:
 		return text
 	}
+}
+
+func positionTableRow(position, personalDrafted, personalRemaining, target, totalDrafted, totalRemaining string) string {
+	return strings.Join([]string{
+		padRightVisible(position, 4),
+		padRightVisible(personalDrafted, 10),
+		padRightVisible(personalRemaining, 7),
+		padRightVisible(target, 6),
+		padRightVisible(totalDrafted, 13),
+		totalRemaining,
+	}, " ")
+}
+
+func padRightVisible(value string, width int) string {
+	padding := width - lipgloss.Width(value)
+	if padding <= 0 {
+		return value
+	}
+	return value + strings.Repeat(" ", padding)
 }
 
 func emptyTeamAsFA(team string) string {

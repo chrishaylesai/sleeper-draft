@@ -109,7 +109,7 @@ Config loaded: target=... sport=nfl refresh=5s positions=...
 Players loaded: 12345 source=cache
 Player lists loaded: rankings=0 wishlist=0
 Draft loaded: draft_id=... status=active round=1 pick=4 next_pick=4 total_picks=3
-Position summary: QB drafted=0 remaining=2 target=2; RB drafted=1 remaining=4 target=5
+Position summary: QB personal_drafted=0 personal_remaining=2 target=2 total_drafted=0 total_remaining=474; RB personal_drafted=1 personal_remaining=4 target=5 total_drafted=4 total_remaining=923
 Best available: QB Josh Allen (BUF) sleeper_rank=4; RB Derrick Henry (BAL) sleeper_rank=7
 Wishlist: none
 ```

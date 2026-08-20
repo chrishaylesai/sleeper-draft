@@ -1,5 +1,5 @@
 {
-  "cached_at": "2026-08-19T03:35:52.792819Z",
+  "cached_at": "2026-08-20T04:00:40.338154Z",
   "players": [
     {
       "player_id": "1",
@@ -195,7 +195,7 @@
       "name": "Cameron Latu",
       "team": "PHI",
       "position": "TE",
-      "search_rank": 496
+      "search_rank": 548
     },
     {
       "player_id": "10211",
@@ -209,7 +209,7 @@
       "name": "Josh Whyle",
       "team": "GB",
       "position": "TE",
-      "search_rank": 319
+      "search_rank": 351
     },
     {
       "player_id": "10213",
@@ -223,14 +223,14 @@
       "name": "Davis Allen",
       "team": "LAR",
       "position": "TE",
-      "search_rank": 620
+      "search_rank": 283
     },
     {
       "player_id": "10215",
       "name": "Jake Haener",
       "team": "NYG",
       "position": "QB",
-      "search_rank": 406
+      "search_rank": 446
     },
     {
       "player_id": "10216",
@@ -251,14 +251,14 @@
       "name": "Xavier Hutchinson",
       "team": "HOU",
       "position": "WR",
-      "search_rank": 999
+      "search_rank": 269
     },
     {
       "player_id": "10219",
       "name": "Chris Rodriguez",
       "team": "JAX",
       "position": "RB",
-      "search_rank": 141
+      "search_rank": 140
     },
     {
       "player_id": "1022",
@@ -272,14 +272,14 @@
       "name": "Will Mallory",
       "team": "IND",
       "position": "TE",
-      "search_rank": 532
+      "search_rank": 284
     },
     {
       "player_id": "10221",
       "name": "Ronnie Bell",
       "team": "NO",
       "position": "WR",
-      "search_rank": 683
+      "search_rank": 273
     },
     {
       "player_id": "10222",
@@ -293,7 +293,7 @@
       "name": "Eric Gray",
       "team": "NYG",
       "position": "RB",
-      "search_rank": 999
+      "search_rank": 272
     },
     {
       "player_id": "10224",
@@ -307,35 +307,35 @@
       "name": "Jonathan Mingo",
       "team": "DAL",
       "position": "WR",
-      "search_rank": 383
+      "search_rank": 423
     },
     {
       "player_id": "10226",
       "name": "Andrei Iosivas",
       "team": "CIN",
       "position": "WR",
-      "search_rank": 500
+      "search_rank": 501
     },
     {
       "player_id": "10227",
       "name": "Payne Durham",
       "team": "TB",
       "position": "TE",
-      "search_rank": 314
+      "search_rank": 322
     },
     {
       "player_id": "10228",
       "name": "Charlie Jones",
       "team": "CIN",
       "position": "WR",
-      "search_rank": 999
+      "search_rank": 275
     },
     {
       "player_id": "10229",
       "name": "Rashee Rice",
       "team": "KC",
       "position": "WR",
-      "search_rank": 28
+      "search_rank": 27
     },
     {
       "player_id": "1023",
@@ -377,14 +377,14 @@
       "name": "Derius Davis",
       "team": "LAC",
       "position": "WR",
-      "search_rank": 499
+      "search_rank": 552
     },
     {
       "player_id": "10235",
       "name": "Roschon Johnson",
       "team": "CHI",
       "position": "RB",
-      "search_rank": 438
+      "search_rank": 453
     },
     {
       "player_id": "10236",
@@ -559,7 +559,7 @@
       "name": "Cedric Tillman",
       "team": "CLE",
       "position": "WR",
-      "search_rank": 999
+      "search_rank": 279
     },
     {
       "player_id": "1045",
@@ -622,7 +622,7 @@
       "name": "Demario Davis",
       "team": "NYJ",
       "position": "LB",
-      "search_rank": 375
+      "search_rank": 378
     },
     {
       "player_id": "1053",
@@ -888,7 +888,7 @@
       "name": "Stetson Bennett",
       "team": "LAR",
       "position": "QB",
-      "search_rank": 477
+      "search_rank": 525
     },
     {
       "player_id": "10858",
@@ -902,7 +902,7 @@
       "name": "Sam LaPorta",
       "team": "DET",
       "position": "TE",
-      "search_rank": 60
+      "search_rank": 61
     },
     {
       "player_id": "1086",
@@ -916,7 +916,7 @@
       "name": "Malik Cunningham",
       "team": "DET",
       "position": "WR",
-      "search_rank": 669
+      "search_rank": 285
     },
     {
       "player_id": "10861",
@@ -958,14 +958,14 @@
       "name": "Aidan O'Connell",
       "team": "LV",
       "position": "QB",
-      "search_rank": 307
+      "search_rank": 332
     },
     {
       "player_id": "10867",
       "name": "Jake Bobo",
       "team": "SEA",
       "position": "WR",
-      "search_rank": 479
+      "search_rank": 526
     },
     {
       "player_id": "10868",
@@ -1014,7 +1014,7 @@
       "name": "Nolan Smith",
       "team": "PHI",
       "position": "LB",
-      "search_rank": 578
+      "search_rank": 588
     },
     {
       "player_id": "10874",
@@ -1056,7 +1056,7 @@
       "name": "Calijah Kancey",
       "team": "TB",
       "position": "DL",
-      "search_rank": 498
+      "search_rank": 503
     },
     {
       "player_id": "1088",
@@ -1070,14 +1070,14 @@
       "name": "Jack Campbell",
       "team": "DET",
       "position": "LB",
-      "search_rank": 106
+      "search_rank": 105
     },
     {
       "player_id": "10881",
       "name": "Christian Gonzalez",
       "team": "NE",
       "position": "DB",
-      "search_rank": 430
+      "search_rank": 432
     },
     {
       "player_id": "10882",
@@ -1154,14 +1154,14 @@
       "name": "Devon Witherspoon",
       "team": "SEA",
       "position": "DB",
-      "search_rank": 335
+      "search_rank": 334
     },
     {
       "player_id": "10892",
       "name": "Will Anderson",
       "team": "HOU",
       "position": "DL",
-      "search_rank": 104
+      "search_rank": 106
     },
     {
       "player_id": "10893",
@@ -1266,7 +1266,7 @@
       "name": "Brian Branch",
       "team": "DET",
       "position": "DB",
-      "search_rank": 240
+      "search_rank": 241
     },
     {
       "player_id": "10906",
@@ -1336,7 +1336,7 @@
       "name": "Daiyan Henley",
       "team": "LAC",
       "position": "LB",
-      "search_rank": 147
+      "search_rank": 146
     },
     {
       "player_id": "10915",
@@ -1350,14 +1350,14 @@
       "name": "Kobie Turner",
       "team": "LAR",
       "position": "DT",
-      "search_rank": 464
+      "search_rank": 466
     },
     {
       "player_id": "10917",
       "name": "Byron Young",
       "team": "LAR",
       "position": "LB",
-      "search_rank": 181
+      "search_rank": 180
     },
     {
       "player_id": "10918",
@@ -1392,7 +1392,7 @@
       "name": "Yaya Diaby",
       "team": "TB",
       "position": "DL",
-      "search_rank": 351
+      "search_rank": 353
     },
     {
       "player_id": "10922",
@@ -1462,7 +1462,7 @@
       "name": "Riley Moss",
       "team": "DEN",
       "position": "DB",
-      "search_rank": 560
+      "search_rank": 551
     },
     {
       "player_id": "10931",
@@ -1539,14 +1539,14 @@
       "name": "Nick Herbig",
       "team": "PIT",
       "position": "LB",
-      "search_rank": 378
+      "search_rank": 381
     },
     {
       "player_id": "10941",
       "name": "Tyler Lacy",
       "team": "DET",
       "position": "DE",
-      "search_rank": 605
+      "search_rank": 679
     },
     {
       "player_id": "10942",
@@ -1588,7 +1588,7 @@
       "name": "Ventrell Miller",
       "team": "JAX",
       "position": "LB",
-      "search_rank": 346
+      "search_rank": 345
     },
     {
       "player_id": "10948",
@@ -1602,7 +1602,7 @@
       "name": "Chamarri Conner",
       "team": "KC",
       "position": "DB",
-      "search_rank": 243
+      "search_rank": 246
     },
     {
       "player_id": "1095",
@@ -1770,7 +1770,7 @@
       "name": "Henry To'oTo'o",
       "team": "HOU",
       "position": "LB",
-      "search_rank": 403
+      "search_rank": 406
     },
     {
       "player_id": "10971",
@@ -1798,7 +1798,7 @@
       "name": "Antonio Johnson",
       "team": "JAX",
       "position": "DB",
-      "search_rank": 606
+      "search_rank": 592
     },
     {
       "player_id": "10975",
@@ -1847,7 +1847,7 @@
       "name": "SirVocea Dennis",
       "team": "TB",
       "position": "LB",
-      "search_rank": 422
+      "search_rank": 423
     },
     {
       "player_id": "10981",
@@ -1868,7 +1868,7 @@
       "name": "Sean Clifford",
       "team": "CIN",
       "position": "QB",
-      "search_rank": 361
+      "search_rank": 398
     },
     {
       "player_id": "10984",
@@ -2141,7 +2141,7 @@
       "name": "Dee Winters",
       "team": "DAL",
       "position": "LB",
-      "search_rank": 373
+      "search_rank": 377
     },
     {
       "player_id": "11018",
@@ -2274,7 +2274,7 @@
       "name": "Jalen Brooks",
       "team": "ARI",
       "position": "WR",
-      "search_rank": 691
+      "search_rank": 291
     },
     {
       "player_id": "11035",
@@ -2456,7 +2456,7 @@
       "name": "Blake Grupe",
       "team": "IND",
       "position": "K",
-      "search_rank": 455
+      "search_rank": 508
     },
     {
       "player_id": "11059",
@@ -2512,7 +2512,7 @@
       "name": "Adrian Martinez",
       "team": "SF",
       "position": "QB",
-      "search_rank": 365
+      "search_rank": 403
     },
     {
       "player_id": "11066",
@@ -2645,7 +2645,7 @@
       "name": "Ben Sims",
       "team": "MIA",
       "position": "TE",
-      "search_rank": 344
+      "search_rank": 359
     },
     {
       "player_id": "11083",
@@ -2673,7 +2673,7 @@
       "name": "Ivan Pace",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 515
+      "search_rank": 520
     },
     {
       "player_id": "11087",
@@ -2715,7 +2715,7 @@
       "name": "B.T. Potter",
       "team": "TB",
       "position": "K",
-      "search_rank": 490
+      "search_rank": 540
     },
     {
       "player_id": "11093",
@@ -3121,7 +3121,7 @@
       "name": "Tanner Brown",
       "team": "NO",
       "position": "K",
-      "search_rank": 511
+      "search_rank": 567
     },
     {
       "player_id": "11146",
@@ -3422,7 +3422,7 @@
       "name": "Carlos Washington",
       "team": "MIA",
       "position": "RB",
-      "search_rank": 439
+      "search_rank": 491
     },
     {
       "player_id": "11187",
@@ -3513,7 +3513,7 @@
       "name": "Emari Demercado",
       "team": "KC",
       "position": "RB",
-      "search_rank": 561
+      "search_rank": 566
     },
     {
       "player_id": "112",
@@ -3814,7 +3814,7 @@
       "name": "Jacob Saylors",
       "team": "DET",
       "position": "RB",
-      "search_rank": 456
+      "search_rank": 510
     },
     {
       "player_id": "11238",
@@ -3961,7 +3961,7 @@
       "name": "Tyson Bagent",
       "team": "CHI",
       "position": "QB",
-      "search_rank": 570
+      "search_rank": 451
     },
     {
       "player_id": "11257",
@@ -4241,7 +4241,7 @@
       "name": "Tommy DeVito",
       "team": "NE",
       "position": "QB",
-      "search_rank": 439
+      "search_rank": 490
     },
     {
       "player_id": "11293",
@@ -4421,7 +4421,7 @@
     {
       "player_id": "11315",
       "name": "Cam Jones",
-      "team": "",
+      "team": "KC",
       "position": "LB",
       "search_rank": 9999999
     },
@@ -4850,14 +4850,14 @@
       "name": "Chris Brooks",
       "team": "GB",
       "position": "RB",
-      "search_rank": 571
+      "search_rank": 562
     },
     {
       "player_id": "11371",
       "name": "Julian Hill",
       "team": "NE",
       "position": "TE",
-      "search_rank": 282
+      "search_rank": 301
     },
     {
       "player_id": "11372",
@@ -4899,7 +4899,7 @@
       "name": "Tyrell Shavers",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 376
+      "search_rank": 396
     },
     {
       "player_id": "11378",
@@ -5627,7 +5627,7 @@
       "name": "Drake Thomas",
       "team": "SEA",
       "position": "LB",
-      "search_rank": 435
+      "search_rank": 437
     },
     {
       "player_id": "11471",
@@ -5907,7 +5907,7 @@
       "name": "Jalen Moreno-Cropper",
       "team": "NO",
       "position": "WR",
-      "search_rank": 317
+      "search_rank": 347
     },
     {
       "player_id": "11507",
@@ -6159,7 +6159,7 @@
       "name": "Jake Bates",
       "team": "DET",
       "position": "K",
-      "search_rank": 156
+      "search_rank": 155
     },
     {
       "player_id": "1154",
@@ -6299,7 +6299,7 @@
       "name": "Joe Milton",
       "team": "DAL",
       "position": "QB",
-      "search_rank": 578
+      "search_rank": 575
     },
     {
       "player_id": "11558",
@@ -6327,7 +6327,7 @@
       "name": "Caleb Williams",
       "team": "CHI",
       "position": "QB",
-      "search_rank": 19
+      "search_rank": 17
     },
     {
       "player_id": "11561",
@@ -6341,14 +6341,14 @@
       "name": "Spencer Rattler",
       "team": "NO",
       "position": "QB",
-      "search_rank": 343
+      "search_rank": 379
     },
     {
       "player_id": "11563",
       "name": "Bo Nix",
       "team": "DEN",
       "position": "QB",
-      "search_rank": 39
+      "search_rank": 41
     },
     {
       "player_id": "11564",
@@ -6369,7 +6369,7 @@
       "name": "Jayden Daniels",
       "team": "WAS",
       "position": "QB",
-      "search_rank": 15
+      "search_rank": 16
     },
     {
       "player_id": "11567",
@@ -6404,14 +6404,14 @@
       "name": "Rasheen Ali",
       "team": "BAL",
       "position": "RB",
-      "search_rank": 366
+      "search_rank": 404
     },
     {
       "player_id": "11571",
       "name": "Isaiah Davis",
       "team": "NYJ",
       "position": "RB",
-      "search_rank": 549
+      "search_rank": 473
     },
     {
       "player_id": "11572",
@@ -6432,7 +6432,7 @@
       "name": "Dylan Laube",
       "team": "LV",
       "position": "RB",
-      "search_rank": 377
+      "search_rank": 415
     },
     {
       "player_id": "11575",
@@ -6453,7 +6453,7 @@
       "name": "Will Shipley",
       "team": "PHI",
       "position": "RB",
-      "search_rank": 470
+      "search_rank": 485
     },
     {
       "player_id": "11578",
@@ -6495,7 +6495,7 @@
       "name": "Carson Steele",
       "team": "PHI",
       "position": "RB",
-      "search_rank": 284
+      "search_rank": 286
     },
     {
       "player_id": "11583",
@@ -6537,7 +6537,7 @@
       "name": "Jawhar Jordan",
       "team": "HOU",
       "position": "RB",
-      "search_rank": 538
+      "search_rank": 565
     },
     {
       "player_id": "11589",
@@ -6572,7 +6572,7 @@
       "name": "Erick All",
       "team": "CIN",
       "position": "TE",
-      "search_rank": 478
+      "search_rank": 486
     },
     {
       "player_id": "11593",
@@ -6614,7 +6614,7 @@
       "name": "Tanner McLachlan",
       "team": "SF",
       "position": "TE",
-      "search_rank": 284
+      "search_rank": 304
     },
     {
       "player_id": "11599",
@@ -6670,7 +6670,7 @@
       "name": "Brock Bowers",
       "team": "LV",
       "position": "TE",
-      "search_rank": 21
+      "search_rank": 22
     },
     {
       "player_id": "11605",
@@ -6698,7 +6698,7 @@
       "name": "Isaiah Williams",
       "team": "NYJ",
       "position": "WR",
-      "search_rank": 458
+      "search_rank": 475
     },
     {
       "player_id": "11609",
@@ -6817,14 +6817,14 @@
       "name": "Jordan Whittington",
       "team": "LAR",
       "position": "WR",
-      "search_rank": 592
+      "search_rank": 654
     },
     {
       "player_id": "11624",
       "name": "Xavier Worthy",
       "team": "KC",
       "position": "WR",
-      "search_rank": 120
+      "search_rank": 121
     },
     {
       "player_id": "11625",
@@ -6838,7 +6838,7 @@
       "name": "Xavier Legette",
       "team": "CAR",
       "position": "WR",
-      "search_rank": 558
+      "search_rank": 560
     },
     {
       "player_id": "11627",
@@ -6852,14 +6852,14 @@
       "name": "Marvin Harrison",
       "team": "ARI",
       "position": "WR",
-      "search_rank": 74
+      "search_rank": 73
     },
     {
       "player_id": "11629",
       "name": "Devontez Walker",
       "team": "BAL",
       "position": "WR",
-      "search_rank": 587
+      "search_rank": 647
     },
     {
       "player_id": "1163",
@@ -6929,7 +6929,7 @@
       "name": "Ricky Pearsall",
       "team": "SF",
       "position": "WR",
-      "search_rank": 242
+      "search_rank": 244
     },
     {
       "player_id": "11639",
@@ -7006,14 +7006,14 @@
       "name": "Kedon Slovis",
       "team": "ARI",
       "position": "QB",
-      "search_rank": 395
+      "search_rank": 418
     },
     {
       "player_id": "11649",
       "name": "Kendall Milton",
       "team": "CIN",
       "position": "RB",
-      "search_rank": 660
+      "search_rank": 696
     },
     {
       "player_id": "1165",
@@ -7027,14 +7027,14 @@
       "name": "Luke McCaffrey",
       "team": "WAS",
       "position": "WR",
-      "search_rank": 472
+      "search_rank": 510
     },
     {
       "player_id": "11651",
       "name": "Isaac Guerendo",
       "team": "SF",
       "position": "RB",
-      "search_rank": 338
+      "search_rank": 359
     },
     {
       "player_id": "11652",
@@ -7053,7 +7053,7 @@
     {
       "player_id": "11654",
       "name": "Dante Miller",
-      "team": "",
+      "team": "NYG",
       "position": "RB",
       "search_rank": 9999999
     },
@@ -7097,7 +7097,7 @@
       "name": "Kirk Cousins",
       "team": "LV",
       "position": "QB",
-      "search_rank": 268
+      "search_rank": 265
     },
     {
       "player_id": "11660",
@@ -7125,7 +7125,7 @@
       "name": "Chop Robinson",
       "team": "MIA",
       "position": "DE",
-      "search_rank": 399
+      "search_rank": 408
     },
     {
       "player_id": "11664",
@@ -7139,7 +7139,7 @@
       "name": "Jared Verse",
       "team": "CLE",
       "position": "DL",
-      "search_rank": 121
+      "search_rank": 122
     },
     {
       "player_id": "11666",
@@ -7153,21 +7153,21 @@
       "name": "Dallas Turner",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 245
+      "search_rank": 244
     },
     {
       "player_id": "11668",
       "name": "Byron Murphy",
       "team": "SEA",
       "position": "DL",
-      "search_rank": 438
+      "search_rank": 435
     },
     {
       "player_id": "11669",
       "name": "Laiatu Latu",
       "team": "IND",
       "position": "DL",
-      "search_rank": 255
+      "search_rank": 257
     },
     {
       "player_id": "1167",
@@ -7209,7 +7209,7 @@
       "name": "Tyler Nubin",
       "team": "NYG",
       "position": "DB",
-      "search_rank": 393
+      "search_rank": 396
     },
     {
       "player_id": "11675",
@@ -7223,7 +7223,7 @@
       "name": "Mike Sainristil",
       "team": "WAS",
       "position": "DB",
-      "search_rank": 564
+      "search_rank": 570
     },
     {
       "player_id": "11677",
@@ -7272,7 +7272,7 @@
       "name": "Cole Bishop",
       "team": "BUF",
       "position": "DB",
-      "search_rank": 378
+      "search_rank": 371
     },
     {
       "player_id": "11683",
@@ -7300,7 +7300,7 @@
       "name": "Javon Bullard",
       "team": "GB",
       "position": "DB",
-      "search_rank": 599
+      "search_rank": 603
     },
     {
       "player_id": "11687",
@@ -7440,7 +7440,7 @@
       "name": "Jalyx Hunt",
       "team": "PHI",
       "position": "DE",
-      "search_rank": 388
+      "search_rank": 382
     },
     {
       "player_id": "11704",
@@ -7454,7 +7454,7 @@
       "name": "Tykee Smith",
       "team": "TB",
       "position": "DB",
-      "search_rank": 241
+      "search_rank": 242
     },
     {
       "player_id": "11706",
@@ -7496,7 +7496,7 @@
       "name": "Calen Bullock",
       "team": "HOU",
       "position": "DB",
-      "search_rank": 550
+      "search_rank": 554
     },
     {
       "player_id": "11711",
@@ -7601,7 +7601,7 @@
       "name": "Trevin Wallace",
       "team": "CAR",
       "position": "LB",
-      "search_rank": 485
+      "search_rank": 482
     },
     {
       "player_id": "11725",
@@ -7622,7 +7622,7 @@
       "name": "Payton Wilson",
       "team": "PIT",
       "position": "LB",
-      "search_rank": 358
+      "search_rank": 360
     },
     {
       "player_id": "11728",
@@ -7636,7 +7636,7 @@
       "name": "Sione Vaki",
       "team": "DET",
       "position": "RB",
-      "search_rank": 359
+      "search_rank": 393
     },
     {
       "player_id": "1173",
@@ -7657,7 +7657,7 @@
       "name": "Malik Mustapha",
       "team": "SF",
       "position": "DB",
-      "search_rank": 485
+      "search_rank": 480
     },
     {
       "player_id": "11732",
@@ -7678,7 +7678,7 @@
       "name": "Tyrice Knight",
       "team": "SEA",
       "position": "LB",
-      "search_rank": 520
+      "search_rank": 522
     },
     {
       "player_id": "11735",
@@ -7713,7 +7713,7 @@
       "name": "Evan Williams",
       "team": "GB",
       "position": "DB",
-      "search_rank": 551
+      "search_rank": 549
     },
     {
       "player_id": "1174",
@@ -7804,7 +7804,7 @@
       "name": "Dominique Hampton",
       "team": "TEN",
       "position": "CB",
-      "search_rank": 630
+      "search_rank": 693
     },
     {
       "player_id": "11751",
@@ -7881,7 +7881,7 @@
       "name": "Austin Booker",
       "team": "CHI",
       "position": "DL",
-      "search_rank": 546
+      "search_rank": 548
     },
     {
       "player_id": "11761",
@@ -7969,7 +7969,7 @@
     },
     {
       "player_id": "11772",
-      "name": "De'Antre Prince",
+      "name": "Deantre Prince",
       "team": "CHI",
       "position": "CB",
       "search_rank": 9999999
@@ -8357,7 +8357,7 @@
       "name": "Tahj Washington",
       "team": "MIA",
       "position": "WR",
-      "search_rank": 575
+      "search_rank": 635
     },
     {
       "player_id": "11822",
@@ -9295,7 +9295,7 @@
       "name": "Colson Yankoff",
       "team": "WAS",
       "position": "TE",
-      "search_rank": 379
+      "search_rank": 417
     },
     {
       "player_id": "11943",
@@ -9421,7 +9421,7 @@
       "name": "Bryce Oliver",
       "team": "TEN",
       "position": "WR",
-      "search_rank": 420
+      "search_rank": 456
     },
     {
       "player_id": "1196",
@@ -9468,7 +9468,7 @@
     {
       "player_id": "11965",
       "name": "Marcus Banks",
-      "team": "",
+      "team": "TB",
       "position": "DB",
       "search_rank": 9999999
     },
@@ -9694,7 +9694,7 @@
       "name": "Kameron Johnson",
       "team": "TB",
       "position": "WR",
-      "search_rank": 649
+      "search_rank": 671
     },
     {
       "player_id": "11995",
@@ -9869,7 +9869,7 @@
       "name": "Harrison Mevis",
       "team": "LAR",
       "position": "K",
-      "search_rank": 149
+      "search_rank": 148
     },
     {
       "player_id": "12016",
@@ -10030,7 +10030,7 @@
       "name": "Ian Wheeler",
       "team": "BUF",
       "position": "RB",
-      "search_rank": 476
+      "search_rank": 519
     },
     {
       "player_id": "12037",
@@ -10121,7 +10121,7 @@
       "name": "George Holani",
       "team": "SEA",
       "position": "RB",
-      "search_rank": 440
+      "search_rank": 441
     },
     {
       "player_id": "12049",
@@ -10842,7 +10842,7 @@
       "name": "Omar Speights",
       "team": "LAR",
       "position": "LB",
-      "search_rank": 590
+      "search_rank": 589
     },
     {
       "player_id": "12141",
@@ -10861,7 +10861,7 @@
     {
       "player_id": "12143",
       "name": "Bayron Matos",
-      "team": "IND",
+      "team": "",
       "position": "OL",
       "search_rank": 9999999
     },
@@ -11080,7 +11080,7 @@
       "name": "British Brooks",
       "team": "HOU",
       "position": "RB",
-      "search_rank": 9999999
+      "search_rank": 271
     },
     {
       "player_id": "12172",
@@ -11738,7 +11738,7 @@
       "name": "Baylor Cupp",
       "team": "ARI",
       "position": "TE",
-      "search_rank": 390
+      "search_rank": 411
     },
     {
       "player_id": "12257",
@@ -11822,7 +11822,7 @@
       "name": "Qadir Ismail",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 354
+      "search_rank": 371
     },
     {
       "player_id": "12268",
@@ -12653,7 +12653,7 @@
     {
       "player_id": "12374",
       "name": "Brenden Bates",
-      "team": "",
+      "team": "CLE",
       "position": "TE",
       "search_rank": 999
     },
@@ -13376,7 +13376,7 @@
       "name": "Jordan James",
       "team": "SF",
       "position": "RB",
-      "search_rank": 244
+      "search_rank": 243
     },
     {
       "player_id": "12468",
@@ -13404,14 +13404,14 @@
       "name": "Riley Leonard",
       "team": "IND",
       "position": "QB",
-      "search_rank": 564
+      "search_rank": 566
     },
     {
       "player_id": "12471",
       "name": "DJ Giddens",
       "team": "IND",
       "position": "RB",
-      "search_rank": 568
+      "search_rank": 572
     },
     {
       "player_id": "12472",
@@ -13439,7 +13439,7 @@
       "name": "Ricky White",
       "team": "SEA",
       "position": "WR",
-      "search_rank": 647
+      "search_rank": 598
     },
     {
       "player_id": "12476",
@@ -13495,7 +13495,7 @@
       "name": "Savion Williams",
       "team": "GB",
       "position": "WR",
-      "search_rank": 609
+      "search_rank": 619
     },
     {
       "player_id": "12483",
@@ -13509,14 +13509,14 @@
       "name": "Jayden Higgins",
       "team": "HOU",
       "position": "WR",
-      "search_rank": 126
+      "search_rank": 125
     },
     {
       "player_id": "12485",
       "name": "Tez Johnson",
       "team": "TB",
       "position": "WR",
-      "search_rank": 593
+      "search_rank": 632
     },
     {
       "player_id": "12486",
@@ -13593,7 +13593,7 @@
       "name": "Ollie Gordon",
       "team": "MIA",
       "position": "RB",
-      "search_rank": 456
+      "search_rank": 452
     },
     {
       "player_id": "12496",
@@ -13642,14 +13642,14 @@
       "name": "Quinn Ewers",
       "team": "MIA",
       "position": "QB",
-      "search_rank": 373
+      "search_rank": 412
     },
     {
       "player_id": "12501",
       "name": "Matthew Golden",
       "team": "GB",
       "position": "WR",
-      "search_rank": 124
+      "search_rank": 123
     },
     {
       "player_id": "12502",
@@ -13663,7 +13663,7 @@
       "name": "Isaiah Bond",
       "team": "CLE",
       "position": "WR",
-      "search_rank": 554
+      "search_rank": 598
     },
     {
       "player_id": "12504",
@@ -13677,7 +13677,7 @@
       "name": "Jalen Royals",
       "team": "KC",
       "position": "WR",
-      "search_rank": 671
+      "search_rank": 647
     },
     {
       "player_id": "12506",
@@ -13719,14 +13719,14 @@
       "name": "Jalen Milroe",
       "team": "SEA",
       "position": "QB",
-      "search_rank": 479
+      "search_rank": 483
     },
     {
       "player_id": "12511",
       "name": "Will Howard",
       "team": "PIT",
       "position": "QB",
-      "search_rank": 413
+      "search_rank": 454
     },
     {
       "player_id": "12512",
@@ -13747,7 +13747,7 @@
       "name": "Emeka Egbuka",
       "team": "TB",
       "position": "WR",
-      "search_rank": 39
+      "search_rank": 40
     },
     {
       "player_id": "12515",
@@ -13768,14 +13768,14 @@
       "name": "Colston Loveland",
       "team": "CHI",
       "position": "TE",
-      "search_rank": 39
+      "search_rank": 40
     },
     {
       "player_id": "12518",
       "name": "Tyler Warren",
       "team": "IND",
       "position": "TE",
-      "search_rank": 46
+      "search_rank": 47
     },
     {
       "player_id": "12519",
@@ -13810,14 +13810,14 @@
       "name": "Cam Ward",
       "team": "TEN",
       "position": "QB",
-      "search_rank": 91
+      "search_rank": 90
     },
     {
       "player_id": "12523",
       "name": "Jimmy Horn",
       "team": "CAR",
       "position": "WR",
-      "search_rank": 566
+      "search_rank": 572
     },
     {
       "player_id": "12524",
@@ -13838,14 +13838,14 @@
       "name": "Tetairoa McMillan",
       "team": "CAR",
       "position": "WR",
-      "search_rank": 36
+      "search_rank": 35
     },
     {
       "player_id": "12527",
       "name": "Ashton Jeanty",
       "team": "LV",
       "position": "RB",
-      "search_rank": 11
+      "search_rank": 12
     },
     {
       "player_id": "12528",
@@ -13873,14 +13873,14 @@
       "name": "Travis Hunter",
       "team": "JAX",
       "position": "WR",
-      "search_rank": 120
+      "search_rank": 119
     },
     {
       "player_id": "12531",
       "name": "Trevor Etienne",
       "team": "CAR",
       "position": "RB",
-      "search_rank": 399
+      "search_rank": 408
     },
     {
       "player_id": "12532",
@@ -13929,7 +13929,7 @@
       "name": "Brady Cook",
       "team": "NYJ",
       "position": "QB",
-      "search_rank": 278
+      "search_rank": 297
     },
     {
       "player_id": "12539",
@@ -13964,21 +13964,21 @@
       "name": "Efton Chism",
       "team": "NE",
       "position": "WR",
-      "search_rank": 408
+      "search_rank": 449
     },
     {
       "player_id": "12543",
       "name": "Tahj Brooks",
       "team": "CIN",
       "position": "RB",
-      "search_rank": 568
+      "search_rank": 584
     },
     {
       "player_id": "12544",
       "name": "LeQuint Allen",
       "team": "JAX",
       "position": "RB",
-      "search_rank": 467
+      "search_rank": 468
     },
     {
       "player_id": "12545",
@@ -14069,7 +14069,7 @@
       "name": "Donovan Ezeiruaku",
       "team": "DAL",
       "position": "DL",
-      "search_rank": 547
+      "search_rank": 552
     },
     {
       "player_id": "12557",
@@ -14118,7 +14118,7 @@
       "name": "Nic Scourton",
       "team": "CAR",
       "position": "DL",
-      "search_rank": 568
+      "search_rank": 575
     },
     {
       "player_id": "12563",
@@ -14146,21 +14146,21 @@
       "name": "Jihaad Campbell",
       "team": "PHI",
       "position": "LB",
-      "search_rank": 249
+      "search_rank": 250
     },
     {
       "player_id": "12567",
       "name": "Malaki Starks",
       "team": "BAL",
       "position": "DB",
-      "search_rank": 263
+      "search_rank": 264
     },
     {
       "player_id": "12568",
       "name": "Jalon Walker",
       "team": "ATL",
       "position": "DL",
-      "search_rank": 451
+      "search_rank": 466
     },
     {
       "player_id": "12569",
@@ -14188,7 +14188,7 @@
       "name": "Mike Green",
       "team": "BAL",
       "position": "DL",
-      "search_rank": 477
+      "search_rank": 476
     },
     {
       "player_id": "12572",
@@ -14202,14 +14202,14 @@
       "name": "Mason Graham",
       "team": "CLE",
       "position": "DL",
-      "search_rank": 588
+      "search_rank": 581
     },
     {
       "player_id": "12574",
       "name": "Abdul Carter",
       "team": "NYG",
       "position": "DL",
-      "search_rank": 160
+      "search_rank": 159
     },
     {
       "player_id": "12575",
@@ -14237,7 +14237,7 @@
       "name": "Carson Schwesinger",
       "team": "CLE",
       "position": "LB",
-      "search_rank": 100
+      "search_rank": 98
     },
     {
       "player_id": "12579",
@@ -14293,7 +14293,7 @@
       "name": "James Pearce",
       "team": "ATL",
       "position": "DL",
-      "search_rank": 438
+      "search_rank": 442
     },
     {
       "player_id": "12586",
@@ -14314,7 +14314,7 @@
       "name": "Kevin Winston",
       "team": "TEN",
       "position": "DB",
-      "search_rank": 432
+      "search_rank": 434
     },
     {
       "player_id": "12589",
@@ -14384,7 +14384,7 @@
       "name": "Nick Emmanwori",
       "team": "SEA",
       "position": "DB",
-      "search_rank": 237
+      "search_rank": 238
     },
     {
       "player_id": "12598",
@@ -14433,7 +14433,7 @@
       "name": "Mykel Williams",
       "team": "SF",
       "position": "DL",
-      "search_rank": 591
+      "search_rank": 592
     },
     {
       "player_id": "12603",
@@ -14545,7 +14545,7 @@
       "name": "Demetrius Knight",
       "team": "CIN",
       "position": "LB",
-      "search_rank": 330
+      "search_rank": 329
     },
     {
       "player_id": "12618",
@@ -14727,14 +14727,14 @@
       "name": "Teddye Buchanan",
       "team": "BAL",
       "position": "LB",
-      "search_rank": 475
+      "search_rank": 479
     },
     {
       "player_id": "12641",
       "name": "Jaylin Lane",
       "team": "WAS",
       "position": "WR",
-      "search_rank": 700
+      "search_rank": 644
     },
     {
       "player_id": "12642",
@@ -14769,7 +14769,7 @@
       "name": "Barrett Carter",
       "team": "CIN",
       "position": "LB",
-      "search_rank": 341
+      "search_rank": 338
     },
     {
       "player_id": "12647",
@@ -14783,7 +14783,7 @@
       "name": "Cody Simon",
       "team": "ARI",
       "position": "LB",
-      "search_rank": 436
+      "search_rank": 438
     },
     {
       "player_id": "12649",
@@ -14860,7 +14860,7 @@
       "name": "Jackson Hawes",
       "team": "BUF",
       "position": "TE",
-      "search_rank": 328
+      "search_rank": 338
     },
     {
       "player_id": "12659",
@@ -14958,7 +14958,7 @@
       "name": "KeAndre Lambert-Smith",
       "team": "LAC",
       "position": "WR",
-      "search_rank": 668
+      "search_rank": 614
     },
     {
       "player_id": "12671",
@@ -15175,7 +15175,7 @@
       "name": "LaJohntay Wester",
       "team": "BAL",
       "position": "WR",
-      "search_rank": 382
+      "search_rank": 422
     },
     {
       "player_id": "127",
@@ -15294,7 +15294,7 @@
       "name": "Andy Borregales",
       "team": "NE",
       "position": "K",
-      "search_rank": 154
+      "search_rank": 153
     },
     {
       "player_id": "12714",
@@ -15329,7 +15329,7 @@
       "name": "Konata Mumpfield",
       "team": "LAR",
       "position": "WR",
-      "search_rank": 393
+      "search_rank": 419
     },
     {
       "player_id": "12719",
@@ -15483,12 +15483,12 @@
       "name": "Phil Mafah",
       "team": "DAL",
       "position": "RB",
-      "search_rank": 573
+      "search_rank": 581
     },
     {
       "player_id": "12739",
       "name": "Tommy Akingbesote",
-      "team": "BUF",
+      "team": "",
       "position": "DT",
       "search_rank": 9999999
     },
@@ -15523,9 +15523,9 @@
     {
       "player_id": "12743",
       "name": "Junior Bergen",
-      "team": "",
+      "team": "NYJ",
       "position": "WR",
-      "search_rank": 999
+      "search_rank": 274
     },
     {
       "player_id": "12744",
@@ -15546,7 +15546,7 @@
       "name": "JP Richardson",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 542
+      "search_rank": 587
     },
     {
       "player_id": "12747",
@@ -15623,7 +15623,7 @@
       "name": "Stephen Gosnell",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 309
+      "search_rank": 315
     },
     {
       "player_id": "12757",
@@ -15756,7 +15756,7 @@
       "name": "DJ Uiagalelei",
       "team": "LAC",
       "position": "QB",
-      "search_rank": 508
+      "search_rank": 564
     },
     {
       "player_id": "12774",
@@ -15770,7 +15770,7 @@
       "name": "Max Brosmer",
       "team": "MIN",
       "position": "QB",
-      "search_rank": 459
+      "search_rank": 512
     },
     {
       "player_id": "12776",
@@ -15861,14 +15861,14 @@
       "name": "Josh Williams",
       "team": "TB",
       "position": "RB",
-      "search_rank": 576
+      "search_rank": 636
     },
     {
       "player_id": "12788",
       "name": "Will Sheppard",
       "team": "GB",
       "position": "WR",
-      "search_rank": 331
+      "search_rank": 368
     },
     {
       "player_id": "12789",
@@ -15903,7 +15903,7 @@
       "name": "Garrett Greene",
       "team": "TB",
       "position": "QB",
-      "search_rank": 614
+      "search_rank": 654
     },
     {
       "player_id": "12793",
@@ -16036,7 +16036,7 @@
       "name": "Mac Dalena",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 319
+      "search_rank": 328
     },
     {
       "player_id": "1281",
@@ -16365,7 +16365,7 @@
       "name": "Rivaldo Fairweather",
       "team": "ARI",
       "position": "TE",
-      "search_rank": 304
+      "search_rank": 309
     },
     {
       "player_id": "12852",
@@ -16435,7 +16435,7 @@
       "name": "Theo Wease",
       "team": "MIA",
       "position": "WR",
-      "search_rank": 566
+      "search_rank": 577
     },
     {
       "player_id": "12861",
@@ -16575,7 +16575,7 @@
       "name": "Chaz Chambliss",
       "team": "MIN",
       "position": "DE",
-      "search_rank": 622
+      "search_rank": 674
     },
     {
       "player_id": "1288",
@@ -16617,7 +16617,7 @@
       "name": "Quincy Skinner",
       "team": "NYJ",
       "position": "WR",
-      "search_rank": 405
+      "search_rank": 429
     },
     {
       "player_id": "12885",
@@ -16636,7 +16636,7 @@
     {
       "player_id": "12887",
       "name": "Joshua Gray",
-      "team": "",
+      "team": "MIN",
       "position": "OL",
       "search_rank": 9999999
     },
@@ -16680,7 +16680,7 @@
       "name": "Da'Quan Felton",
       "team": "NYJ",
       "position": "WR",
-      "search_rank": 286
+      "search_rank": 306
     },
     {
       "player_id": "12893",
@@ -16960,7 +16960,7 @@
       "name": "Amar Johnson",
       "team": "LAC",
       "position": "RB",
-      "search_rank": 299
+      "search_rank": 336
     },
     {
       "player_id": "12929",
@@ -17114,7 +17114,7 @@
       "name": "Austin Keys",
       "team": "ARI",
       "position": "LB",
-      "search_rank": 627
+      "search_rank": 624
     },
     {
       "player_id": "12949",
@@ -17394,7 +17394,7 @@
       "name": "CJ Dippre",
       "team": "NE",
       "position": "TE",
-      "search_rank": 401
+      "search_rank": 426
     },
     {
       "player_id": "12985",
@@ -17574,7 +17574,7 @@
     {
       "player_id": "13006",
       "name": "Jamil Muhammad",
-      "team": "",
+      "team": "CLE",
       "position": "DE",
       "search_rank": 9999999
     },
@@ -18101,14 +18101,14 @@
       "name": "Isaiah Neyor",
       "team": "GB",
       "position": "WR",
-      "search_rank": 631
+      "search_rank": 675
     },
     {
       "player_id": "13075",
       "name": "Myles Price",
       "team": "MIN",
       "position": "WR",
-      "search_rank": 303
+      "search_rank": 346
     },
     {
       "player_id": "13076",
@@ -18136,7 +18136,7 @@
       "name": "Jahdae Walker",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 591
+      "search_rank": 652
     },
     {
       "player_id": "1308",
@@ -18388,7 +18388,7 @@
       "name": "Zach Horton",
       "team": "DET",
       "position": "TE",
-      "search_rank": 571
+      "search_rank": 617
     },
     {
       "player_id": "13111",
@@ -18493,7 +18493,7 @@
       "name": "Jeremiah Webb",
       "team": "NE",
       "position": "WR",
-      "search_rank": 394
+      "search_rank": 416
     },
     {
       "player_id": "13125",
@@ -18528,7 +18528,7 @@
       "name": "Jermaine Terry",
       "team": "CLE",
       "position": "TE",
-      "search_rank": 415
+      "search_rank": 448
     },
     {
       "player_id": "1313",
@@ -18623,7 +18623,7 @@
     },
     {
       "player_id": "13141",
-      "name": "Seth Coleman",
+      "name": "Seth Coleman-Lyles",
       "team": "MIA",
       "position": "LB",
       "search_rank": 9999999
@@ -18675,7 +18675,7 @@
       "name": "Aaron Smith",
       "team": "SEA",
       "position": "LB",
-      "search_rank": 655
+      "search_rank": 684
     },
     {
       "player_id": "13149",
@@ -18696,7 +18696,7 @@
       "name": "Darius Cooper",
       "team": "PHI",
       "position": "WR",
-      "search_rank": 318
+      "search_rank": 348
     },
     {
       "player_id": "13151",
@@ -18990,7 +18990,7 @@
       "name": "Luke Floriea",
       "team": "CLE",
       "position": "WR",
-      "search_rank": 624
+      "search_rank": 682
     },
     {
       "player_id": "1319",
@@ -19067,7 +19067,7 @@
       "name": "Montorie Foster",
       "team": "SEA",
       "position": "WR",
-      "search_rank": 9999999
+      "search_rank": 382
     },
     {
       "player_id": "132",
@@ -19289,7 +19289,7 @@
     {
       "player_id": "13227",
       "name": "Mitch Van Vooren",
-      "team": "NE",
+      "team": "",
       "position": "WR",
       "search_rank": 999
     },
@@ -19578,7 +19578,7 @@
       "name": "Dohnte Meyers",
       "team": "CIN",
       "position": "WR",
-      "search_rank": 477
+      "search_rank": 520
     },
     {
       "player_id": "13265",
@@ -19599,7 +19599,7 @@
       "name": "Devin Veresuk",
       "team": "IND",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 606
     },
     {
       "player_id": "13268",
@@ -19627,7 +19627,7 @@
       "name": "CJ Daniels",
       "team": "LAR",
       "position": "WR",
-      "search_rank": 592
+      "search_rank": 597
     },
     {
       "player_id": "13271",
@@ -19641,7 +19641,7 @@
       "name": "Carson Beck",
       "team": "ARI",
       "position": "QB",
-      "search_rank": 257
+      "search_rank": 256
     },
     {
       "player_id": "13273",
@@ -19676,7 +19676,7 @@
       "name": "CJ Donaldson",
       "team": "NO",
       "position": "RB",
-      "search_rank": 382
+      "search_rank": 403
     },
     {
       "player_id": "13278",
@@ -19718,7 +19718,7 @@
       "name": "Jack Endries",
       "team": "CIN",
       "position": "TE",
-      "search_rank": 329
+      "search_rank": 369
     },
     {
       "player_id": "13283",
@@ -19767,7 +19767,7 @@
       "name": "Drew Allar",
       "team": "PIT",
       "position": "QB",
-      "search_rank": 347
+      "search_rank": 346
     },
     {
       "player_id": "1329",
@@ -19802,49 +19802,49 @@
       "name": "Ja'Kobi Lane",
       "team": "BAL",
       "position": "WR",
-      "search_rank": 165
+      "search_rank": 164
     },
     {
       "player_id": "13294",
       "name": "Makai Lemon",
       "team": "PHI",
       "position": "WR",
-      "search_rank": 85
+      "search_rank": 86
     },
     {
       "player_id": "13295",
       "name": "Behren Morton",
       "team": "NE",
       "position": "QB",
-      "search_rank": 999
+      "search_rank": 315
     },
     {
       "player_id": "13296",
       "name": "Caleb Douglas",
       "team": "MIA",
       "position": "WR",
-      "search_rank": 239
+      "search_rank": 238
     },
     {
       "player_id": "13297",
       "name": "Reggie Virgil",
       "team": "ARI",
       "position": "WR",
-      "search_rank": 451
+      "search_rank": 467
     },
     {
       "player_id": "13298",
       "name": "KC Concepcion",
       "team": "CLE",
       "position": "WR",
-      "search_rank": 114
+      "search_rank": 113
     },
     {
       "player_id": "13299",
       "name": "Nate Boerkircher",
       "team": "JAX",
       "position": "TE",
-      "search_rank": 467
+      "search_rank": 516
     },
     {
       "player_id": "133",
@@ -19879,14 +19879,14 @@
       "name": "Adam Randall",
       "team": "BAL",
       "position": "RB",
-      "search_rank": 392
+      "search_rank": 383
     },
     {
       "player_id": "13303",
       "name": "Cade Klubnik",
       "team": "NYJ",
       "position": "QB",
-      "search_rank": 362
+      "search_rank": 359
     },
     {
       "player_id": "13304",
@@ -19907,14 +19907,14 @@
       "name": "Taylen Green",
       "team": "CLE",
       "position": "QB",
-      "search_rank": 560
+      "search_rank": 563
     },
     {
       "player_id": "13307",
       "name": "Marlin Klein",
       "team": "HOU",
       "position": "TE",
-      "search_rank": 439
+      "search_rank": 471
     },
     {
       "player_id": "13308",
@@ -19977,7 +19977,7 @@
       "name": "Dean Connors",
       "team": "LAR",
       "position": "RB",
-      "search_rank": 334
+      "search_rank": 346
     },
     {
       "player_id": "13316",
@@ -20026,14 +20026,14 @@
       "name": "Dan Villari",
       "team": "LAR",
       "position": "TE",
-      "search_rank": 368
+      "search_rank": 323
     },
     {
       "player_id": "13322",
       "name": "Sam Roush",
       "team": "CHI",
       "position": "TE",
-      "search_rank": 534
+      "search_rank": 593
     },
     {
       "player_id": "13323",
@@ -20047,21 +20047,21 @@
       "name": "Matt Hibner",
       "team": "BAL",
       "position": "TE",
-      "search_rank": 518
+      "search_rank": 507
     },
     {
       "player_id": "13325",
       "name": "Jordan Hudson",
       "team": "DAL",
       "position": "WR",
-      "search_rank": 648
+      "search_rank": 696
     },
     {
       "player_id": "13326",
       "name": "DT Sheffield",
-      "team": "NYJ",
+      "team": "",
       "position": "WR",
-      "search_rank": 597
+      "search_rank": 660
     },
     {
       "player_id": "13327",
@@ -20075,14 +20075,14 @@
       "name": "Anthony Hankerson",
       "team": "SEA",
       "position": "RB",
-      "search_rank": 512
+      "search_rank": 557
     },
     {
       "player_id": "13329",
       "name": "Malik Benson",
       "team": "LV",
       "position": "WR",
-      "search_rank": 488
+      "search_rank": 480
     },
     {
       "player_id": "1333",
@@ -20152,7 +20152,7 @@
       "name": "Kevin Coleman",
       "team": "MIA",
       "position": "WR",
-      "search_rank": 488
+      "search_rank": 537
     },
     {
       "player_id": "13339",
@@ -20173,14 +20173,14 @@
       "name": "Rueben Bain",
       "team": "TB",
       "position": "DL",
-      "search_rank": 183
+      "search_rank": 182
     },
     {
       "player_id": "13341",
       "name": "Akheem Mesidor",
       "team": "LAC",
       "position": "DL",
-      "search_rank": 287
+      "search_rank": 288
     },
     {
       "player_id": "13342",
@@ -20229,7 +20229,7 @@
       "name": "J'Mari Taylor",
       "team": "JAX",
       "position": "RB",
-      "search_rank": 558
+      "search_rank": 399
     },
     {
       "player_id": "13349",
@@ -20250,7 +20250,7 @@
       "name": "Joe Fagnano",
       "team": "BAL",
       "position": "QB",
-      "search_rank": 664
+      "search_rank": 287
     },
     {
       "player_id": "13351",
@@ -20306,14 +20306,14 @@
       "name": "Anthony Lucas",
       "team": "DET",
       "position": "DL",
-      "search_rank": 593
+      "search_rank": 596
     },
     {
       "player_id": "13359",
       "name": "Malachi Lawrence",
       "team": "DAL",
       "position": "DL",
-      "search_rank": 467
+      "search_rank": 464
     },
     {
       "player_id": "1336",
@@ -20327,42 +20327,42 @@
       "name": "Emmanuel McNeil-Warren",
       "team": "CLE",
       "position": "DB",
-      "search_rank": 276
+      "search_rank": 281
     },
     {
       "player_id": "13361",
       "name": "Romello Height",
       "team": "SF",
       "position": "LB",
-      "search_rank": 598
+      "search_rank": 600
     },
     {
       "player_id": "13362",
       "name": "Lee Hunter",
       "team": "CAR",
       "position": "DL",
-      "search_rank": 517
+      "search_rank": 519
     },
     {
       "player_id": "13363",
       "name": "David Bailey",
       "team": "NYJ",
       "position": "LB",
-      "search_rank": 206
+      "search_rank": 207
     },
     {
       "player_id": "13364",
       "name": "Cashius Howell",
       "team": "CIN",
       "position": "DL",
-      "search_rank": 304
+      "search_rank": 306
     },
     {
       "player_id": "13365",
       "name": "Anthony Hill",
       "team": "TEN",
       "position": "LB",
-      "search_rank": 218
+      "search_rank": 219
     },
     {
       "player_id": "13366",
@@ -20383,14 +20383,14 @@
       "name": "Jermod McCoy",
       "team": "LV",
       "position": "DB",
-      "search_rank": 251
+      "search_rank": 246
     },
     {
       "player_id": "13369",
       "name": "Brandon Cisse",
       "team": "GB",
       "position": "DB",
-      "search_rank": 481
+      "search_rank": 491
     },
     {
       "player_id": "1337",
@@ -20404,35 +20404,35 @@
       "name": "Chris Johnson",
       "team": "MIA",
       "position": "DB",
-      "search_rank": 506
+      "search_rank": 505
     },
     {
       "player_id": "13371",
       "name": "Dillon Thieneman",
       "team": "CHI",
       "position": "DB",
-      "search_rank": 197
+      "search_rank": 196
     },
     {
       "player_id": "13372",
       "name": "R Mason Thomas",
       "team": "KC",
       "position": "DL",
-      "search_rank": 507
+      "search_rank": 508
     },
     {
       "player_id": "13373",
       "name": "Caden Curry",
       "team": "IND",
       "position": "DL",
-      "search_rank": 519
+      "search_rank": 518
     },
     {
       "player_id": "13374",
       "name": "Kayden McDonald",
       "team": "HOU",
       "position": "DL",
-      "search_rank": 490
+      "search_rank": 492
     },
     {
       "player_id": "13375",
@@ -20453,7 +20453,7 @@
       "name": "Arvell Reese",
       "team": "NYG",
       "position": "LB",
-      "search_rank": 157
+      "search_rank": 158
     },
     {
       "player_id": "13378",
@@ -20467,7 +20467,7 @@
       "name": "Josiah Trotter",
       "team": "TB",
       "position": "LB",
-      "search_rank": 270
+      "search_rank": 273
     },
     {
       "player_id": "1338",
@@ -20481,21 +20481,21 @@
       "name": "Brenen Thompson",
       "team": "LAC",
       "position": "WR",
-      "search_rank": 453
+      "search_rank": 448
     },
     {
       "player_id": "13381",
       "name": "Jaishawn Barham",
       "team": "DAL",
       "position": "LB",
-      "search_rank": 582
+      "search_rank": 584
     },
     {
       "player_id": "13382",
       "name": "Keionte Scott",
       "team": "TB",
       "position": "DB",
-      "search_rank": 594
+      "search_rank": 597
     },
     {
       "player_id": "13383",
@@ -20509,28 +20509,28 @@
       "name": "AJ Haulcy",
       "team": "IND",
       "position": "DB",
-      "search_rank": 251
+      "search_rank": 255
     },
     {
       "player_id": "13385",
       "name": "Mansoor Delane",
       "team": "KC",
       "position": "DB",
-      "search_rank": 302
+      "search_rank": 303
     },
     {
       "player_id": "13386",
       "name": "D'Angelo Ponds",
       "team": "NYJ",
       "position": "DB",
-      "search_rank": 575
+      "search_rank": 587
     },
     {
       "player_id": "13387",
       "name": "Christen Miller",
       "team": "NO",
       "position": "DL",
-      "search_rank": 420
+      "search_rank": 422
     },
     {
       "player_id": "13388",
@@ -20544,7 +20544,7 @@
       "name": "Avieon Terrell",
       "team": "ATL",
       "position": "DB",
-      "search_rank": 307
+      "search_rank": 306
     },
     {
       "player_id": "1339",
@@ -20565,21 +20565,21 @@
       "name": "Jake Golday",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 455
+      "search_rank": 457
     },
     {
       "player_id": "13392",
       "name": "Jeff Caldwell",
       "team": "KC",
       "position": "WR",
-      "search_rank": 498
+      "search_rank": 432
     },
     {
       "player_id": "13393",
       "name": "Brent Austin",
       "team": "DEN",
       "position": "DB",
-      "search_rank": 599
+      "search_rank": 601
     },
     {
       "player_id": "13394",
@@ -20593,7 +20593,7 @@
       "name": "Keldric Faulk",
       "team": "TEN",
       "position": "DL",
-      "search_rank": 259
+      "search_rank": 260
     },
     {
       "player_id": "13396",
@@ -20607,21 +20607,21 @@
       "name": "Keith Abney",
       "team": "DET",
       "position": "DB",
-      "search_rank": 488
+      "search_rank": 494
     },
     {
       "player_id": "13398",
       "name": "Treydan Stukes",
       "team": "LV",
       "position": "DB",
-      "search_rank": 518
+      "search_rank": 514
     },
     {
       "player_id": "13399",
       "name": "Genesis Smith",
       "team": "LAC",
       "position": "DB",
-      "search_rank": 515
+      "search_rank": 517
     },
     {
       "player_id": "134",
@@ -20642,7 +20642,7 @@
       "name": "Justin Joly",
       "team": "DEN",
       "position": "TE",
-      "search_rank": 437
+      "search_rank": 438
     },
     {
       "player_id": "13401",
@@ -20656,7 +20656,7 @@
       "name": "Skyler Bell",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 387
+      "search_rank": 386
     },
     {
       "player_id": "13403",
@@ -20670,7 +20670,7 @@
       "name": "Garrett Nussmeier",
       "team": "KC",
       "position": "QB",
-      "search_rank": 366
+      "search_rank": 404
     },
     {
       "player_id": "13405",
@@ -20684,7 +20684,7 @@
       "name": "Kamari Ramsey",
       "team": "HOU",
       "position": "DB",
-      "search_rank": 303
+      "search_rank": 304
     },
     {
       "player_id": "13407",
@@ -20726,7 +20726,7 @@
       "name": "Zavion Thomas",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 461
+      "search_rank": 460
     },
     {
       "player_id": "13412",
@@ -20740,21 +20740,21 @@
       "name": "Cyrus Allen",
       "team": "KC",
       "position": "WR",
-      "search_rank": 199
+      "search_rank": 187
     },
     {
       "player_id": "13414",
       "name": "Kaelon Black",
       "team": "SF",
       "position": "RB",
-      "search_rank": 210
+      "search_rank": 208
     },
     {
       "player_id": "13415",
       "name": "Haynes King",
       "team": "CAR",
       "position": "QB",
-      "search_rank": 598
+      "search_rank": 661
     },
     {
       "player_id": "13416",
@@ -20768,21 +20768,21 @@
       "name": "De'Zhaun Stribling",
       "team": "SF",
       "position": "WR",
-      "search_rank": 143
+      "search_rank": 142
     },
     {
       "player_id": "13418",
       "name": "Robert Henry",
       "team": "WAS",
       "position": "RB",
-      "search_rank": 302
+      "search_rank": 324
     },
     {
       "player_id": "13419",
       "name": "Jaydn Ott",
       "team": "KC",
       "position": "RB",
-      "search_rank": 540
+      "search_rank": 585
     },
     {
       "player_id": "1342",
@@ -20796,14 +20796,14 @@
       "name": "Bryce Lance",
       "team": "NO",
       "position": "WR",
-      "search_rank": 455
+      "search_rank": 449
     },
     {
       "player_id": "13421",
       "name": "Eli Raridon",
       "team": "NE",
       "position": "TE",
-      "search_rank": 340
+      "search_rank": 341
     },
     {
       "player_id": "13422",
@@ -20817,21 +20817,21 @@
       "name": "Eli Heidenreich",
       "team": "PIT",
       "position": "RB",
-      "search_rank": 557
+      "search_rank": 569
     },
     {
       "player_id": "13424",
       "name": "Seth McGowan",
       "team": "IND",
       "position": "RB",
-      "search_rank": 474
+      "search_rank": 475
     },
     {
       "player_id": "13425",
       "name": "Jalon Daniels",
       "team": "TB",
       "position": "QB",
-      "search_rank": 308
+      "search_rank": 329
     },
     {
       "player_id": "13426",
@@ -20852,14 +20852,14 @@
       "name": "Joey Aguilar",
       "team": "JAX",
       "position": "QB",
-      "search_rank": 9999999
+      "search_rank": 437
     },
     {
       "player_id": "13429",
       "name": "Seydou Traore",
       "team": "MIA",
       "position": "TE",
-      "search_rank": 280
+      "search_rank": 287
     },
     {
       "player_id": "1343",
@@ -20901,14 +20901,14 @@
       "name": "Will Kacmarek",
       "team": "MIA",
       "position": "TE",
-      "search_rank": 418
+      "search_rank": 445
     },
     {
       "player_id": "13435",
       "name": "Joe Royer",
       "team": "CLE",
       "position": "TE",
-      "search_rank": 683
+      "search_rank": 418
     },
     {
       "player_id": "13436",
@@ -20922,7 +20922,7 @@
       "name": "Noah Whittington",
       "team": "HOU",
       "position": "RB",
-      "search_rank": 432
+      "search_rank": 469
     },
     {
       "player_id": "13438",
@@ -21048,7 +21048,7 @@
       "name": "Jacob Rodriguez",
       "team": "MIA",
       "position": "LB",
-      "search_rank": 334
+      "search_rank": 332
     },
     {
       "player_id": "13454",
@@ -21083,7 +21083,7 @@
       "name": "Derrick Moore",
       "team": "DET",
       "position": "DE",
-      "search_rank": 560
+      "search_rank": 566
     },
     {
       "player_id": "13459",
@@ -21230,7 +21230,7 @@
       "name": "Colbie Young",
       "team": "CIN",
       "position": "WR",
-      "search_rank": 555
+      "search_rank": 557
     },
     {
       "player_id": "13478",
@@ -21286,7 +21286,7 @@
       "name": "Trey Moore",
       "team": "MIA",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 637
     },
     {
       "player_id": "13485",
@@ -21314,7 +21314,7 @@
       "name": "Kaleb Elarms-Orr",
       "team": "BUF",
       "position": "LB",
-      "search_rank": 475
+      "search_rank": 471
     },
     {
       "player_id": "13489",
@@ -21342,7 +21342,7 @@
       "name": "Kaden Wetjen",
       "team": "PIT",
       "position": "WR",
-      "search_rank": 467
+      "search_rank": 499
     },
     {
       "player_id": "13492",
@@ -21538,7 +21538,7 @@
       "name": "Max Bredeson",
       "team": "MIN",
       "position": "TE",
-      "search_rank": 686
+      "search_rank": 684
     },
     {
       "player_id": "13517",
@@ -21657,7 +21657,7 @@
       "name": "Jack Kelly",
       "team": "NYG",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 632
     },
     {
       "player_id": "13532",
@@ -21741,7 +21741,7 @@
       "name": "Namdi Obiazor",
       "team": "NE",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 628
     },
     {
       "player_id": "13543",
@@ -21811,7 +21811,7 @@
       "name": "Karson Sharar",
       "team": "ARI",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 640
     },
     {
       "player_id": "13552",
@@ -21853,7 +21853,7 @@
       "name": "Athan Kaliakmanis",
       "team": "WAS",
       "position": "QB",
-      "search_rank": 294
+      "search_rank": 299
     },
     {
       "player_id": "13558",
@@ -22077,7 +22077,7 @@
       "name": "Jackson Kuwatch",
       "team": "CAR",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 649
     },
     {
       "player_id": "13587",
@@ -22161,12 +22161,12 @@
       "name": "Matthew Caldwell",
       "team": "LAR",
       "position": "QB",
-      "search_rank": 322
+      "search_rank": 331
     },
     {
       "player_id": "13598",
       "name": "Mason Reiger",
-      "team": "",
+      "team": "MIA",
       "position": "DE",
       "search_rank": 9999999
     },
@@ -22196,7 +22196,7 @@
       "name": "Tyren Montgomery",
       "team": "TEN",
       "position": "WR",
-      "search_rank": 528
+      "search_rank": 589
     },
     {
       "player_id": "13601",
@@ -22210,7 +22210,7 @@
       "name": "Jack Strand",
       "team": "ATL",
       "position": "QB",
-      "search_rank": 519
+      "search_rank": 578
     },
     {
       "player_id": "13603",
@@ -22224,7 +22224,7 @@
       "name": "Sincere Brown",
       "team": "LAC",
       "position": "WR",
-      "search_rank": 407
+      "search_rank": 419
     },
     {
       "player_id": "13605",
@@ -22287,7 +22287,7 @@
       "name": "Scooby Williams",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 656
     },
     {
       "player_id": "13613",
@@ -22301,7 +22301,7 @@
       "name": "Cam'Ron Stewart",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 655
     },
     {
       "player_id": "13615",
@@ -22390,9 +22390,9 @@
     {
       "player_id": "13626",
       "name": "Arden Walker",
-      "team": "",
+      "team": "GB",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 654
     },
     {
       "player_id": "13627",
@@ -22539,7 +22539,7 @@
       "name": "Michael Wortham",
       "team": "JAX",
       "position": "WR",
-      "search_rank": 291
+      "search_rank": 261
     },
     {
       "player_id": "13646",
@@ -22609,7 +22609,7 @@
       "name": "Devon Marshall",
       "team": "JAX",
       "position": "CB",
-      "search_rank": 615
+      "search_rank": 663
     },
     {
       "player_id": "13655",
@@ -22679,7 +22679,7 @@
       "name": "Wesley Grimes",
       "team": "SF",
       "position": "WR",
-      "search_rank": 414
+      "search_rank": 458
     },
     {
       "player_id": "13664",
@@ -22735,7 +22735,7 @@
       "name": "Harrison Wallace",
       "team": "ARI",
       "position": "WR",
-      "search_rank": 9999999
+      "search_rank": 312
     },
     {
       "player_id": "13671",
@@ -23064,7 +23064,7 @@
       "name": "Hayden Large",
       "team": "CHI",
       "position": "TE",
-      "search_rank": 355
+      "search_rank": 373
     },
     {
       "player_id": "13713",
@@ -23106,7 +23106,7 @@
       "name": "Eric Gentry",
       "team": "CIN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 653
     },
     {
       "player_id": "13719",
@@ -23134,7 +23134,7 @@
       "name": "Jack Dingle",
       "team": "CIN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 651
     },
     {
       "player_id": "13722",
@@ -23160,7 +23160,7 @@
     {
       "player_id": "13725",
       "name": "Dominic Richardson",
-      "team": "TEN",
+      "team": "",
       "position": "RB",
       "search_rank": 9999999
     },
@@ -23169,7 +23169,7 @@
       "name": "Camden Brown",
       "team": "DAL",
       "position": "WR",
-      "search_rank": 344
+      "search_rank": 353
     },
     {
       "player_id": "13727",
@@ -23197,7 +23197,7 @@
       "name": "Geno Smith",
       "team": "NYJ",
       "position": "QB",
-      "search_rank": 191
+      "search_rank": 188
     },
     {
       "player_id": "13730",
@@ -23239,14 +23239,14 @@
       "name": "Dominic DeLuca",
       "team": "BAL",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 650
     },
     {
       "player_id": "13736",
       "name": "Reid Williford",
       "team": "BAL",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 646
     },
     {
       "player_id": "13737",
@@ -23267,7 +23267,7 @@
       "name": "Erick Hunter",
       "team": "DET",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 648
     },
     {
       "player_id": "1374",
@@ -23386,7 +23386,7 @@
       "name": "Langston Patterson",
       "team": "DAL",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 645
     },
     {
       "player_id": "13755",
@@ -23456,7 +23456,7 @@
       "name": "Javin Wright",
       "team": "TB",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 643
     },
     {
       "player_id": "13764",
@@ -23512,7 +23512,7 @@
       "name": "J. Michael Sturdivant",
       "team": "GB",
       "position": "WR",
-      "search_rank": 475
+      "search_rank": 404
     },
     {
       "player_id": "13771",
@@ -23554,7 +23554,7 @@
       "name": "Hank Beatty",
       "team": "TEN",
       "position": "WR",
-      "search_rank": 506
+      "search_rank": 548
     },
     {
       "player_id": "13777",
@@ -23624,7 +23624,7 @@
       "name": "West Weeks",
       "team": "IND",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 642
     },
     {
       "player_id": "13786",
@@ -23638,7 +23638,7 @@
       "name": "Tahj Chambers",
       "team": "IND",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 627
     },
     {
       "player_id": "13788",
@@ -23659,7 +23659,7 @@
       "name": "Kyle Juszczyk",
       "team": "SF",
       "position": "FB",
-      "search_rank": 410
+      "search_rank": 450
     },
     {
       "player_id": "13790",
@@ -23673,7 +23673,7 @@
       "name": "Wesley Bissainthe",
       "team": "KC",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 639
     },
     {
       "player_id": "13792",
@@ -23750,7 +23750,7 @@
       "name": "Xavian Sorey",
       "team": "LV",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 635
     },
     {
       "player_id": "13801",
@@ -23778,14 +23778,14 @@
       "name": "Kansei Matsuzawa",
       "team": "LV",
       "position": "K",
-      "search_rank": 282
+      "search_rank": 319
     },
     {
       "player_id": "13805",
       "name": "E.J. Williams",
       "team": "LV",
       "position": "WR",
-      "search_rank": 331
+      "search_rank": 342
     },
     {
       "player_id": "13806",
@@ -23813,7 +23813,7 @@
       "name": "Nikhai Hill-Green",
       "team": "LAR",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 636
     },
     {
       "player_id": "1381",
@@ -23848,7 +23848,7 @@
       "name": "Laith Marjan",
       "team": "PIT",
       "position": "K",
-      "search_rank": 499
+      "search_rank": 540
     },
     {
       "player_id": "13814",
@@ -24002,7 +24002,7 @@
       "name": "Dominic Zvada",
       "team": "NYG",
       "position": "K",
-      "search_rank": 313
+      "search_rank": 330
     },
     {
       "player_id": "13834",
@@ -24149,7 +24149,7 @@
       "name": "Dontae McMillan",
       "team": "BAL",
       "position": "RB",
-      "search_rank": 470
+      "search_rank": 474
     },
     {
       "player_id": "13853",
@@ -24177,7 +24177,7 @@
       "name": "Darryl Peterson",
       "team": "LAR",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 629
     },
     {
       "player_id": "13857",
@@ -24226,7 +24226,7 @@
       "name": "Treyvhon Saunders",
       "team": "HOU",
       "position": "WR",
-      "search_rank": 459
+      "search_rank": 501
     },
     {
       "player_id": "13863",
@@ -24247,7 +24247,7 @@
       "name": "Dasan McCullough",
       "team": "DEN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 609
     },
     {
       "player_id": "13866",
@@ -24322,9 +24322,9 @@
     {
       "player_id": "13875",
       "name": "Sean Brown",
-      "team": "",
+      "team": "TEN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 633
     },
     {
       "player_id": "13876",
@@ -24464,7 +24464,7 @@
       "name": "Mani Powell",
       "team": "TEN",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 608
     },
     {
       "player_id": "13894",
@@ -24532,7 +24532,7 @@
     {
       "player_id": "13901",
       "name": "Anthony Dunn",
-      "team": "KC",
+      "team": "",
       "position": "DE",
       "search_rank": 9999999
     },
@@ -24590,7 +24590,7 @@
       "name": "Elijah Tau-Tolliver",
       "team": "BAL",
       "position": "RB",
-      "search_rank": 276
+      "search_rank": 346
     },
     {
       "player_id": "1391",
@@ -24639,14 +24639,14 @@
       "name": "Khalil Jacobs",
       "team": "NE",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 631
     },
     {
       "player_id": "13916",
       "name": "Xavier Loyd",
       "team": "KC",
       "position": "WR",
-      "search_rank": 605
+      "search_rank": 643
     },
     {
       "player_id": "13917",
@@ -24721,7 +24721,7 @@
     {
       "player_id": "13926",
       "name": "Ben Barten",
-      "team": "",
+      "team": "NYG",
       "position": "DL",
       "search_rank": 9999999
     },
@@ -24763,7 +24763,7 @@
     {
       "player_id": "13931",
       "name": "E.J. Horton",
-      "team": "IND",
+      "team": "",
       "position": "WR",
       "search_rank": 9999999
     },
@@ -25003,7 +25003,7 @@
       "name": "Cameron Dorner",
       "team": "NE",
       "position": "WR",
-      "search_rank": 391
+      "search_rank": 373
     },
     {
       "player_id": "13963",
@@ -25038,14 +25038,14 @@
       "name": "Jimmy Kibble",
       "team": "NE",
       "position": "WR",
-      "search_rank": 629
+      "search_rank": 661
     },
     {
       "player_id": "13968",
       "name": "Drew Stevens",
       "team": "WAS",
       "position": "K",
-      "search_rank": 293
+      "search_rank": 317
     },
     {
       "player_id": "13969",
@@ -25066,14 +25066,14 @@
       "name": "Riley Wilson",
       "team": "NE",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 619
     },
     {
       "player_id": "13971",
       "name": "Caden Fordham",
       "team": "TB",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 626
     },
     {
       "player_id": "13972",
@@ -25129,7 +25129,7 @@
       "name": "Isaiah Smith",
       "team": "CAR",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 623
     },
     {
       "player_id": "1398",
@@ -25150,7 +25150,7 @@
       "name": "Kolbe Katsis",
       "team": "DEN",
       "position": "WR",
-      "search_rank": 544
+      "search_rank": 589
     },
     {
       "player_id": "13982",
@@ -25470,9 +25470,9 @@
     {
       "player_id": "14021",
       "name": "Kadarius Calloway",
-      "team": "",
+      "team": "TB",
       "position": "RB",
-      "search_rank": 394
+      "search_rank": 463
     },
     {
       "player_id": "14022",
@@ -25486,7 +25486,7 @@
       "name": "Jaden Keller",
       "team": "NYJ",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 620
     },
     {
       "player_id": "14024",
@@ -25507,7 +25507,7 @@
       "name": "DJ Herman",
       "team": "MIA",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 617
     },
     {
       "player_id": "14027",
@@ -25521,14 +25521,14 @@
       "name": "Daveren Rayner",
       "team": "ATL",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 616
     },
     {
       "player_id": "14029",
       "name": "Johnny Pascuzzi",
       "team": "LAC",
       "position": "TE",
-      "search_rank": 484
+      "search_rank": 530
     },
     {
       "player_id": "1403",
@@ -25542,7 +25542,7 @@
       "name": "Wayne Matthews",
       "team": "CHI",
       "position": "LB",
-      "search_rank": 9999999
+      "search_rank": 615
     },
     {
       "player_id": "14031",
@@ -25570,7 +25570,7 @@
       "name": "Brock Rechsteiner",
       "team": "NO",
       "position": "WR",
-      "search_rank": 670
+      "search_rank": 639
     },
     {
       "player_id": "14035",
@@ -25626,7 +25626,7 @@
       "name": "Anderson Castle",
       "team": "IND",
       "position": "RB",
-      "search_rank": 441
+      "search_rank": 482
     },
     {
       "player_id": "14042",
@@ -25780,7 +25780,7 @@
       "name": "Jeremiah Franklin",
       "team": "MIA",
       "position": "TE",
-      "search_rank": 435
+      "search_rank": 474
     },
     {
       "player_id": "14062",
@@ -25792,7 +25792,7 @@
     {
       "player_id": "14063",
       "name": "Liam Clifford",
-      "team": "",
+      "team": "LAC",
       "position": "WR",
       "search_rank": 9999999
     },
@@ -25801,7 +25801,7 @@
       "name": "Roydell Williams",
       "team": "IND",
       "position": "RB",
-      "search_rank": 508
+      "search_rank": 565
     },
     {
       "player_id": "14065",
@@ -25822,7 +25822,7 @@
       "name": "Jeff Weimer",
       "team": "KC",
       "position": "WR",
-      "search_rank": 424
+      "search_rank": 475
     },
     {
       "player_id": "14068",
@@ -25927,7 +25927,7 @@
       "name": "Barika Kpeenu",
       "team": "TB",
       "position": "RB",
-      "search_rank": 348
+      "search_rank": 363
     },
     {
       "player_id": "14081",
@@ -28489,7 +28489,7 @@
       "name": "Case Keenum",
       "team": "CHI",
       "position": "QB",
-      "search_rank": 516
+      "search_rank": 525
     },
     {
       "player_id": "1738",
@@ -29749,7 +29749,7 @@
       "name": "Joe Flacco",
       "team": "CIN",
       "position": "QB",
-      "search_rank": 478
+      "search_rank": 482
     },
     {
       "player_id": "190",
@@ -30820,7 +30820,7 @@
       "name": "Khalil Mack",
       "team": "LAC",
       "position": "LB",
-      "search_rank": 573
+      "search_rank": 579
     },
     {
       "player_id": "2037",
@@ -31142,7 +31142,7 @@
       "name": "Odell Beckham",
       "team": "NYG",
       "position": "WR",
-      "search_rank": 461
+      "search_rank": 505
     },
     {
       "player_id": "2079",
@@ -32220,7 +32220,7 @@
       "name": "Mike Evans",
       "team": "SF",
       "position": "WR",
-      "search_rank": 60
+      "search_rank": 59
     },
     {
       "player_id": "2217",
@@ -32920,14 +32920,14 @@
       "name": "Jameis Winston",
       "team": "NYG",
       "position": "QB",
-      "search_rank": 434
+      "search_rank": 466
     },
     {
       "player_id": "2307",
       "name": "Marcus Mariota",
       "team": "WAS",
       "position": "QB",
-      "search_rank": 340
+      "search_rank": 376
     },
     {
       "player_id": "2308",
@@ -32962,7 +32962,7 @@
       "name": "Leonard Williams",
       "team": "SEA",
       "position": "DE",
-      "search_rank": 446
+      "search_rank": 448
     },
     {
       "player_id": "2312",
@@ -33326,7 +33326,7 @@
       "name": "Ameer Abdullah",
       "team": "JAX",
       "position": "RB",
-      "search_rank": 404
+      "search_rank": 444
     },
     {
       "player_id": "236",
@@ -34026,7 +34026,7 @@
       "name": "Stefon Diggs",
       "team": "WAS",
       "position": "WR",
-      "search_rank": 116
+      "search_rank": 115
     },
     {
       "player_id": "245",
@@ -34467,7 +34467,7 @@
       "name": "Darren Waller",
       "team": "CAR",
       "position": "TE",
-      "search_rank": 424
+      "search_rank": 425
     },
     {
       "player_id": "2506",
@@ -35335,7 +35335,7 @@
       "name": "Alex Singleton",
       "team": "DEN",
       "position": "LB",
-      "search_rank": 262
+      "search_rank": 260
     },
     {
       "player_id": "2618",
@@ -36343,7 +36343,7 @@
       "name": "Jason Myers",
       "team": "SEA",
       "position": "K",
-      "search_rank": 127
+      "search_rank": 125
     },
     {
       "player_id": "2748",
@@ -38688,7 +38688,7 @@
       "name": "Chris Manhertz",
       "team": "NYG",
       "position": "TE",
-      "search_rank": 583
+      "search_rank": 625
     },
     {
       "player_id": "3049",
@@ -39514,7 +39514,7 @@
       "name": "Laquon Treadwell",
       "team": "IND",
       "position": "WR",
-      "search_rank": 367
+      "search_rank": 390
     },
     {
       "player_id": "3156",
@@ -39577,7 +39577,7 @@
       "name": "Jared Goff",
       "team": "DET",
       "position": "QB",
-      "search_rank": 64
+      "search_rank": 65
     },
     {
       "player_id": "3164",
@@ -39647,7 +39647,7 @@
       "name": "DeForest Buckner",
       "team": "IND",
       "position": "DT",
-      "search_rank": 472
+      "search_rank": 478
     },
     {
       "player_id": "3173",
@@ -39773,7 +39773,7 @@
       "name": "Eli Apple",
       "team": "SF",
       "position": "CB",
-      "search_rank": 632
+      "search_rank": 658
     },
     {
       "player_id": "319",
@@ -40123,7 +40123,7 @@
       "name": "Kevin Byard",
       "team": "NE",
       "position": "DB",
-      "search_rank": 271
+      "search_rank": 270
     },
     {
       "player_id": "3234",
@@ -40144,7 +40144,7 @@
       "name": "Maliek Collins",
       "team": "CLE",
       "position": "DT",
-      "search_rank": 648
+      "search_rank": 668
     },
     {
       "player_id": "3237",
@@ -40305,7 +40305,7 @@
       "name": "Jacoby Brissett",
       "team": "ARI",
       "position": "QB",
-      "search_rank": 186
+      "search_rank": 184
     },
     {
       "player_id": "3258",
@@ -40417,7 +40417,7 @@
       "name": "Tyler Higbee",
       "team": "LAR",
       "position": "TE",
-      "search_rank": 546
+      "search_rank": 535
     },
     {
       "player_id": "3272",
@@ -41082,7 +41082,7 @@
       "name": "Brandon Allen",
       "team": "NYG",
       "position": "QB",
-      "search_rank": 311
+      "search_rank": 335
     },
     {
       "player_id": "3358",
@@ -42643,7 +42643,7 @@
       "name": "Chris Jones",
       "team": "KC",
       "position": "DT",
-      "search_rank": 478
+      "search_rank": 485
     },
     {
       "player_id": "3559",
@@ -43238,7 +43238,7 @@
       "name": "Kalif Raymond",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 537
+      "search_rank": 546
     },
     {
       "player_id": "3635",
@@ -45870,7 +45870,7 @@
       "name": "Myles Garrett",
       "team": "LAR",
       "position": "DE",
-      "search_rank": 83
+      "search_rank": 84
     },
     {
       "player_id": "3974",
@@ -45891,7 +45891,7 @@
       "name": "Mitchell Trubisky",
       "team": "TEN",
       "position": "QB",
-      "search_rank": 336
+      "search_rank": 373
     },
     {
       "player_id": "3977",
@@ -46220,7 +46220,7 @@
       "name": "Deshaun Watson",
       "team": "CLE",
       "position": "QB",
-      "search_rank": 331
+      "search_rank": 330
     },
     {
       "player_id": "4018",
@@ -46400,7 +46400,7 @@
     {
       "player_id": "4040",
       "name": "JuJu Smith-Schuster",
-      "team": "NYG",
+      "team": "",
       "position": "WR",
       "search_rank": 398
     },
@@ -46507,7 +46507,7 @@
       "name": "Mo Alie-Cox",
       "team": "IND",
       "position": "TE",
-      "search_rank": 9999999
+      "search_rank": 457
     },
     {
       "player_id": "4055",
@@ -46598,7 +46598,7 @@
       "name": "Evan Engram",
       "team": "DEN",
       "position": "TE",
-      "search_rank": 453
+      "search_rank": 454
     },
     {
       "player_id": "4067",
@@ -46717,7 +46717,7 @@
       "name": "Budda Baker",
       "team": "ARI",
       "position": "DB",
-      "search_rank": 210
+      "search_rank": 211
     },
     {
       "player_id": "4082",
@@ -47004,7 +47004,7 @@
       "name": "Alex Anzalone",
       "team": "TB",
       "position": "LB",
-      "search_rank": 353
+      "search_rank": 356
     },
     {
       "player_id": "4119",
@@ -47137,7 +47137,7 @@
       "name": "Trey Hendrickson",
       "team": "BAL",
       "position": "DE",
-      "search_rank": 199
+      "search_rank": 197
     },
     {
       "player_id": "4136",
@@ -47459,7 +47459,7 @@
       "name": "Mack Hollins",
       "team": "NE",
       "position": "WR",
-      "search_rank": 620
+      "search_rank": 617
     },
     {
       "player_id": "4178",
@@ -47473,7 +47473,7 @@
       "name": "Joshua Dobbs",
       "team": "DET",
       "position": "QB",
-      "search_rank": 647
+      "search_rank": 677
     },
     {
       "player_id": "418",
@@ -47718,7 +47718,7 @@
       "name": "Matthew Stafford",
       "team": "LAR",
       "position": "QB",
-      "search_rank": 78
+      "search_rank": 77
     },
     {
       "player_id": "4210",
@@ -47774,7 +47774,7 @@
       "name": "George Kittle",
       "team": "SF",
       "position": "TE",
-      "search_rank": 91
+      "search_rank": 90
     },
     {
       "player_id": "4218",
@@ -47907,7 +47907,7 @@
       "name": "Noah Brown",
       "team": "LV",
       "position": "WR",
-      "search_rank": 511
+      "search_rank": 555
     },
     {
       "player_id": "4235",
@@ -49300,7 +49300,7 @@
       "name": "Eric Wilson",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 430
+      "search_rank": 350
     },
     {
       "player_id": "4414",
@@ -49615,7 +49615,7 @@
       "name": "Kendrick Bourne",
       "team": "ARI",
       "position": "WR",
-      "search_rank": 618
+      "search_rank": 602
     },
     {
       "player_id": "4455",
@@ -49692,7 +49692,7 @@
       "name": "Nick Mullens",
       "team": "JAX",
       "position": "QB",
-      "search_rank": 999
+      "search_rank": 428
     },
     {
       "player_id": "4465",
@@ -50546,7 +50546,7 @@
       "name": "Cooper Rush",
       "team": "ATL",
       "position": "QB",
-      "search_rank": 468
+      "search_rank": 510
     },
     {
       "player_id": "4575",
@@ -52926,7 +52926,7 @@
       "name": "Lamar Jackson",
       "team": "BAL",
       "position": "QB",
-      "search_rank": 11
+      "search_rank": 10
     },
     {
       "player_id": "4882",
@@ -53563,7 +53563,7 @@
       "name": "Minkah Fitzpatrick",
       "team": "NYJ",
       "position": "DB",
-      "search_rank": 488
+      "search_rank": 489
     },
     {
       "player_id": "4964",
@@ -53591,14 +53591,14 @@
       "name": "Bradley Chubb",
       "team": "BUF",
       "position": "LB",
-      "search_rank": 394
+      "search_rank": 396
     },
     {
       "player_id": "4968",
       "name": "Tremaine Edmunds",
       "team": "NYG",
       "position": "LB",
-      "search_rank": 266
+      "search_rank": 267
     },
     {
       "player_id": "4969",
@@ -53717,14 +53717,14 @@
       "name": "DJ Moore",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 55
+      "search_rank": 56
     },
     {
       "player_id": "4984",
       "name": "Josh Allen",
       "team": "BUF",
       "position": "QB",
-      "search_rank": 4
+      "search_rank": 3
     },
     {
       "player_id": "4985",
@@ -53990,7 +53990,7 @@
       "name": "Jessie Bates",
       "team": "ATL",
       "position": "DB",
-      "search_rank": 288
+      "search_rank": 291
     },
     {
       "player_id": "5018",
@@ -54095,7 +54095,7 @@
       "name": "Harold Landry",
       "team": "NE",
       "position": "LB",
-      "search_rank": 369
+      "search_rank": 377
     },
     {
       "player_id": "5031",
@@ -54179,7 +54179,7 @@
       "name": "Fred Warner",
       "team": "SF",
       "position": "LB",
-      "search_rank": 123
+      "search_rank": 124
     },
     {
       "player_id": "5042",
@@ -54599,7 +54599,7 @@
       "name": "Ray-Ray McCloud",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 528
+      "search_rank": 590
     },
     {
       "player_id": "5097",
@@ -54739,7 +54739,7 @@
       "name": "Cedrick Wilson",
       "team": "DET",
       "position": "WR",
-      "search_rank": 524
+      "search_rank": 568
     },
     {
       "player_id": "5114",
@@ -54781,7 +54781,7 @@
       "name": "Jason Sanders",
       "team": "NYJ",
       "position": "K",
-      "search_rank": 565
+      "search_rank": 628
     },
     {
       "player_id": "512",
@@ -54802,7 +54802,7 @@
       "name": "Braxton Berrios",
       "team": "NYG",
       "position": "WR",
-      "search_rank": 535
+      "search_rank": 595
     },
     {
       "player_id": "5122",
@@ -54844,7 +54844,7 @@
       "name": "Kyle Allen",
       "team": "BUF",
       "position": "QB",
-      "search_rank": 624
+      "search_rank": 666
     },
     {
       "player_id": "5128",
@@ -54893,7 +54893,7 @@
       "name": "Tyler Conklin",
       "team": "DET",
       "position": "TE",
-      "search_rank": 520
+      "search_rank": 580
     },
     {
       "player_id": "5134",
@@ -55054,7 +55054,7 @@
       "name": "Trent Sherfield",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 627
+      "search_rank": 670
     },
     {
       "player_id": "5155",
@@ -55320,7 +55320,7 @@
       "name": "Eddy Pineiro",
       "team": "SF",
       "position": "K",
-      "search_rank": 169
+      "search_rank": 170
     },
     {
       "player_id": "519",
@@ -56426,7 +56426,7 @@
       "name": "Dorance Armstrong",
       "team": "WAS",
       "position": "DE",
-      "search_rank": 469
+      "search_rank": 476
     },
     {
       "player_id": "5331",
@@ -56440,7 +56440,7 @@
       "name": "Foyesade Oluokun",
       "team": "JAX",
       "position": "LB",
-      "search_rank": 155
+      "search_rank": 154
     },
     {
       "player_id": "5333",
@@ -56545,7 +56545,7 @@
       "name": "Zaire Franklin",
       "team": "GB",
       "position": "LB",
-      "search_rank": 164
+      "search_rank": 179
     },
     {
       "player_id": "5347",
@@ -58365,7 +58365,7 @@
       "name": "Frankie Luvu",
       "team": "WAS",
       "position": "LB",
-      "search_rank": 384
+      "search_rank": 389
     },
     {
       "player_id": "5581",
@@ -60367,7 +60367,7 @@
       "name": "Rashan Gary",
       "team": "DAL",
       "position": "LB",
-      "search_rank": 283
+      "search_rank": 286
     },
     {
       "player_id": "584",
@@ -60381,14 +60381,14 @@
       "name": "Josh Hines-Allen",
       "team": "JAX",
       "position": "DE",
-      "search_rank": 184
+      "search_rank": 187
     },
     {
       "player_id": "5841",
       "name": "Ed Oliver",
       "team": "BUF",
       "position": "DT",
-      "search_rank": 508
+      "search_rank": 511
     },
     {
       "player_id": "5842",
@@ -60402,7 +60402,7 @@
       "name": "Devin Bush",
       "team": "CHI",
       "position": "LB",
-      "search_rank": 328
+      "search_rank": 324
     },
     {
       "player_id": "5844",
@@ -60430,21 +60430,21 @@
       "name": "Dexter Lawrence",
       "team": "CIN",
       "position": "DT",
-      "search_rank": 397
+      "search_rank": 399
     },
     {
       "player_id": "5848",
       "name": "Marquise Brown",
       "team": "PHI",
       "position": "WR",
-      "search_rank": 623
+      "search_rank": 633
     },
     {
       "player_id": "5849",
       "name": "Kyler Murray",
       "team": "MIN",
       "position": "QB",
-      "search_rank": 98
+      "search_rank": 97
     },
     {
       "player_id": "585",
@@ -60486,7 +60486,7 @@
       "name": "Drew Lock",
       "team": "SEA",
       "position": "QB",
-      "search_rank": 596
+      "search_rank": 644
     },
     {
       "player_id": "5855",
@@ -60507,7 +60507,7 @@
       "name": "Noah Fant",
       "team": "NO",
       "position": "TE",
-      "search_rank": 444
+      "search_rank": 498
     },
     {
       "player_id": "5858",
@@ -60521,7 +60521,7 @@
       "name": "A.J. Brown",
       "team": "NE",
       "position": "WR",
-      "search_rank": 18
+      "search_rank": 17
     },
     {
       "player_id": "586",
@@ -60549,7 +60549,7 @@
       "name": "Brian Burns",
       "team": "NYG",
       "position": "DE",
-      "search_rank": 135
+      "search_rank": 134
     },
     {
       "player_id": "5863",
@@ -60612,21 +60612,21 @@
       "name": "Daniel Jones",
       "team": "IND",
       "position": "QB",
-      "search_rank": 122
+      "search_rank": 123
     },
     {
       "player_id": "5871",
       "name": "Zach Allen",
       "team": "DEN",
       "position": "DE",
-      "search_rank": 395
+      "search_rank": 402
     },
     {
       "player_id": "5872",
       "name": "Deebo Samuel",
       "team": "SF",
       "position": "WR",
-      "search_rank": 131
+      "search_rank": 130
     },
     {
       "player_id": "5873",
@@ -60654,7 +60654,7 @@
       "name": "Julian Love",
       "team": "SEA",
       "position": "DB",
-      "search_rank": 301
+      "search_rank": 300
     },
     {
       "player_id": "5877",
@@ -60892,7 +60892,7 @@
       "name": "Dawson Knox",
       "team": "BUF",
       "position": "TE",
-      "search_rank": 571
+      "search_rank": 586
     },
     {
       "player_id": "5907",
@@ -60941,7 +60941,7 @@
       "name": "Carl Granderson",
       "team": "NO",
       "position": "DE",
-      "search_rank": 215
+      "search_rank": 216
     },
     {
       "player_id": "5913",
@@ -60976,7 +60976,7 @@
       "name": "Mecole Hardman",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 277
+      "search_rank": 278
     },
     {
       "player_id": "5918",
@@ -61053,7 +61053,7 @@
       "name": "Terry McLaurin",
       "team": "WAS",
       "position": "WR",
-      "search_rank": 53
+      "search_rank": 54
     },
     {
       "player_id": "5928",
@@ -61137,7 +61137,7 @@
       "name": "Lil'Jordan Humphrey",
       "team": "DEN",
       "position": "WR",
-      "search_rank": 427
+      "search_rank": 477
     },
     {
       "player_id": "5939",
@@ -61312,7 +61312,7 @@
       "name": "T.J. Edwards",
       "team": "CHI",
       "position": "LB",
-      "search_rank": 336
+      "search_rank": 335
     },
     {
       "player_id": "5961",
@@ -61389,7 +61389,7 @@
       "name": "Greg Dortch",
       "team": "DET",
       "position": "WR",
-      "search_rank": 579
+      "search_rank": 575
     },
     {
       "player_id": "5971",
@@ -61501,7 +61501,7 @@
       "name": "Foster Moreau",
       "team": "HOU",
       "position": "TE",
-      "search_rank": 451
+      "search_rank": 492
     },
     {
       "player_id": "5986",
@@ -61718,14 +61718,14 @@
       "name": "Gardner Minshew",
       "team": "ARI",
       "position": "QB",
-      "search_rank": 327
+      "search_rank": 364
     },
     {
       "player_id": "6012",
       "name": "Travis Homer",
       "team": "PIT",
       "position": "RB",
-      "search_rank": 392
+      "search_rank": 414
     },
     {
       "player_id": "6013",
@@ -61823,7 +61823,7 @@
       "name": "Mike Jackson",
       "team": "CAR",
       "position": "CB",
-      "search_rank": 543
+      "search_rank": 545
     },
     {
       "player_id": "6026",
@@ -62061,7 +62061,7 @@
       "name": "Dre Greenlaw",
       "team": "SF",
       "position": "LB",
-      "search_rank": 415
+      "search_rank": 416
     },
     {
       "player_id": "6057",
@@ -62131,7 +62131,7 @@
       "name": "Cody Barton",
       "team": "TEN",
       "position": "LB",
-      "search_rank": 504
+      "search_rank": 507
     },
     {
       "player_id": "6066",
@@ -62544,14 +62544,14 @@
       "name": "Quinnen Williams",
       "team": "DAL",
       "position": "DT",
-      "search_rank": 390
+      "search_rank": 392
     },
     {
       "player_id": "6119",
       "name": "Devin White",
       "team": "DET",
       "position": "LB",
-      "search_rank": 290
+      "search_rank": 292
     },
     {
       "player_id": "612",
@@ -62593,14 +62593,14 @@
       "name": "Montez Sweat",
       "team": "CHI",
       "position": "DE",
-      "search_rank": 365
+      "search_rank": 364
     },
     {
       "player_id": "6125",
       "name": "Jeffery Simmons",
       "team": "TEN",
       "position": "DT",
-      "search_rank": 245
+      "search_rank": 246
     },
     {
       "player_id": "6126",
@@ -62649,7 +62649,7 @@
       "name": "Mack Wilson",
       "team": "ARI",
       "position": "LB",
-      "search_rank": 446
+      "search_rank": 447
     },
     {
       "player_id": "6132",
@@ -63048,7 +63048,7 @@
       "name": "Andrew Van Ginkel",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 192
+      "search_rank": 193
     },
     {
       "player_id": "6184",
@@ -63062,7 +63062,7 @@
       "name": "Easton Stick",
       "team": "IND",
       "position": "QB",
-      "search_rank": 365
+      "search_rank": 386
     },
     {
       "player_id": "6186",
@@ -63258,7 +63258,7 @@
       "name": "Quincy Williams",
       "team": "CLE",
       "position": "LB",
-      "search_rank": 336
+      "search_rank": 340
     },
     {
       "player_id": "6215",
@@ -63279,7 +63279,7 @@
       "name": "Blake Cashman",
       "team": "MIN",
       "position": "LB",
-      "search_rank": 248
+      "search_rank": 247
     },
     {
       "player_id": "6218",
@@ -63692,7 +63692,7 @@
       "name": "Olamide Zaccheaus",
       "team": "ATL",
       "position": "WR",
-      "search_rank": 536
+      "search_rank": 545
     },
     {
       "player_id": "6272",
@@ -63734,7 +63734,7 @@
       "name": "Corey Ballentine",
       "team": "JAX",
       "position": "CB",
-      "search_rank": 612
+      "search_rank": 661
     },
     {
       "player_id": "6284",
@@ -63867,14 +63867,14 @@
       "name": "Nick Scott",
       "team": "CAR",
       "position": "DB",
-      "search_rank": 583
+      "search_rank": 572
     },
     {
       "player_id": "6302",
       "name": "Kaden Elliss",
       "team": "NO",
       "position": "LB",
-      "search_rank": 263
+      "search_rank": 262
     },
     {
       "player_id": "6303",
@@ -63972,7 +63972,7 @@
       "name": "Tyrel Dodson",
       "team": "MIA",
       "position": "LB",
-      "search_rank": 266
+      "search_rank": 268
     },
     {
       "player_id": "6316",
@@ -64035,7 +64035,7 @@
       "name": "Andrew Beck",
       "team": "NYJ",
       "position": "RB",
-      "search_rank": 279
+      "search_rank": 350
     },
     {
       "player_id": "6324",
@@ -64742,7 +64742,7 @@
       "name": "Andrew Wingard",
       "team": "ARI",
       "position": "DB",
-      "search_rank": 628
+      "search_rank": 686
     },
     {
       "player_id": "6417",
@@ -64826,7 +64826,7 @@
       "name": "Ashton Dulin",
       "team": "IND",
       "position": "WR",
-      "search_rank": 674
+      "search_rank": 617
     },
     {
       "player_id": "6428",
@@ -65022,7 +65022,7 @@
       "name": "D.J. Montgomery",
       "team": "IND",
       "position": "WR",
-      "search_rank": 443
+      "search_rank": 495
     },
     {
       "player_id": "6454",
@@ -66812,9 +66812,9 @@
     {
       "player_id": "6694",
       "name": "D'Ernest Johnson",
-      "team": "",
+      "team": "TEN",
       "position": "RB",
-      "search_rank": 383
+      "search_rank": 455
     },
     {
       "player_id": "6695",
@@ -66940,7 +66940,7 @@
       "name": "Jalen Thompson",
       "team": "DAL",
       "position": "DB",
-      "search_rank": 502
+      "search_rank": 496
     },
     {
       "player_id": "6712",
@@ -67395,7 +67395,7 @@
       "name": "Joe Burrow",
       "team": "CIN",
       "position": "QB",
-      "search_rank": 13
+      "search_rank": 14
     },
     {
       "player_id": "6771",
@@ -67500,7 +67500,7 @@
       "name": "Derrick Brown",
       "team": "CAR",
       "position": "DT",
-      "search_rank": 450
+      "search_rank": 453
     },
     {
       "player_id": "6785",
@@ -67514,7 +67514,7 @@
       "name": "CeeDee Lamb",
       "team": "DAL",
       "position": "WR",
-      "search_rank": 10
+      "search_rank": 8
     },
     {
       "player_id": "6787",
@@ -67612,7 +67612,7 @@
       "name": "Grant Delpit",
       "team": "CLE",
       "position": "DB",
-      "search_rank": 400
+      "search_rank": 398
     },
     {
       "player_id": "68",
@@ -67640,7 +67640,7 @@
       "name": "Tee Higgins",
       "team": "CIN",
       "position": "WR",
-      "search_rank": 35
+      "search_rank": 34
     },
     {
       "player_id": "6802",
@@ -67694,9 +67694,9 @@
     {
       "player_id": "6809",
       "name": "Trevon Diggs",
-      "team": "",
+      "team": "SEA",
       "position": "CB",
-      "search_rank": 569
+      "search_rank": 9999999
     },
     {
       "player_id": "681",
@@ -67745,7 +67745,7 @@
       "name": "Zack Baun",
       "team": "PHI",
       "position": "LB",
-      "search_rank": 136
+      "search_rank": 134
     },
     {
       "player_id": "6816",
@@ -67766,14 +67766,14 @@
       "name": "Nnamdi Madubuike",
       "team": "BAL",
       "position": "DT",
-      "search_rank": 586
+      "search_rank": 590
     },
     {
       "player_id": "6819",
       "name": "Michael Pittman",
       "team": "PIT",
       "position": "WR",
-      "search_rank": 100
+      "search_rank": 101
     },
     {
       "player_id": "682",
@@ -67829,7 +67829,7 @@
       "name": "Cole Kmet",
       "team": "CHI",
       "position": "TE",
-      "search_rank": 573
+      "search_rank": 569
     },
     {
       "player_id": "6827",
@@ -67843,7 +67843,7 @@
       "name": "AJ Dillon",
       "team": "CAR",
       "position": "RB",
-      "search_rank": 627
+      "search_rank": 688
     },
     {
       "player_id": "6829",
@@ -68095,7 +68095,7 @@
       "name": "Akeem Davis-Gaither",
       "team": "IND",
       "position": "LB",
-      "search_rank": 464
+      "search_rank": 463
     },
     {
       "player_id": "6861",
@@ -68158,7 +68158,7 @@
       "name": "Adam Trautman",
       "team": "DEN",
       "position": "TE",
-      "search_rank": 640
+      "search_rank": 667
     },
     {
       "player_id": "687",
@@ -68305,7 +68305,7 @@
       "name": "Antoine Winfield",
       "team": "TB",
       "position": "DB",
-      "search_rank": 342
+      "search_rank": 345
     },
     {
       "player_id": "6889",
@@ -68410,14 +68410,14 @@
       "name": "Jonathan Greenard",
       "team": "PHI",
       "position": "DE",
-      "search_rank": 381
+      "search_rank": 386
     },
     {
       "player_id": "6901",
       "name": "Joshua Metellus",
       "team": "MIN",
       "position": "DB",
-      "search_rank": 407
+      "search_rank": 404
     },
     {
       "player_id": "6902",
@@ -68494,7 +68494,7 @@
       "name": "Brandon Jones",
       "team": "DEN",
       "position": "DB",
-      "search_rank": 483
+      "search_rank": 488
     },
     {
       "player_id": "6912",
@@ -68543,7 +68543,7 @@
       "name": "Salvon Ahmed",
       "team": "CHI",
       "position": "RB",
-      "search_rank": 632
+      "search_rank": 640
     },
     {
       "player_id": "6919",
@@ -68585,7 +68585,7 @@
       "name": "Geno Stone",
       "team": "BUF",
       "position": "DB",
-      "search_rank": 442
+      "search_rank": 394
     },
     {
       "player_id": "6924",
@@ -68648,7 +68648,7 @@
       "name": "DeeJay Dallas",
       "team": "JAX",
       "position": "RB",
-      "search_rank": 519
+      "search_rank": 563
     },
     {
       "player_id": "6932",
@@ -68781,7 +68781,7 @@
       "name": "Jordyn Brooks",
       "team": "MIA",
       "position": "LB",
-      "search_rank": 152
+      "search_rank": 153
     },
     {
       "player_id": "695",
@@ -68893,7 +68893,7 @@
       "name": "Patrick Taylor",
       "team": "SF",
       "position": "RB",
-      "search_rank": 688
+      "search_rank": 597
     },
     {
       "player_id": "6964",
@@ -69313,7 +69313,7 @@
       "name": "Jeremy Chinn",
       "team": "LV",
       "position": "DB",
-      "search_rank": 331
+      "search_rank": 332
     },
     {
       "player_id": "7017",
@@ -69831,7 +69831,7 @@
       "name": "Tyler Huntley",
       "team": "BAL",
       "position": "QB",
-      "search_rank": 570
+      "search_rank": 630
     },
     {
       "player_id": "7084",
@@ -70069,7 +70069,7 @@
       "name": "Alex Highsmith",
       "team": "PIT",
       "position": "LB",
-      "search_rank": 295
+      "search_rank": 294
     },
     {
       "player_id": "7114",
@@ -71875,7 +71875,7 @@
       "name": "Christian Rozeboom",
       "team": "TB",
       "position": "LB",
-      "search_rank": 419
+      "search_rank": 421
     },
     {
       "player_id": "7347",
@@ -73037,7 +73037,7 @@
       "name": "Nick Westbrook-Ikhine",
       "team": "IND",
       "position": "WR",
-      "search_rank": 372
+      "search_rank": 396
     },
     {
       "player_id": "7497",
@@ -73282,7 +73282,7 @@
       "name": "Mac Jones",
       "team": "SF",
       "position": "QB",
-      "search_rank": 360
+      "search_rank": 365
     },
     {
       "player_id": "7528",
@@ -73366,7 +73366,7 @@
       "name": "Zach Wilson",
       "team": "NO",
       "position": "QB",
-      "search_rank": 368
+      "search_rank": 409
     },
     {
       "player_id": "7539",
@@ -73429,7 +73429,7 @@
       "name": "Amon-Ra St. Brown",
       "team": "DET",
       "position": "WR",
-      "search_rank": 7
+      "search_rank": 8
     },
     {
       "player_id": "7548",
@@ -73478,14 +73478,14 @@
       "name": "Kyle Pitts",
       "team": "ATL",
       "position": "TE",
-      "search_rank": 68
+      "search_rank": 69
     },
     {
       "player_id": "7554",
       "name": "Tre' McKitty",
       "team": "WAS",
       "position": "TE",
-      "search_rank": 9999999
+      "search_rank": 332
     },
     {
       "player_id": "7555",
@@ -73597,7 +73597,7 @@
       "name": "Nico Collins",
       "team": "HOU",
       "position": "WR",
-      "search_rank": 24
+      "search_rank": 23
     },
     {
       "player_id": "757",
@@ -73709,7 +73709,7 @@
       "name": "Davis Mills",
       "team": "HOU",
       "position": "QB",
-      "search_rank": 513
+      "search_rank": 569
     },
     {
       "player_id": "7586",
@@ -73751,7 +73751,7 @@
       "name": "Justin Fields",
       "team": "KC",
       "position": "QB",
-      "search_rank": 391
+      "search_rank": 394
     },
     {
       "player_id": "7593",
@@ -73772,7 +73772,7 @@
       "name": "Tylan Wallace",
       "team": "CLE",
       "position": "WR",
-      "search_rank": 999
+      "search_rank": 593
     },
     {
       "player_id": "7596",
@@ -73784,7 +73784,7 @@
     {
       "player_id": "7597",
       "name": "Kenny Yeboah",
-      "team": "ARI",
+      "team": "",
       "position": "TE",
       "search_rank": 999
     },
@@ -73793,7 +73793,7 @@
       "name": "Jermar Jefferson",
       "team": "MIN",
       "position": "RB",
-      "search_rank": 452
+      "search_rank": 457
     },
     {
       "player_id": "76",
@@ -73849,7 +73849,7 @@
       "name": "Kyle Trask",
       "team": "CAR",
       "position": "QB",
-      "search_rank": 552
+      "search_rank": 598
     },
     {
       "player_id": "7606",
@@ -74080,7 +74080,7 @@
       "name": "Jaelan Phillips",
       "team": "CAR",
       "position": "LB",
-      "search_rank": 349
+      "search_rank": 352
     },
     {
       "player_id": "7636",
@@ -74129,7 +74129,7 @@
       "name": "Pat Surtain",
       "team": "DEN",
       "position": "CB",
-      "search_rank": 425
+      "search_rank": 428
     },
     {
       "player_id": "7642",
@@ -74262,7 +74262,7 @@
       "name": "Tre'von Moehrig",
       "team": "CAR",
       "position": "DB",
-      "search_rank": 253
+      "search_rank": 252
     },
     {
       "player_id": "766",
@@ -74318,14 +74318,14 @@
       "name": "Jevon Holland",
       "team": "NYG",
       "position": "DB",
-      "search_rank": 596
+      "search_rank": 599
     },
     {
       "player_id": "7667",
       "name": "Tyson Campbell",
       "team": "CLE",
       "position": "CB",
-      "search_rank": 551
+      "search_rank": 550
     },
     {
       "player_id": "7668",
@@ -74339,7 +74339,7 @@
       "name": "Paulson Adebo",
       "team": "NYG",
       "position": "CB",
-      "search_rank": 511
+      "search_rank": 509
     },
     {
       "player_id": "767",
@@ -74353,7 +74353,7 @@
       "name": "Joshua Palmer",
       "team": "BUF",
       "position": "WR",
-      "search_rank": 556
+      "search_rank": 539
     },
     {
       "player_id": "7671",
@@ -74402,7 +74402,7 @@
       "name": "Divine Deablo",
       "team": "ATL",
       "position": "LB",
-      "search_rank": 459
+      "search_rank": 458
     },
     {
       "player_id": "7678",
@@ -74535,7 +74535,7 @@
       "name": "Tommy Tremble",
       "team": "CAR",
       "position": "TE",
-      "search_rank": 999
+      "search_rank": 442
     },
     {
       "player_id": "7695",
@@ -74703,7 +74703,7 @@
       "name": "Cam Bynum",
       "team": "IND",
       "position": "DB",
-      "search_rank": 463
+      "search_rank": 462
     },
     {
       "player_id": "7716",
@@ -75578,7 +75578,7 @@
       "name": "Noah Gray",
       "team": "KC",
       "position": "TE",
-      "search_rank": 636
+      "search_rank": 683
     },
     {
       "player_id": "7829",
@@ -75683,7 +75683,7 @@
       "name": "Jamien Sherwood",
       "team": "NYJ",
       "position": "LB",
-      "search_rank": 124
+      "search_rank": 125
     },
     {
       "player_id": "7842",
@@ -76068,7 +76068,7 @@
       "name": "Brock Wright",
       "team": "DET",
       "position": "TE",
-      "search_rank": 407
+      "search_rank": 446
     },
     {
       "player_id": "7892",
@@ -76306,7 +76306,7 @@
       "name": "Christian Elliss",
       "team": "NE",
       "position": "LB",
-      "search_rank": 448
+      "search_rank": 444
     },
     {
       "player_id": "7922",
@@ -77118,7 +77118,7 @@
       "name": "Adam Prentice",
       "team": "DEN",
       "position": "FB",
-      "search_rank": 622
+      "search_rank": 621
     },
     {
       "player_id": "8026",
@@ -77753,7 +77753,7 @@
     {
       "player_id": "8107",
       "name": "Nikola Kalinic",
-      "team": "",
+      "team": "CHI",
       "position": "TE",
       "search_rank": 999
     },
@@ -77797,7 +77797,7 @@
       "name": "Drake London",
       "team": "ATL",
       "position": "WR",
-      "search_rank": 16
+      "search_rank": 17
     },
     {
       "player_id": "8113",
@@ -77825,14 +77825,14 @@
       "name": "Pierre Strong",
       "team": "GB",
       "position": "RB",
-      "search_rank": 523
+      "search_rank": 567
     },
     {
       "player_id": "8117",
       "name": "Jalen Tolbert",
       "team": "MIA",
       "position": "WR",
-      "search_rank": 542
+      "search_rank": 552
     },
     {
       "player_id": "8118",
@@ -77846,7 +77846,7 @@
       "name": "Jahan Dotson",
       "team": "ATL",
       "position": "WR",
-      "search_rank": 489
+      "search_rank": 486
     },
     {
       "player_id": "812",
@@ -77909,7 +77909,7 @@
       "name": "Charlie Kolar",
       "team": "LAC",
       "position": "TE",
-      "search_rank": 613
+      "search_rank": 606
     },
     {
       "player_id": "8128",
@@ -77972,14 +77972,14 @@
       "name": "Treylon Burks",
       "team": "WAS",
       "position": "WR",
-      "search_rank": 425
+      "search_rank": 461
     },
     {
       "player_id": "8136",
       "name": "Rachaad White",
       "team": "WAS",
       "position": "RB",
-      "search_rank": 115
+      "search_rank": 116
     },
     {
       "player_id": "8137",
@@ -78000,7 +78000,7 @@
       "name": "Zamir White",
       "team": "SF",
       "position": "RB",
-      "search_rank": 434
+      "search_rank": 485
     },
     {
       "player_id": "814",
@@ -78028,7 +78028,7 @@
       "name": "Alec Pierce",
       "team": "IND",
       "position": "WR",
-      "search_rank": 92
+      "search_rank": 93
     },
     {
       "player_id": "8143",
@@ -78063,7 +78063,7 @@
       "name": "John Metchie",
       "team": "CAR",
       "position": "WR",
-      "search_rank": 605
+      "search_rank": 537
     },
     {
       "player_id": "8148",
@@ -78098,7 +78098,7 @@
       "name": "Kenneth Walker",
       "team": "KC",
       "position": "RB",
-      "search_rank": 19
+      "search_rank": 18
     },
     {
       "player_id": "8152",
@@ -78224,7 +78224,7 @@
       "name": "Skyy Moore",
       "team": "GB",
       "position": "WR",
-      "search_rank": 441
+      "search_rank": 487
     },
     {
       "player_id": "8169",
@@ -78259,7 +78259,7 @@
       "name": "Greg Dulcich",
       "team": "MIA",
       "position": "TE",
-      "search_rank": 235
+      "search_rank": 233
     },
     {
       "player_id": "8173",
@@ -78322,14 +78322,14 @@
       "name": "Jalen Nailor",
       "team": "LV",
       "position": "WR",
-      "search_rank": 172
+      "search_rank": 167
     },
     {
       "player_id": "8181",
       "name": "Connor Heyward",
       "team": "LV",
       "position": "TE",
-      "search_rank": 609
+      "search_rank": 648
     },
     {
       "player_id": "8182",
@@ -78343,7 +78343,7 @@
       "name": "Brock Purdy",
       "team": "SF",
       "position": "QB",
-      "search_rank": 47
+      "search_rank": 48
     },
     {
       "player_id": "8184",
@@ -78378,7 +78378,7 @@
       "name": "Tyquan Thornton",
       "team": "KC",
       "position": "WR",
-      "search_rank": 486
+      "search_rank": 485
     },
     {
       "player_id": "8189",
@@ -78427,7 +78427,7 @@
       "name": "Jashaun Corbin",
       "team": "DAL",
       "position": "RB",
-      "search_rank": 524
+      "search_rank": 583
     },
     {
       "player_id": "8195",
@@ -78497,7 +78497,7 @@
       "name": "Michael Woods",
       "team": "DEN",
       "position": "WR",
-      "search_rank": 999
+      "search_rank": 337
     },
     {
       "player_id": "8203",
@@ -78511,7 +78511,7 @@
       "name": "Bo Melton",
       "team": "GB",
       "position": "WR",
-      "search_rank": 695
+      "search_rank": 455
     },
     {
       "player_id": "8205",
@@ -78658,7 +78658,7 @@
       "name": "Velus Jones",
       "team": "SEA",
       "position": "WR",
-      "search_rank": 392
+      "search_rank": 432
     },
     {
       "player_id": "8224",
@@ -78672,7 +78672,7 @@
       "name": "Daniel Bellinger",
       "team": "TEN",
       "position": "TE",
-      "search_rank": 688
+      "search_rank": 659
     },
     {
       "player_id": "8226",
@@ -78931,7 +78931,7 @@
       "name": "Cameron Dicker",
       "team": "LAC",
       "position": "K",
-      "search_rank": 118
+      "search_rank": 119
     },
     {
       "player_id": "826",
@@ -78987,7 +78987,7 @@
       "name": "Quay Walker",
       "team": "LV",
       "position": "LB",
-      "search_rank": 144
+      "search_rank": 143
     },
     {
       "player_id": "8267",
@@ -79008,14 +79008,14 @@
       "name": "Jordan Davis",
       "team": "PHI",
       "position": "DL",
-      "search_rank": 566
+      "search_rank": 555
     },
     {
       "player_id": "827",
       "name": "Tyrod Taylor",
       "team": "GB",
       "position": "QB",
-      "search_rank": 349
+      "search_rank": 385
     },
     {
       "player_id": "8270",
@@ -79099,7 +79099,7 @@
       "name": "Nik Bonitto",
       "team": "DEN",
       "position": "LB",
-      "search_rank": 137
+      "search_rank": 138
     },
     {
       "player_id": "8281",
@@ -79316,7 +79316,7 @@
       "name": "Derek Stingley",
       "team": "HOU",
       "position": "DB",
-      "search_rank": 535
+      "search_rank": 538
     },
     {
       "player_id": "8309",
@@ -79365,7 +79365,7 @@
       "name": "Jalen Pitre",
       "team": "HOU",
       "position": "DB",
-      "search_rank": 367
+      "search_rank": 369
     },
     {
       "player_id": "8315",
@@ -79435,7 +79435,7 @@
       "name": "Jaquan Brisker",
       "team": "PIT",
       "position": "DB",
-      "search_rank": 380
+      "search_rank": 384
     },
     {
       "player_id": "8324",
@@ -79477,7 +79477,7 @@
       "name": "Devin Lloyd",
       "team": "CAR",
       "position": "LB",
-      "search_rank": 190
+      "search_rank": 191
     },
     {
       "player_id": "833",
@@ -79491,7 +79491,7 @@
       "name": "Quentin Lake",
       "team": "LAR",
       "position": "DB",
-      "search_rank": 461
+      "search_rank": 464
     },
     {
       "player_id": "8331",
@@ -79512,7 +79512,7 @@
       "name": "Alontae Taylor",
       "team": "TEN",
       "position": "DB",
-      "search_rank": 471
+      "search_rank": 472
     },
     {
       "player_id": "8334",
@@ -79554,7 +79554,7 @@
       "name": "Kyle Hamilton",
       "team": "BAL",
       "position": "DB",
-      "search_rank": 127
+      "search_rank": 125
     },
     {
       "player_id": "834",
@@ -79589,7 +79589,7 @@
       "name": "Boye Mafe",
       "team": "CIN",
       "position": "DL",
-      "search_rank": 348
+      "search_rank": 349
     },
     {
       "player_id": "8344",
@@ -79624,7 +79624,7 @@
       "name": "Kerby Joseph",
       "team": "DET",
       "position": "DB",
-      "search_rank": 499
+      "search_rank": 502
     },
     {
       "player_id": "8349",
@@ -79652,7 +79652,7 @@
       "name": "Drake Jackson",
       "team": "WAS",
       "position": "DL",
-      "search_rank": 606
+      "search_rank": 687
     },
     {
       "player_id": "8352",
@@ -79680,7 +79680,7 @@
       "name": "Kayvon Thibodeaux",
       "team": "NYG",
       "position": "DL",
-      "search_rank": 362
+      "search_rank": 375
     },
     {
       "player_id": "8356",
@@ -79708,7 +79708,7 @@
       "name": "Marcus Jones",
       "team": "NE",
       "position": "DB",
-      "search_rank": 537
+      "search_rank": 536
     },
     {
       "player_id": "836",
@@ -79736,21 +79736,21 @@
       "name": "Leo Chenal",
       "team": "WAS",
       "position": "LB",
-      "search_rank": 460
+      "search_rank": 455
     },
     {
       "player_id": "8363",
       "name": "Jack Sanborn",
       "team": "CHI",
       "position": "LB",
-      "search_rank": 519
+      "search_rank": 520
     },
     {
       "player_id": "8364",
       "name": "Trent McDuffie",
       "team": "LAR",
       "position": "DB",
-      "search_rank": 431
+      "search_rank": 432
     },
     {
       "player_id": "8365",
@@ -79911,7 +79911,7 @@
       "name": "George Karlaftis",
       "team": "KC",
       "position": "DL",
-      "search_rank": 444
+      "search_rank": 445
     },
     {
       "player_id": "8386",
@@ -79995,7 +79995,7 @@
       "name": "Micah McFadden",
       "team": "NYG",
       "position": "LB",
-      "search_rank": 596
+      "search_rank": 601
     },
     {
       "player_id": "8397",
@@ -80079,7 +80079,7 @@
       "name": "Reed Blankenship",
       "team": "HOU",
       "position": "DB",
-      "search_rank": 451
+      "search_rank": 452
     },
     {
       "player_id": "8407",
@@ -80261,7 +80261,7 @@
       "name": "Cameron Heyward",
       "team": "PIT",
       "position": "DT",
-      "search_rank": 543
+      "search_rank": 544
     },
     {
       "player_id": "8430",
@@ -80560,7 +80560,7 @@
     {
       "player_id": "8469",
       "name": "Daniel Faalele",
-      "team": "NYG",
+      "team": "JAX",
       "position": "T",
       "search_rank": 9999999
     },
@@ -81941,7 +81941,7 @@
       "name": "Nate Landman",
       "team": "LAR",
       "position": "LB",
-      "search_rank": 239
+      "search_rank": 241
     },
     {
       "player_id": "866",
@@ -82690,14 +82690,14 @@
       "name": "Kaden Davis",
       "team": "CHI",
       "position": "WR",
-      "search_rank": 326
+      "search_rank": 363
     },
     {
       "player_id": "8756",
       "name": "Brandon Johnson",
       "team": "LV",
       "position": "WR",
-      "search_rank": 591
+      "search_rank": 633
     },
     {
       "player_id": "8757",
@@ -82849,7 +82849,7 @@
     {
       "player_id": "8776",
       "name": "Kingsley Jonathan",
-      "team": "",
+      "team": "NYJ",
       "position": "DT",
       "search_rank": 9999999
     },
@@ -83047,7 +83047,7 @@
       "name": "Malik Davis",
       "team": "DAL",
       "position": "RB",
-      "search_rank": 587
+      "search_rank": 590
     },
     {
       "player_id": "8801",
@@ -83334,7 +83334,7 @@
       "name": "Isaiah Pola-Mao",
       "team": "LV",
       "position": "DB",
-      "search_rank": 583
+      "search_rank": 581
     },
     {
       "player_id": "8839",
@@ -83381,7 +83381,7 @@
     {
       "player_id": "8844",
       "name": "Sam Webb",
-      "team": "NYG",
+      "team": "",
       "position": "CB",
       "search_rank": 9999999
     },
@@ -83950,7 +83950,7 @@
       "name": "KaVontae Turpin",
       "team": "DAL",
       "position": "WR",
-      "search_rank": 440
+      "search_rank": 439
     },
     {
       "player_id": "8918",
@@ -84356,7 +84356,7 @@
       "name": "Jahmyr Gibbs",
       "team": "DET",
       "position": "RB",
-      "search_rank": 2
+      "search_rank": 1
     },
     {
       "player_id": "9222",
@@ -84377,7 +84377,7 @@
       "name": "Chase Brown",
       "team": "CIN",
       "position": "RB",
-      "search_rank": 15
+      "search_rank": 16
     },
     {
       "player_id": "9225",
@@ -84405,14 +84405,14 @@
       "name": "Bryce Young",
       "team": "CAR",
       "position": "QB",
-      "search_rank": 115
+      "search_rank": 116
     },
     {
       "player_id": "9229",
       "name": "Anthony Richardson",
       "team": "IND",
       "position": "QB",
-      "search_rank": 412
+      "search_rank": 413
     },
     {
       "player_id": "923",
@@ -84426,7 +84426,7 @@
       "name": "Tanner McKee",
       "team": "PHI",
       "position": "QB",
-      "search_rank": 603
+      "search_rank": 668
     },
     {
       "player_id": "9231",
@@ -84622,7 +84622,7 @@
       "name": "Darnell Washington",
       "team": "PIT",
       "position": "TE",
-      "search_rank": 448
+      "search_rank": 449
     },
     {
       "player_id": "948",
@@ -84643,14 +84643,14 @@
       "name": "Luke Musgrave",
       "team": "GB",
       "position": "TE",
-      "search_rank": 652
+      "search_rank": 687
     },
     {
       "player_id": "9482",
       "name": "Michael Mayer",
       "team": "LV",
       "position": "TE",
-      "search_rank": 403
+      "search_rank": 400
     },
     {
       "player_id": "9483",
@@ -84678,7 +84678,7 @@
       "name": "Dontayvion Wicks",
       "team": "PHI",
       "position": "WR",
-      "search_rank": 213
+      "search_rank": 212
     },
     {
       "player_id": "9487",
@@ -84692,7 +84692,7 @@
       "name": "Jaxon Smith-Njigba",
       "team": "SEA",
       "position": "WR",
-      "search_rank": 6
+      "search_rank": 7
     },
     {
       "player_id": "9489",
@@ -84734,7 +84734,7 @@
       "name": "Puka Nacua",
       "team": "LAR",
       "position": "WR",
-      "search_rank": 4
+      "search_rank": 5
     },
     {
       "player_id": "9494",
@@ -84804,7 +84804,7 @@
       "name": "DeMario Douglas",
       "team": "NE",
       "position": "WR",
-      "search_rank": 553
+      "search_rank": 555
     },
     {
       "player_id": "9502",
@@ -85084,7 +85084,7 @@
       "name": "Quentin Johnston",
       "team": "LAC",
       "position": "WR",
-      "search_rank": 102
+      "search_rank": 103
     },
     {
       "player_id": "9755",
@@ -85112,7 +85112,7 @@
       "name": "C.J. Stroud",
       "team": "HOU",
       "position": "QB",
-      "search_rank": 94
+      "search_rank": 95
     },
     {
       "player_id": "9759",
@@ -85322,7 +85322,7 @@
       "name": "Will Levis",
       "team": "TEN",
       "position": "QB",
-      "search_rank": 607
+      "search_rank": 651
     },
     {
       "player_id": "ARI",

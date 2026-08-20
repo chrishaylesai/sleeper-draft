@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -55,6 +56,13 @@ type DraftSnapshot struct {
 	CurrentPick  int
 	Complete     bool
 	UpdatedAt    time.Time
+}
+
+type PersonalDraft struct {
+	UserID    string
+	DraftSlot int
+	RosterID  int
+	Known     bool
 }
 
 type SnapshotHandler func(DraftSnapshot, error)
@@ -277,6 +285,37 @@ func (s DraftSnapshot) Summary() string {
 		s.NextPickNo,
 		s.TotalPicks,
 	)
+}
+
+func ResolvePersonalDraft(draft Draft, user SleeperUser) (PersonalDraft, error) {
+	if user.UserID == "" {
+		return PersonalDraft{}, errors.New("user_id is required to resolve personal draft slot")
+	}
+
+	slot, ok := draft.DraftOrder[user.UserID]
+	if !ok {
+		return PersonalDraft{}, fmt.Errorf("user_id %q is not in draft_order for draft %q", user.UserID, draft.ID)
+	}
+
+	personal := PersonalDraft{
+		UserID:    user.UserID,
+		DraftSlot: slot,
+		Known:     true,
+	}
+	if draft.SlotToRosterID != nil {
+		personal.RosterID = draft.SlotToRosterID[strconv.Itoa(slot)]
+	}
+	return personal, nil
+}
+
+func (p PersonalDraft) MatchesPick(pick Pick) bool {
+	if !p.Known {
+		return false
+	}
+	if p.UserID != "" && pick.PickedBy == p.UserID {
+		return true
+	}
+	return p.RosterID > 0 && pick.RosterID == p.RosterID
 }
 
 func inferTeamCount(draft Draft, picks []Pick) int {

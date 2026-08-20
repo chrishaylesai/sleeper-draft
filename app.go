@@ -14,6 +14,7 @@ type AppState struct {
 	Wishlist PlayerList
 	Drafts   DraftService
 	DraftID  string
+	Personal PersonalDraft
 }
 
 func LoadAppState(ctx context.Context, cfg Config, client *http.Client) (AppState, error) {
@@ -33,6 +34,18 @@ func LoadAppState(ctx context.Context, cfg Config, client *http.Client) (AppStat
 		return AppState{}, err
 	}
 
+	var personal PersonalDraft
+	if cfg.Username != "" {
+		user, err := drafts.getUser(ctx, cfg.Username)
+		if err != nil {
+			return AppState{}, err
+		}
+		personal, err = ResolvePersonalDraft(draft, user)
+		if err != nil {
+			return AppState{}, err
+		}
+	}
+
 	return AppState{
 		Config:   cfg,
 		Players:  players,
@@ -40,6 +53,7 @@ func LoadAppState(ctx context.Context, cfg Config, client *http.Client) (AppStat
 		Wishlist: wishlist,
 		Drafts:   drafts,
 		DraftID:  draft.ID,
+		Personal: personal,
 	}, nil
 }
 
@@ -58,7 +72,7 @@ func (s AppState) SnapshotSummary(snapshot DraftSnapshot) string {
 	return fmt.Sprintf(
 		"%s\n%s\n%s\n%s",
 		snapshot.Summary(),
-		FormatPositionSummaries(BuildPositionSummaries(s.Config.PositionTargets, snapshot.Picks, s.Players)),
+		FormatPositionSummaries(BuildPositionSummaries(s.Config.PositionTargets, snapshot.Picks, s.Players, s.Personal)),
 		FormatBestAvailable(BestAvailableByPosition(s.Config, s.Players, s.Rankings, snapshot.Picks)),
 		FormatWishlistReport(BuildWishlistReport(s.Config, s.Wishlist, snapshot.Picks)),
 	)
