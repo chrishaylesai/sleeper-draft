@@ -65,6 +65,45 @@ player_name,player_position,player_team
 names. Every non-header row is validated against `players.json`; startup fails
 clearly if any row cannot be matched.
 
+## Prune the player cache
+
+Sleeper's player database is around 12,000 players, but only a small slice is
+fantasy relevant. `-prune` rewrites `players.json` in place, keeping only:
+
+- players whose Sleeper `search_rank` is at or below the cutoff
+  (`search_rank` is lower-is-better; unranked players carry values like
+  `9999999`),
+- team defenses (`DEF`), which Sleeper leaves without a `search_rank`,
+- every player referenced by `rankings.csv` or `wishlist.csv`, regardless of
+  rank.
+
+Preview the result without touching the file:
+
+```sh
+go run ./... -prune -prune-dry-run
+```
+
+```text
+Prune dry run for players.json: cutoff=500 before=12221 after=1160 removed=11061 kept_ranked=1113 kept_rankless=32 kept_listed=15
+```
+
+Then prune for real, optionally choosing your own cutoff:
+
+```sh
+go run ./... -prune                 # default cutoff 500
+go run ./... -prune -prune-rank 300 # tighter pool
+```
+
+Pruning preserves the cache's `cached_at` value and refreshes its modification
+time, so the app treats the smaller file as a fresh cache. The next time the
+cache goes stale (24 hours), the app refetches the full player database from
+Sleeper — rerun `-prune` after that if you want the smaller cache back.
+
+Rankings and wishlist rows are resolved against the *unpruned* database before
+anything is removed, so pruning never breaks CSV validation for the lists you
+have today. If you later add a player who was pruned out, delete
+`players.json` to resync from Sleeper.
+
 ## Build
 
 ```sh

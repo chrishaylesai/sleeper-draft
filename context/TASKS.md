@@ -184,14 +184,18 @@ a shippable feature on its own.
 - **Description:** Create a script or CLI command that removes irrelevant players
   from `players.json` based on Sleeper `search_rank`, producing a smaller local
   cache for faster startup and easier inspection.
-- **Status:** TODO
-- **Assigned to:** _unassigned_
-- **Notes:** `search_rank` is lower-is-better; very large values such as
-  `9999999` are effectively unranked. Suggested initial cutoff is `500`, which
-  keeps a deep fantasy-relevant pool while removing most noise. Final cutoff is
-  user-selected. Preserve any player referenced by `rankings.csv` or
-  `wishlist.csv` even if their `search_rank` is above the cutoff or missing. Be
-  careful with `DEF`, since team defenses may not have `search_rank`.
+- **Status:** DONE
+- **Assigned to:** Claude
+- **Notes:** Added a `-prune` CLI command (`-prune-rank` cutoff, default `500`;
+  `-prune-dry-run` preview) that rewrites `players.json` in place. Keeps players
+  ranked at or below the cutoff, rankless-but-draftable positions (`DEF`, which
+  Sleeper leaves without a `search_rank`), and every player referenced by
+  `rankings.csv` or `wishlist.csv` — those lists are resolved against the
+  unpruned database first, so CSV validation keeps working. The pruned file
+  preserves `cached_at`, so the app still treats it as a fresh cache. On the
+  real cache this cuts 12,221 players to 1,160 (1.7 MB to 162 KB). Verified with
+  `go test ./...`, `go build ./...`, and dry-run plus real prune runs against a
+  copy of the live cache.
 
 ### T14. Display my overall pick numbers
 
