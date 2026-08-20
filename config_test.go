@@ -42,6 +42,51 @@ func TestLoadConfigWithUsernameAndSeason(t *testing.T) {
 	}
 }
 
+func TestLoadConfigDefaultsPruneRankCutoff(t *testing.T) {
+	cfg := loadTestConfig(t, `{
+		"draft_id": "123",
+		"position_targets": {"QB": 2},
+		"refresh_interval_seconds": 10,
+		"players_path": "players.json",
+		"rankings_path": "rankings.csv",
+		"wishlist_path": "wishlist.csv"
+	}`)
+
+	if cfg.PruneRankCutoff != defaultPruneRankCutoff {
+		t.Fatalf("PruneRankCutoff = %d, want %d", cfg.PruneRankCutoff, defaultPruneRankCutoff)
+	}
+}
+
+func TestLoadConfigUsesConfiguredPruneRankCutoff(t *testing.T) {
+	cfg := loadTestConfig(t, `{
+		"draft_id": "123",
+		"position_targets": {"QB": 2},
+		"refresh_interval_seconds": 10,
+		"prune_rank_cutoff": 300,
+		"players_path": "players.json",
+		"rankings_path": "rankings.csv",
+		"wishlist_path": "wishlist.csv"
+	}`)
+
+	if cfg.PruneRankCutoff != 300 {
+		t.Fatalf("PruneRankCutoff = %d, want 300", cfg.PruneRankCutoff)
+	}
+}
+
+func TestLoadConfigRejectsNegativePruneRankCutoff(t *testing.T) {
+	err := loadConfigError(t, `{
+		"draft_id": "123",
+		"position_targets": {"QB": 1},
+		"refresh_interval_seconds": 10,
+		"prune_rank_cutoff": -1,
+		"players_path": "players.json",
+		"rankings_path": "rankings.csv",
+		"wishlist_path": "wishlist.csv"
+	}`)
+
+	assertErrorContains(t, err, "prune_rank_cutoff must be greater than 0")
+}
+
 func TestLoadConfigRejectsMissingDraftIdentity(t *testing.T) {
 	err := loadConfigError(t, `{
 		"position_targets": {"QB": 1},

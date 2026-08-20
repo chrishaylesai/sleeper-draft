@@ -236,14 +236,9 @@ func parseSearchRank(raw json.RawMessage) (*int, error) {
 }
 
 func readPlayerCache(path string) (PlayerDatabase, error) {
-	data, err := os.ReadFile(path)
+	cache, err := readPlayerCacheFile(path)
 	if err != nil {
-		return PlayerDatabase{}, fmt.Errorf("read player cache %q: %w", path, err)
-	}
-
-	var cache playerCacheFile
-	if err := json.Unmarshal(data, &cache); err != nil {
-		return PlayerDatabase{}, fmt.Errorf("parse player cache %q: %w", path, err)
+		return PlayerDatabase{}, err
 	}
 
 	return PlayerDatabase{
@@ -251,6 +246,19 @@ func readPlayerCache(path string) (PlayerDatabase, error) {
 		Index:   NewPlayerIndex(cache.Players),
 		Source:  "cache",
 	}, nil
+}
+
+func readPlayerCacheFile(path string) (playerCacheFile, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return playerCacheFile{}, fmt.Errorf("read player cache %q: %w", path, err)
+	}
+
+	var cache playerCacheFile
+	if err := json.Unmarshal(data, &cache); err != nil {
+		return playerCacheFile{}, fmt.Errorf("parse player cache %q: %w", path, err)
+	}
+	return cache, nil
 }
 
 func writePlayerCache(path string, cache playerCacheFile) error {
