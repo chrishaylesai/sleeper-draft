@@ -18,7 +18,7 @@
     "FA"
   ],
   "refresh_interval_seconds": 5,
-  "prune_rank_cutoff": 500,
+  "prune_rank_cutoff": 300,
   "players_path": "players.json",
   "rankings_path": "rankings.csv",
   "wishlist_path": "wishlist.csv"

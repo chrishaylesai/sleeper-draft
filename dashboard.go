@@ -90,7 +90,7 @@ func (m dashboardModel) View() string {
 		)
 	}
 
-	positionSummaries := BuildPositionSummaries(m.state.Config.PositionTargets, m.snapshot.Picks, m.state.Players, m.state.Personal)
+	positionSummaries := BuildRelevantPositionSummaries(m.state.Config, m.snapshot.Picks, m.state.Players, m.state.Rankings, m.state.Wishlist, m.state.Personal)
 	bestAvailable := BestAvailableByPosition(m.state.Config, m.state.Players, m.state.Rankings, m.snapshot.Picks)
 	wishlistReport := BuildWishlistReport(m.state.Config, m.state.Wishlist, m.snapshot.Picks)
 

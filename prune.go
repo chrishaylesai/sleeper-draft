@@ -76,12 +76,12 @@ func PrunePlayerCache(ctx context.Context, cfg Config, players PlayerService, op
 
 	kept := make([]Player, 0, len(cache.Players))
 	for _, player := range cache.Players {
-		switch {
-		case listed.ids[normalizeLookupText(player.ID)]:
+		switch relevance := playerRelevance(player, listed, cutoff, cutoffApplied); relevance {
+		case relevanceListed:
 			result.KeptListed++
-		case cutoffApplied && player.SearchRank != nil && *player.SearchRank <= cutoff:
+		case relevanceRanked:
 			result.KeptRanked++
-		case player.SearchRank == nil && keepWhenRankless(player):
+		case relevanceRankless:
 			result.KeptRankless++
 		default:
 			continue
@@ -135,6 +135,42 @@ func keepWhenRankless(player Player) bool {
 	return keep
 }
 
+type relevanceReason int
+
+const (
+	relevanceNone relevanceReason = iota
+	relevanceListed
+	relevanceRanked
+	relevanceRankless
+)
+
+func playerRelevance(player Player, listed listedPlayerSet, cutoff int, cutoffApplied bool) relevanceReason {
+	switch {
+	case listed.ids[normalizeLookupText(player.ID)]:
+		return relevanceListed
+	case cutoffApplied && player.SearchRank != nil && *player.SearchRank <= cutoff:
+		return relevanceRanked
+	case player.SearchRank == nil && keepWhenRankless(player):
+		return relevanceRankless
+	default:
+		return relevanceNone
+	}
+}
+
+func relevantPlayers(cfg Config, players []Player, rankings, wishlist PlayerList) []Player {
+	listed := listedPlayersFromLists(rankings, wishlist)
+	cutoffApplied := !listed.rankingsSupplied
+
+	relevant := make([]Player, 0, len(players))
+	for _, player := range players {
+		if playerRelevance(player, listed, cfg.PruneRankCutoff, cutoffApplied) == relevanceNone {
+			continue
+		}
+		relevant = append(relevant, player)
+	}
+	return relevant
+}
+
 type listedPlayerSet struct {
 	ids              map[string]bool
 	rankingsSupplied bool
@@ -149,6 +185,10 @@ func listedPlayers(cfg Config, players []Player) (listedPlayerSet, error) {
 		return listedPlayerSet{}, err
 	}
 
+	return listedPlayersFromLists(rankings, wishlist), nil
+}
+
+func listedPlayersFromLists(rankings, wishlist PlayerList) listedPlayerSet {
 	listed := listedPlayerSet{
 		ids:              make(map[string]bool, len(rankings.Entries)+len(wishlist.Entries)),
 		rankingsSupplied: len(rankings.Entries) > 0,
@@ -160,5 +200,5 @@ func listedPlayers(cfg Config, players []Player) (listedPlayerSet, error) {
 			}
 		}
 	}
-	return listed, nil
+	return listed
 }

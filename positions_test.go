@@ -102,6 +102,35 @@ func TestBuildPositionSummariesSkipsExplicitZeroTargetPositions(t *testing.T) {
 	}
 }
 
+func TestBuildRelevantPositionSummariesCountsPrunedRemainingPool(t *testing.T) {
+	players := []Player{
+		{ID: "top-qb", Name: "Top QB", Position: "QB", SearchRank: intPtr(25)},
+		{ID: "deep-qb", Name: "Deep QB", Position: "QB", SearchRank: intPtr(900)},
+		{ID: "wishlist-qb", Name: "Wishlist QB", Position: "QB", SearchRank: intPtr(1200)},
+		{ID: "irrelevant-wr", Name: "Irrelevant WR", Position: "WR", SearchRank: intPtr(900)},
+	}
+
+	got := BuildRelevantPositionSummaries(
+		Config{
+			PositionTargets: map[string]int{"QB": 2, "WR": 1},
+			PruneRankCutoff: 300,
+		},
+		[]Pick{{PlayerID: "deep-qb"}},
+		PlayerDatabase{Players: players, Index: NewPlayerIndex(players)},
+		PlayerList{},
+		PlayerList{Entries: []RankedPlayer{{PlayerID: "wishlist-qb"}}},
+		PersonalDraft{},
+	)
+
+	want := []PositionSummary{
+		{Position: "QB", Target: 2, PersonalDrafted: 0, PersonalRemaining: 2, TotalDrafted: 1, TotalRemaining: 2},
+		{Position: "WR", Target: 1, PersonalDrafted: 0, PersonalRemaining: 1, TotalDrafted: 0, TotalRemaining: 0},
+	}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("summaries = %#v, want %#v", got, want)
+	}
+}
+
 func TestFormatPositionSummaries(t *testing.T) {
 	got := FormatPositionSummaries([]PositionSummary{
 		{Position: "QB", Target: 2, PersonalDrafted: 1, PersonalRemaining: 1, TotalDrafted: 4, TotalRemaining: 12},

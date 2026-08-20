@@ -16,6 +16,14 @@ type PositionSummary struct {
 }
 
 func BuildPositionSummaries(targets map[string]int, picks []Pick, players PlayerDatabase, personal PersonalDraft) []PositionSummary {
+	return buildPositionSummaries(targets, picks, players, players.Players, personal)
+}
+
+func BuildRelevantPositionSummaries(cfg Config, picks []Pick, players PlayerDatabase, rankings, wishlist PlayerList, personal PersonalDraft) []PositionSummary {
+	return buildPositionSummaries(cfg.PositionTargets, picks, players, relevantPlayers(cfg, players.Players, rankings, wishlist), personal)
+}
+
+func buildPositionSummaries(targets map[string]int, picks []Pick, players PlayerDatabase, playerPool []Player, personal PersonalDraft) []PositionSummary {
 	configuredTargets := normalizePositionTargets(targets)
 	totalDrafted := make(map[string]int)
 	personalDrafted := make(map[string]int)
@@ -29,7 +37,7 @@ func BuildPositionSummaries(targets map[string]int, picks []Pick, players Player
 			personalDrafted[position]++
 		}
 	}
-	totalPlayers := totalPlayersByPosition(players.Players)
+	totalAvailable := availablePlayersByPosition(playerPool, picks)
 
 	positions := make(map[string]struct{})
 	for position, target := range configuredTargets {
@@ -59,17 +67,13 @@ func BuildPositionSummaries(targets map[string]int, picks []Pick, players Player
 		if personalRemaining < 0 {
 			personalRemaining = 0
 		}
-		totalRemaining := totalPlayers[position] - totalDrafted[position]
-		if totalRemaining < 0 {
-			totalRemaining = 0
-		}
 		summaries = append(summaries, PositionSummary{
 			Position:          position,
 			Target:            target,
 			PersonalDrafted:   personalCount,
 			PersonalRemaining: personalRemaining,
 			TotalDrafted:      totalDrafted[position],
-			TotalRemaining:    totalRemaining,
+			TotalRemaining:    totalAvailable[position],
 		})
 	}
 	return summaries
@@ -114,9 +118,13 @@ func normalizePositionTargets(targets map[string]int) map[string]int {
 	return normalized
 }
 
-func totalPlayersByPosition(players []Player) map[string]int {
+func availablePlayersByPosition(players []Player, picks []Pick) map[string]int {
+	drafted := draftedPlayerIDs(picks)
 	totals := make(map[string]int)
 	for _, player := range players {
+		if drafted[normalizeLookupText(player.ID)] {
+			continue
+		}
 		if position := normalizePosition(player.Position); position != "" {
 			totals[position]++
 		}

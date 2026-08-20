@@ -185,7 +185,7 @@ a shippable feature on its own.
   from `players.json` based on Sleeper `search_rank`, producing a smaller local
   cache for faster startup and easier inspection.
 - **Status:** DONE
-- **Assigned to:** Claude
+- **Assigned to:** Codex
 - **Notes:** Added a `-prune` CLI command (`-prune-dry-run` previews without
   rewriting) that rewrites `players.json` in place. Keeps every player
   referenced by `rankings.csv` or `wishlist.csv`, rankless-but-draftable
@@ -199,7 +199,11 @@ a shippable feature on its own.
   cache the cutoff path cuts 12,221 players to 1,160 (1.7 MB to 162 KB); a
   61-row rankings file cuts it to 96. Verified with `go test ./...`,
   `go build ./...`, and dry-run plus real prune runs against a copy of the live
-  cache, with and without rankings.
+  cache, with and without rankings. Follow-up fix: dashboard/text position
+  summaries now apply the same relevance rules at render time, so total
+  remaining counts are pruned even when the local `players.json` cache has not
+  been rewritten. Verified with `go test ./...`, `go build ./...`, and a live
+  `-once` smoke run.
 
 ### T14. Display my overall pick numbers
 
