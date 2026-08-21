@@ -289,10 +289,17 @@ a shippable feature on its own.
   team using a transparent, documented method and consistent source data. Store
   both the underlying score and an easiest-to-hardest or hardest-to-easiest rank
   in a machine-readable file, with the season and as-of date recorded.
-- **Status:** IN PROGRESS
+- **Status:** DONE
 - **Assigned to:** Codex
-- **Notes:** Calculating 2026 schedule strength from each scheduled opponent's
-  2025 regular-season winning percentage, weighted by actual meetings.
+- **Notes:** Added `2026_team_strength_of_schedule.csv` at the repository root
+  with all 32 teams ranked hardest to easiest by their 17 scheduled 2026
+  opponents' combined 2025 regular-season W-L-T records. The file stores each
+  raw 289-game opponent aggregate, exact and published winning percentages,
+  competition rank, methodology, primary and cross-check source URLs, and
+  research dates. Validated all computed percentages and ranks against the CBS
+  Sports and official New York Giants tables, checked for formula errors, and
+  completed spreadsheet inspection and visual render passes. Documented the
+  method and limitations in README.md.
 
 ### T20. Research team defenses against the run and pass
 
