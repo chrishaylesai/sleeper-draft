@@ -85,6 +85,27 @@ marked `projected` because preseason depth order can change and RB1/RB2 does
 not necessarily predict workload in a committee. The app does not consume this
 file yet.
 
+## 2026 team strength of schedule
+
+`2026_team_strength_of_schedule.csv` ranks all 32 NFL teams from hardest to
+easiest 2026 schedule using opponents' combined 2025 regular-season records.
+
+For each of the 17 scheduled games, the opponent's 2025 W-L-T record is included
+in the aggregate; division opponents faced twice are counted twice. Ties count
+as half a win:
+
+```text
+opponent_win_pct = (wins + 0.5 * ties) / (wins + losses + ties)
+```
+
+The CSV includes the raw combined opponent wins, losses, and ties (289
+record-games), the exact six-decimal percentage, the published three-decimal
+percentage, competition rank, methodology, sources, and research dates. The
+primary table is from CBS Sports (published May 12, 2026) and was cross-checked
+against the New York Giants' official table (published May 14, 2026).
+Prior-season strength of schedule is descriptive rather than predictive. The
+app does not consume this file yet.
+
 ## Prune the player cache
 
 Sleeper's player database is around 12,000 players, but only a small slice is
