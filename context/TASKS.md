@@ -289,10 +289,10 @@ a shippable feature on its own.
   team using a transparent, documented method and consistent source data. Store
   both the underlying score and an easiest-to-hardest or hardest-to-easiest rank
   in a machine-readable file, with the season and as-of date recorded.
-- **Status:** TODO
-- **Assigned to:** Unassigned
-- **Notes:** Keep the first version deliberately simple and reproducible. More
-  advanced position-specific schedule analysis can be added separately later.
+- **Status:** IN PROGRESS
+- **Assigned to:** Codex
+- **Notes:** Calculating 2026 schedule strength from each scheduled opponent's
+  2025 regular-season winning percentage, weighted by actual meetings.
 
 ### T20. Research team defenses against the run and pass
 
